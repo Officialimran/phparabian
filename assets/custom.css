@@ -1,0 +1,3 @@
+#langToggle input:checked + .toggle-bg .indicator {
+      transform: translateX(70px);
+  }
