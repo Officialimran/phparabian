@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHP Arabian Horse</title>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"/>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Object+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+
+  <!-- Load Tailwind AFTER config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Correct Tailwind Config for CDN -->
+  <script>
+    window.tailwind = {
+      config: {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins"],
+              objectsans: ['Object Sans', 'sans-serif'],
+              roboto: ['Roboto', 'sans-serif'],
+              montserrat: ['Montserrat', 'sans-serif'],
+            },
+            keyframes: {
+              'fade-in': {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            },
+            animation: {
+              'fade-in': 'fade-in 0.3s ease-out forwards'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+
+
+</head>
+
+
+
+<body>
+
+<div class="w-full shadow-md bg-[#ffffff] relative z-50">
+
+    <header class="px-6 md:px-12 2xl:px-[12vw] lg:px-[4vw] flex items-center justify-between py-4">
+
+        <a href="index.html" class="text-xl font-bold">
+            <img src="assets/img/logo.png" alt="GamesCreed Logo" class="w-[57px] h-[50px] lg:w-[100px] lg:h-[80px] xl:w-[135px] xl:h-[115px]">
+        </a>
+
+        <nav class="hidden lg:flex md:space-x-2 lg:space-x-4 xl:space-x-6 text-[#00807B] font-objectsans text-[14px] md:text-[16px] font-normal relative">
+
+            <a href="index.html" class="hover:text-[#00807B]">Home</a>
+            <a href="aboutus.html" class="hover:text-[#00807B]t">About Us</a>
+
+            <a href="Product.html" class="relative hover:text-[#00807B]">Product</a>
+
+            <a href="why-choose-php.html" class="relative hover:text-[#00807B]">Why Choose PHP</a>
+
+            <a href="gallery.html" class="relative hover:text-[#00807B]">Gallery</a>
+
+            <a href="news-insights.html" class="relative hover:text-[#00807B]">News & Insights</a>
+            <a href="contact-us.html" class="relative hover:text-[#00807B]">Contact Us</a>
+        
+        </nav>
+
+        <div class="flex items-center space-x-3">
+
+        <!-- Language Toggle -->
+        <div id="langToggle" class="flex items-center bg-[#E2E2E2] rounded-[50px] p-1 w-[140px]">
+
+            <!-- Active: English -->
+            <button id="engBtn" class="flex-1 text-[#FFFFFF] font-roboto text-xs font-normal  rounded-[50px] py-2 bg-[#57C4BD] transition-all duration-300">
+                ENG
+            </button>
+
+            <!-- Inactive: Bangla -->
+            <button id="bnBtn" class="flex-1 text-black font-roboto text-xs font-normal  rounded-[50px] py-2 text-center">
+                বাংলা
+            </button>
+
+        </div>
+
+        <button id="menuBtn" class="lg:hidden z-20">
+            <svg class="w-8 h-8 text-[#00807B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        </div>
+    </header>
+
+        <div id="mobileMenu"
+            class="fixed top-0 left-0 w-full h-full bg-[#ffffff] z-50 transform -translate-x-full transition-transform duration-300 lg:hidden flex flex-col">
+
+            <div class="flex items-center justify-between px-4 py-4 border-b border-[#00807B]">
+            <img src="assets/img/logo.png" class="h-10">
+
+            <button id="closeBtn">
+                <svg class="w-8 h-8 text-[#00807B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            </div>
+
+            <nav class="flex flex-col space-y-6 px-6 pt-8 text-[#00807B] font-encode text-[20px] font-medium">
+
+            <a href="index.html" class="hover:text-[#00807B]">Home</a>
+            <a href="aboutus.html" class="hover:text-[#00807B]">About Us</a>
+            <a href="product.html" class="hover:text-[#00807B]">Product</a>
+            <a href="why-choose-php" class="hover:text-[#00807B]">Why Choose PHP</a>
+            <a href="gallery.html" class="hover:text-[#00807B]">Gallery</a>
+            <a href="news-insights.html" class="hover:text-[#00807B]">News & Insights</a>
+            <a href="contact-us.html" class="hover:text-[#00807B]">Contact Us</a>
+
+            </nav>
+        </div>
+
+</div>
+
+<section class="px-6 md:px-12 2xl:px-[12vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+
+  <!-- SHAPES & BACKGROUND -->
+
+  
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-[#57C5BC]"
+      style="clip-path: polygon(34% 10%, 104% 36%, 100% 39%, 0 100%, 0 33%);"></div>
+
+    <div class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('assets/img/home-hero.png');
+      clip-path: polygon(34% 10%, 97% 36%, 200% 100%, 0 100%, 0 36%);"></div>
+
+    <div class="absolute inset-0 bg-[#038C86]/90"
+      style="clip-path: polygon(34% 10%, 100% 37%, 100% 100%, 0 100%, 0 36%);"></div>
+
+    <div class="absolute inset-0 bg-black/20"
+      style="clip-path: polygon(34% 10%, 100% 37%, 100% 100%, 0 100%, 0 36%);"></div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 min-h-[520px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[664px]
+              flex items-center">
+
+    <!-- LEFT CONTENT -->
+    <div class="w-full mt-[80px] lg:mt-[60px]">
+
+      <h1 class="text-[#FFFFFF] text-[30px] sm:text-[50px] md:text-[60px] lg:text-[80px] xl:text-[96px] font-extrabold font-objectsans leading-[100%] lg:leading-[100px] tracking-normal">
+        PHP Arabian Horse Super NOF Dhew Tin
+      </h1>
+
+      <p class="text-[#FFFFFF]  text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-[30px] font-normal font-objectsans mt-4">
+        PHP Arabian Horse Super is mostly trusted because it maintains perfect weight, accurate size, and consistent thickness in every Dhew Tin; something many brands fail to deliver. 
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="px-6 md:px-12 2xl:px-[12vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+    <!-- LEFT CONTENT -->
+    <div>
+      <p class="text-[#000000] text-[14px] lg:text-[16px] leading-6 lg:leading-[35px] font-normal font-objectsans mb-6">
+        PHP Arabian Horse Super NOF Dhew Tin is a premium grade corrugated galvanized iron (CGI) sheet manufactured using advanced Non-Oxidizing Furnace (NOF) technology a process that ensures exceptional coating uniformity, superior rust protection, and longer lifespan. In Bangladesh, it stands as one of the most trusted and durable roofing solutions under the PHP Family Steel Division.v
+      </p>
+
+      <div class="block lg:hidden mb-6">
+        <div class="rounded-xl overflow-hidden mb-4 relative">
+          <img id="mainImageMobile" src="assets/img/thumb-1.png" alt="Product Image" class="w-full h-full object-fill transition-opacity duration-500 opacity-100" />
+        </div>
+
+        <div class="swiper thumbSwiperMobile w-full mx-auto">
+          <div class="swiper-wrapper items-center justify-center">
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/img/thumb-1.png"
+                onclick="changeImage(this, 'mainImageMobile')"
+                class="w-24 h-20 object-fill p-2 rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105 border-2 border-[#E5E5E5]"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/img/thumb-2.png"
+                onclick="changeImage(this, 'mainImageMobile')"
+                class="w-24 h-20 object-fill p-2 rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105 border-2 border-[#E5E5E5]"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Features -->
+      <h3 class="text-[#00605C] text-[20px] lg:text-[24px] font-normal font-objectsans leading-9 lg:leading-[35px] mb-4">Key Features :</h3>
+      <ul class="list-disc pl-5 space-y-2 text-[#000000] text-[14px] lg:text-[16px] leading-6 lg:leading-7 font-normal font-objectsans mb-6">
+        <li>High-Quality Galvanized Steel — strong and rust-resistant</li>
+        <li>NOF Coating Process – smooth finish & uniform zinc layer</li>
+        <li>Chromic Treatment – added shine & durability</li>
+        <li>Wavy (Dhew) Design – better strength & water drainage</li>
+        <li>Lightweight & Easy to Install</li>
+        <li>Weather-Resistant – ideal for Bangladesh climate</li>
+      </ul>
+
+
+      <!-- Key Advantages -->
+      <h3 class="text-[#00605C] text-[20px] lg:text-[24px] font-normal font-objectsans leading-9 lg:leading-[35px] mb-4">Key Advantages :</h3>
+      <ul class="list-disc pl-5 space-y-2 text-[#000000] text-[14px] lg:text-[16px] leading-6 lg:leading-7 font-normal font-objectsans mb-6">
+        <li>Superior Durability: Long-lasting protection in all weather conditions</li>
+        <li>Corrosion Resistant: Dual-sided zinc coating prevents rust even in coastal climates</li>
+        <li>Easy to Install: Saves both labor and installation time</li>
+        <li>Enhanced Water Drainage: The wavy corrugation allows smooth water flow</li>
+        <li>Economical: Excellent cost-to-performance ratio with low maintenance needs</li>
+        <li>Aesthetic Appeal: Available in both galvanized and color-coated finishes for modern structures</li>
+      </ul>
+
+      <!-- Applications -->
+      <h3 class="text-[#00605C] text-[20px] lg:text-[24px] font-normal font-objectsans leading-9 lg:leading-[35px] mb-4">Applications :</h3>
+      <ul class="list-disc pl-5 space-y-2 text-[#000000] text-[14px] lg:text-[16px] leading-6 lg:leading-7 font-normal font-objectsans mb-6">
+        <li>Residential Roofing: Houses, garages, boundary shades</li>
+        <li>Industrial Buildings: Factories, warehouses, workshops</li>
+        <li>Agricultural Projects: Poultry farms, storage sheds, rural housing</li>
+        <li>Commercial Infrastructure: Markets, school buildings, community centers</li>
+      </ul>
+
+      <!-- Specifications Table -->
+      <div class="w-full overflow-hidden rounded-lg border border-[#ffffff]">
+        <table class="w-full text-left divide-y divide-[#ffffff]">
+          <thead class="text-[#ffffff]">
+            <tr>
+              <th class="px-4 py-4 bg-[#00605C] text-[14px] lg:text-[16px] font-normal font-montserrat leading-4">Specifications & Composition</th>
+              <th class="px-4 py-4 bg-[#23242A] text-[14px] lg:text-[16px] font-normal font-montserrat leading-4"></th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-4 bg-[#00605C] text-[#FFFFFF] text-[14px] lg:text-[16px] font-normal font-montserrat leading-4">Thickness</td>
+              <td class="px-4 py-4 bg-[#23242A] text-[#FFFFFF] text-[14px] lg:text-[16px] font-normal font-montserrat leading-4">0.120 mm – 0.510 mm</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-4 bg-[#00605C] text-white text-[14px] lg:text-[16px] font-normal font-montserrat leading-4">Width</td>
+              <td class="px-4 py-4 bg-[#23242A] text-[#FFFFFF] text-[14px] lg:text-[16px] font-normal font-montserrat leading-4">28 to 32 inches</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-4 bg-[#00605C] text-white text-[14px] lg:text-[16px] font-normal font-montserrat leading-4">Length</td>
+              <td class="px-4 py-4 bg-[#23242A] text-[#FFFFFF] text-[14px] lg:text-[16px] font-normal font-montserrat leading-4">6 ft – 20 ft / custom</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-4 bg-[#00605C] text-white text-[14px] lg:text-[16px] font-normal font-montserrat leading-4">Finish</td>
+              <td class="px-4 py-4 bg-[#23242A] text-[#FFFFFF] text-[14px] lg:text-[16px] font-normal font-montserrat leading-4">Galvanized</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+   <!-- PRODUCT IMAGE SECTION -->
+    <div class="hidden lg:block">
+      <div class="rounded-xl overflow-hidden mb-4 relative">
+        <img id="mainImageDesktop" src="assets/img/thumb-2.png" alt="Product Image" class="w-full h-full object-fill transition-opacity duration-500 opacity-100" />
+      </div>
+
+      <div class="swiper thumbSwiperDesktop w-full mx-auto flex items-center justify-center">
+        <div class="swiper-wrapper flex items-center justify-center gap-4">
+          <div class="swiper-slide flex justify-center !w-[100px]">
+            <img
+              src="assets/img/thumb-2.png"
+              onclick="changeImage(this, 'mainImageDesktop')"
+              class="w-full h-20 object-fill p-2 rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105 border-2 border-[#E5E5E5]"
+            />
+          </div>
+          <div class="swiper-slide flex justify-center !w-[100px]">
+            <img
+              src="assets/img/thumb-1.png"
+              onclick="changeImage(this, 'mainImageDesktop')"
+              class="w-full h-20 object-fill p-2 rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105 border-2 border-[#E5E5E5]"
+            />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</section>
+
+
+<section class="px-6 md:px-12 2xl:px-[12vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+  <div class="text-center mb-10">
+    <h2 class="text-[#00605C] text-[24px] lg:text-5xl font-normal font-objectsans leading-[36px] lg:leading-[58px] uppercase">
+      Related Products
+    </h2>
+  </div>
+
+  <div class="hidden lg:block">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
+      <!-- Product 1 -->
+      <a href="#">
+          <div class="relative rounded-lg border border-[#E5E5E5] overflow-hidden w-full h-[300px] lg:h-[458px]">
+            <!-- Image -->
+            <img src="assets/img/product/product-1.png" alt="PHP Arabian Horse Super Profile Sheet" class="w-full h-full object-fill">
+
+            <!-- Overlay Text -->
+            <div class="absolute bottom-0 left-0 w-full p-4 bg-[#00605C]">
+              <p class="text-[#FFFFFF] text-sm lg:text-[24px] font-[500] font-montserrat leading-[100%]">
+                PHP Arabian Horse Super Profile Sheet
+              </p>
+            </div>
+          </div>
+      </a>
+      <a href="#">
+          <div class="relative rounded-lg border border-[#E5E5E5] overflow-hidden w-full h-[300px] lg:h-[458px]">
+            <!-- Image -->
+            <img src="assets/img/product/product-2.png" alt="PHP Arabian Horse Super Profile Sheet" class="w-full h-full object-fill">
+
+            <!-- Overlay Text -->
+            <div class="absolute bottom-0 left-0 w-full p-4 bg-[#00605C]">
+              <p class="text-[#FFFFFF] text-sm lg:text-[24px] font-[500] font-montserrat leading-[100%]">
+                PHP Arabian Horse Super Color Tin
+              </p>
+            </div>
+          </div>
+      </a>
+      <a href="#">
+          <div class="relative rounded-lg border border-[#E5E5E5] overflow-hidden w-full h-[300px] lg:h-[458px]">
+            <!-- Image -->
+            <img src="assets/img/product/product-3.png" alt="PHP Arabian Horse Super Profile Sheet" class="w-full h-full object-fill">
+
+            <!-- Overlay Text -->
+            <div class="absolute bottom-0 left-0 w-full p-4 bg-[#00605C]">
+              <p class="text-[#FFFFFF] text-sm lg:text-[24px] font-[500] font-montserrat leading-[100%]">
+                PHP Arabian Horse Super Alume Tin
+              </p>
+            </div>
+          </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Mobile Swiper -->
+  <div class="lg:hidden">
+    <div class="swiper relatedSwiper relative pb-10">
+      <div class="swiper-wrapper">
+        <!-- Product 1 -->
+        <div class="swiper-slide">
+          <a href="#">
+            <div class="relative rounded-lg border border-[#E5E5E5] overflow-hidden w-full h-[300px]">
+              <img src="assets/img/product/product-1.png" alt="" class="w-full h-full object-fill">
+              <div class="absolute bottom-0 left-0 w-full p-4 bg-[#00605C]">
+                <p class="text-white text-sm font-[500] font-montserrat leading-[100%]">
+                  PHP Arabian Horse Super Profile Sheet
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Product 2 -->
+        <div class="swiper-slide">
+          <a href="#">
+            <div class="relative rounded-lg border border-[#E5E5E5] overflow-hidden w-full h-[300px]">
+              <img src="assets/img/product/product-2.png" alt="" class="w-full h-full object-fill">
+              <div class="absolute bottom-0 left-0 w-full p-4 bg-[#00605C]">
+                <p class="text-white text-sm font-[500] font-montserrat leading-[100%]">
+                  PHP Arabian Horse Super Color Tin
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Product 3 -->
+        <div class="swiper-slide">
+          <a href="#">
+            <div class="relative rounded-lg border border-[#E5E5E5] overflow-hidden w-full h-[300px]">
+              <img src="assets/img/product/product-3.png" alt="" class="w-full h-full object-fill">
+              <div class="absolute bottom-0 left-0 w-full p-4 bg-[#00605C]">
+                <p class="text-white text-sm font-[500] font-montserrat leading-[100%]">
+                  PHP Arabian Horse Super Alume Tin
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- Pagination Dots -->
+      <div class="swiper-pagination mt-4"></div>
+    </div>
+  </div>
+
+
+</section>
+
+
+
+<footer class="bg-[#00605C]">
+    <div class="px-6 md:px-12 2xl:px-[12vw] lg:px-[6vw] py-[150px]">
+        <div class="flex flex-col lg:flex-row justify-between gap-10">
+        
+            <!-- Left Section -->
+            <div class="flex flex-col">
+            <!-- Logo -->
+            <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[24px] md:text-[30px] lg:text-[36px] leading-[100%]">
+                PHPCenter
+            </h2>
+            <div class="max-w-[264px] mb-4">
+                <p class="mb-2 text-[#0EDDC9] text-[20px] md:text-[24px] font-poppins leading-[100%] font-medium">Address:</p>
+                <p class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">40/1,ZakirHossainRoad, Khulshi,Chattogram-4225 Bangladesh</p>
+            </div>
+            <!-- Social Icons -->
+            <div class="flex space-x-4 mb-6 ">
+                <a href="#"><img src="assets/img/instagram.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                <a href="#"><img src="assets/img/facebook.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                <a href="#"><img src="assets/img/x.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                <a href="#"><img src="assets/img/whatsup.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+            </div>
+
+            </div>
+
+            <!-- Right Section -->
+            <div class="lg:w-1/2 flex flex-col items-center md:items-start font-encode">
+                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+                    
+                    <!-- About -->
+                    <div class="w-full">
+                        <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[24px] md:text-[30px] lg:text-[36px] leading-[100%]">About</h2>
+                        <div class="flex flex-col space-y-2">
+                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">History</a>
+                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Our Team</a>
+                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Product</a>
+                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Terms & Condition</a>
+                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Privacy Policy</a>
+                        </div>
+                    </div>
+
+                    <!-- Services -->
+                    <div class="w-full">
+                        <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[24px] md:text-[30px] lg:text-[36px] leading-[100%]">Services</h2>
+                        <div class="flex flex-col space-y-2">
+                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">How to Order</a>
+                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Our Product</a>
+                        </div>
+                    </div>
+
+                    <!-- Other -->
+                    <div class="w-full">
+                        <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[24px] md:text-[30px] lg:text-[36px] leading-[100%]">Other</h2>
+                        <div class="flex flex-col space-y-2">
+                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Contact Us</a>
+                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Help</a>
+                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Privacy</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+  
+    <div class="w-full">
+        <svg viewBox="0 0 1440 112" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Line 1 -->
+            <path fill="none" stroke="#0EDDC9" stroke-width="2"
+                d="M0 40
+                C20 20, 40 20, 60 40
+                C80 60, 100 60, 120 40
+                C140 20, 160 20, 180 40
+                C200 60, 220 60, 240 40
+                C260 20, 280 20, 300 40
+                C320 60, 340 60, 360 40
+                C380 20, 400 20, 420 40
+                C440 60, 460 60, 480 40
+                C500 20, 520 20, 540 40
+                C560 60, 580 60, 600 40
+                C620 20, 640 20, 660 40
+                C680 60, 700 60, 720 40
+                C740 20, 760 20, 780 40
+                C800 60, 820 60, 840 40
+                C860 20, 880 20, 900 40
+                C920 60, 940 60, 960 40
+                C980 20, 1000 20, 1020 40
+                C1040 60, 1060 60, 1080 40
+                C1100 20, 1120 20, 1140 40
+                C1160 60, 1180 60, 1200 40
+                C1220 20, 1240 20, 1260 40
+                C1280 60, 1300 60, 1320 40
+                C1340 20, 1360 20, 1380 40
+                C1400 60, 1420 60, 1440 40" />
+
+            <!-- Line 2 -->
+            <path fill="none" stroke="#0EDDC9" stroke-width="2"
+                d="M0 70
+                C20 50, 40 50, 60 70
+                C80 90, 100 90, 120 70
+                C140 50, 160 50, 180 70
+                C200 90, 220 90, 240 70
+                C260 50, 280 50, 300 70
+                C320 90, 340 90, 360 70
+                C380 50, 400 50, 420 70
+                C440 90, 460 90, 480 70
+                C500 50, 520 50, 540 70
+                C560 90, 580 90, 600 70
+                C620 50, 640 50, 660 70
+                C680 90, 700 90, 720 70
+                C740 50, 760 50, 780 70
+                C800 90, 820 90, 840 70
+                C860 50, 880 50, 900 70
+                C920 90, 940 90, 960 70
+                C980 50, 1000 50, 1020 70
+                C1040 90, 1060 90, 1080 70
+                C1100 50, 1120 50, 1140 70
+                C1160 90, 1180 90, 1200 70
+                C1220 50, 1240 50, 1260 70
+                C1280 90, 1300 90, 1320 70
+                C1340 50, 1360 50, 1380 70
+                C1400 90, 1420 90, 1440 70" />
+
+            <!-- Line 3 -->
+            <path fill="none" stroke="#0EDDC9" stroke-width="2"
+                d="M0 100
+                C20 80, 40 80, 60 100
+                C80 120, 100 120, 120 100
+                C140 80, 160 80, 180 100
+                C200 120, 220 120, 240 100
+                C260 80, 280 80, 300 100
+                C320 120, 340 120, 360 100
+                C380 80, 400 80, 420 100
+                C440 120, 460 120, 480 100
+                C500 80, 520 80, 540 100
+                C560 120, 580 120, 600 100
+                C620 80, 640 80, 660 100
+                C680 120, 700 120, 720 100
+                C740 80, 760 80, 780 100
+                C800 120, 820 120, 840 100
+                C860 80, 880 80, 900 100
+                C920 120, 940 120, 960 100
+                C980 80, 1000 80, 1020 100
+                C1040 120, 1060 120, 1080 100
+                C1100 80, 1120 80, 1140 100
+                C1160 120, 1180 120, 1200 100
+                C1220 80, 1240 80, 1260 100
+                C1280 120, 1300 120, 1320 100
+                C1340 80, 1360 80, 1380 100
+                C1400 120, 1420 120, 1440 100" />
+        </svg>
+
+    </div>
+
+
+
+
+</footer>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  // Generic function to change the main image
+  function changeImage(img, mainImageId) {
+    const mainImage = document.getElementById(mainImageId);
+
+    mainImage.style.opacity = 0; // fade out
+    setTimeout(() => {
+      mainImage.src = img.src;
+      mainImage.style.opacity = 1; // fade in
+    }, 200);
+  }
+
+  // Initialize Swiper for mobile
+  const thumbSwiperMobile = new Swiper('.thumbSwiperMobile', {
+    slidesPerView: 3,
+    loop: true,
+    centeredSlides: true,
+    speed: 1000,
+  });
+
+  // Initialize Swiper for desktop
+ const thumbSwiperDesktop = new Swiper('.thumbSwiperDesktop', {
+  slidesPerView: 'auto',
+  spaceBetween: 10,
+  loop: false,
+  centeredSlides: false,
+});
+</script>
+
+
+<script>
+  const relatedSwiper = new Swiper(".relatedSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: true,
+    autoplay: {
+      delay: 3000,      // Slide every 3 seconds
+      disableOnInteraction: false, // Keep autoplay even after user interacts
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('-translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('-translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
+    });
+
+
+
+
+  </script>
+
+
+ <script>
+  const toggle = document.getElementById("langToggle");
+  const eng = document.getElementById("engBtn");
+  const bn  = document.getElementById("bnBtn");
+
+  toggle.addEventListener("click", () => {
+    eng.classList.toggle("bg-[#57C4BD]");
+    eng.classList.toggle("text-black");
+
+    bn.classList.toggle("bg-[#57C4BD]");
+    bn.classList.toggle("text-white");
+    bn.classList.toggle("text-black");
+    bn.classList.toggle("rounded-full");
+  });
+</script>
+
+
+
+
+<script>
+(function(){
+  const waypoints = Array.from(document.querySelectorAll(".waypoint"));
+
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("fadeIn");
+        entry.target.classList.remove("fadeStart");
+      } else {
+        entry.target.classList.remove("fadeIn");
+        entry.target.classList.add("fadeStart");
+      }
+    });
+  }, {threshold:0.3});
+
+  waypoints.forEach(wp=>observer.observe(wp));
+})();
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const playButton = document.getElementById('playButton');
+  const videoModal = document.getElementById('videoModal');
+  const closeModal = document.getElementById('closeModal');
+  const videoFrame = document.getElementById('videoFrame');
+
+  // Open modal and autoplay video
+  playButton.addEventListener('click', () => {
+    let videoURL = playButton.getAttribute('data-video');
+    const autoplay = playButton.getAttribute('data-autoplay');
+    if(autoplay === "true"){
+      videoURL += videoURL.includes('?') ? '&autoplay=1' : '?autoplay=1';
+    }
+    videoFrame.src = videoURL;
+    videoModal.classList.remove('hidden');
+  });
+
+  // Close modal
+  const closeVideo = () => {
+    videoFrame.src = ""; // stop video
+    videoModal.classList.add('hidden');
+  };
+
+  closeModal.addEventListener('click', closeVideo);
+
+  // Close modal by clicking outside iframe
+  videoModal.addEventListener('click', (e) => {
+    if(e.target === videoModal){
+      closeVideo();
+    }
+  });
+
+  // Optional: Close modal with ESC key
+  document.addEventListener('keydown', (e) => {
+    if(e.key === "Escape" && !videoModal.classList.contains('hidden')){
+      closeVideo();
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+</body>
+</html>
