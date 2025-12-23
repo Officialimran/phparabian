@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHP Arabian Horse</title>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"/>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Object+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+
+  <!-- Load Tailwind AFTER config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Correct Tailwind Config for CDN -->
+  <script>
+    window.tailwind = {
+      config: {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins"],
+              objectsans: ['Object Sans', 'sans-serif'],
+              roboto: ['Roboto', 'sans-serif'],
+              montserrat: ['Montserrat', 'sans-serif'],
+            },
+            keyframes: {
+              'fade-in': {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            },
+            animation: {
+              'fade-in': 'fade-in 0.3s ease-out forwards'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+
+
+
+</head>
+
+
+
+<body>
+
+<div class="w-full shadow-sm bg-[#ffffff] relative z-50">
+
+    <header class="px-6 md:px-12 2xl:px-[10vw] lg:px-[4vw] flex items-center justify-between py-2">
+
+        <a href="index.html" class="text-xl font-bold">
+            <img src="assets/img/logo.png" alt="GamesCreed Logo" class="w-[57px] h-[50px] lg:w-[100px] lg:h-[80px] xl:w-[135px] xl:h-[115px]">
+        </a>
+
+        <nav class="hidden lg:flex md:space-x-2 lg:space-x-4 xl:space-x-6 text-[#00807B] font-objectsans text-[14px] md:text-[16px] font-normal relative">
+
+            <a href="index.html" class="hover:text-[#00807B]">Home</a>
+            <a href="aboutus.html" class="hover:text-[#00807B]t">About Us</a>
+
+            <a href="Product.html" class="relative hover:text-[#00807B]">Product</a>
+
+            <a href="why-choose-php.html" class="relative hover:text-[#00807B]">Why Choose PHP</a>
+
+            <a href="gallery.html" class="relative hover:text-[#00807B]">Gallery</a>
+
+            <a href="news-insights.html" class="relative hover:text-[#00807B]">News & Insights</a>
+            <a href="contact-us.html" class="relative hover:text-[#00807B]">Contact Us</a>
+        
+        </nav>
+
+        <div class="flex items-center space-x-3">
+
+        <!-- Language Toggle -->
+        <div id="langToggle" class="flex items-center bg-[#E2E2E2] rounded-[50px] p-1 w-[140px]">
+
+            <!-- Active: English -->
+            <button id="engBtn" class="flex-1 text-[#FFFFFF] font-roboto text-xs font-normal  rounded-[50px] py-2 bg-[#57C4BD] transition-all duration-300">
+                ENG
+            </button>
+
+            <!-- Inactive: Bangla -->
+            <button id="bnBtn" class="flex-1 text-black font-roboto text-xs font-normal  rounded-[50px] py-2 text-center">
+                বাংলা
+            </button>
+
+        </div>
+
+        <button id="menuBtn" class="lg:hidden z-20">
+            <svg class="w-8 h-8 text-[#00807B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        </div>
+    </header>
+
+        <div id="mobileMenu"
+            class="fixed top-0 left-0 w-full h-full bg-[#ffffff] z-50 transform -translate-x-full transition-transform duration-300 lg:hidden flex flex-col">
+
+            <div class="flex items-center justify-between px-4 py-4 border-b border-[#00807B]">
+            <img src="assets/img/logo.png" class="h-10">
+
+            <button id="closeBtn">
+                <svg class="w-8 h-8 text-[#00807B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            </div>
+
+            <nav class="flex flex-col space-y-6 px-6 pt-8 text-[#00807B] font-encode text-[20px] font-medium">
+
+            <a href="index.html" class="hover:text-[#00807B]">Home</a>
+            <a href="aboutus.html" class="hover:text-[#00807B]">About Us</a>
+            <a href="product.html" class="hover:text-[#00807B]">Product</a>
+            <a href="why-choose-php" class="hover:text-[#00807B]">Why Choose PHP</a>
+            <a href="gallery.html" class="hover:text-[#00807B]">Gallery</a>
+            <a href="news-insights.html" class="hover:text-[#00807B]">News & Insights</a>
+            <a href="contact-us.html" class="hover:text-[#00807B]">Contact Us</a>
+
+            </nav>
+        </div>
+
+</div>
+
+<section class="px-6 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px] z-10  -translate-y-[50px] md:-translate-y-[63px] lg:-translate-y-[66px] transition-transform duration-300 ease-out">
+
+  <!-- SHAPES & BACKGROUND -->
+
+  
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-[#57C5BC]"
+      style="clip-path: polygon(69% 10%, 104% 36%, 100% 39%, 0 100%, 0 33%);"></div>
+
+    <div class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('assets/img/home-hero.png');
+      clip-path: polygon(69% 10%, 97% 36%, 200% 100%, 0 100%, 0 36%);"></div>
+
+    <div class="absolute inset-0 bg-[#038C86]/90"
+      style="clip-path: polygon(69% 10%, 100% 37%, 100% 100%, 0 100%, 0 36%);"></div>
+
+    <div class="absolute inset-0 bg-black/20"
+      style="clip-path: polygon(69% 10%, 100% 37%, 100% 100%, 0 100%, 0 36%);"></div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 min-h-[520px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[664px] flex items-center">
+
+    <!-- LEFT CONTENT -->
+    <div class="w-full mt-[100px] md:mt-[150x] lg:mt-[180x] xl:mt-[200px]">
+
+      <h1 class="text-[#FFFFFF] text-[30px] sm:text-[50px] md:text-[60px] lg:text-[80px] xl:text-[96px] font-extrabold font-objectsans leading-[100%] lg:leading-[96px] tracking-normal mb-8">
+        Contact Us
+      </h1>
+
+      <p class="max-w-xl pr-10 text-[#FFFFFF]  text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-[30px] font-normal font-objectsans mt-4">
+        PHP Arabian Horse Super is mostly trusted because it maintains perfect weight, accurate size, and consistent thickness in every Dhew Tin; something many brands fail to deliver. 
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="px-6 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+        <!-- LEFT CONTENT -->
+        <div>
+          <h2 class="text-[#00605C] text-[24x] md:text-[36px] lg:text-[40px] font-extrabold font-objectsans leading-[24px] lg:leading-[50px] mb-12 w-full lg:max-w-[516px]">
+            PHP Arabian Horse Super
+          </h2>
+
+          <div class="space-y-10">
+            <!-- Phone -->
+            <div class="flex flex-col space-y-4">
+              <div class="flex space-x-3">
+                <img src="assets/img/proicons_phone.svg" class="w-4">
+                <p class="text-[#414042] text-[18px] lg:text-[18px] font-medium font-poppins leading-[100%]">Phone</p>
+              </div>
+              <div>
+                <p class="text-[#414042] text-[14px] lg:text-[14px] font-medium font-poppins leading-[100%]">BD - +880 2333352316-21</p>
+              </div>
+            </div>
+            <!-- email -->
+            <div class="flex flex-col space-y-4">
+              <div class="flex space-x-3">
+                <img src="assets/img/proicons_mail.svg" class="w-4">
+                <p class="text-[#414042] text-[18px] lg:text-[18px] font-medium font-poppins leading-[100%]">E-mail</p>
+              </div>
+              <div>
+                <p class="text-[#414042] text-[14px] lg:text-[14px] font-medium font-poppins leading-[100%]">info@phpfamily.com</p>
+              </div>
+            </div>
+            <!-- address -->
+            <div class="flex flex-col space-y-4">
+              <div class="flex space-x-3">
+                <img src="assets/img/proicons_mail.svg" class="w-4">
+                <p class="text-[#414042] text-[18px] lg:text-[18px] font-medium font-poppins leading-[100%]">PHP Center</p>
+              </div>
+              <div class="max-w-[210px]">
+                <p class="text-[#414042] text-[14px] lg:text-[14px] font-medium font-poppins leading-[24px] ">40/1, Zakir Hossain Road, Khulshi, Chattogram-4225, Bangladesh</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT MAP -->
+        <div class="w-full h-[360px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[585px] rounded-xl overflow-hidden">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747160.657577925!2d87.70269555019605!3d23.48438330617583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adaaed80e18ba7%3A0xf2d28e0c4e1fc6b!2sBangladesh!5e0!3m2!1sen!2sbd!4v1766466055925!5m2!1sen!2sbd" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </div>
+</section>
+
+<section class="bg-[#23242A] px-6 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 py-[50px] md:py-[70px] lg:py-[100px]">
+      <div class="flex flex-col items-start space-y-6 w-full lg:max-w-[460px]">
+          <h2 class="text-[#FFFFFF] text-[24px] lg:text-[26px] xl:text-[30px] font-normal font-objectsans leading-9 lg:leading-[40px] uppercase">Get In Touch with us</h2>
+          <p class="text-[#FFFFFF] text-[14px] lg:text-[16px] font-normal font-objectsans leading-6 lg:leading-[28px]">We believe in turning ideas into reality and we're ready to join your journey. </p>
+      </div>
+      <div>
+        <form class="space-y-4">
+          
+          <div class="relative w-full mb-6">
+            <!-- Select -->
+            <select id="query_type" name="query_type" required
+              class="peer w-full bg-transparent text-[#FFFFFFB2] text-[14px] lg:text-[16px]
+                    border-0 border-b border-white
+                    focus:outline-none focus:ring-0 focus:border-white
+                    pt-6 pb-2 appearance-none px-1">
+              <option value="" disabled selected hidden></option>
+              <option value="general" class="text-gray-800">General Query</option>
+              <option value="support" class="text-gray-800">Support</option>
+              <option value="sales" class="text-gray-800">Sales</option>
+            </select>
+
+            <!-- Floating Label -->
+            <label for="query_type"
+              class="absolute left-0 top-2 text-[#FFFFFF] text-[14px] lg:text-[16px] font-poppins font-normal lg:font-medium leading-[100%]
+                    transition-all duration-300
+                    peer-focus:text-[16px]
+                    peer-focus:-top-1
+                    peer-valid:text-[16px]
+                    peer-valid:-top-1"
+            >
+              Type of query <span class="text-[#FF4306]">*</span>
+            </label>
+
+            <!-- Dropdown Icon -->
+            <svg
+              class="absolute right-0 top-6 w-4 h-4 text-white pointer-events-none"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+
+
+        <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-[#FFFFFFB2] text-sm font-poppins font-normal leading-[100%] bg-transparent border-0 border-b-2 border-[#FFFFFF] appearance-none focus:outline-none focus:ring-0 focus:border-[#FFFFFF] peer" placeholder=" " required="">
+                <label for="floating_first_name" class="peer-focus:font-medium absolute text-[#FFFFFF] text-[14px] lg:text-[16px] font-poppins font-normal lg:font-medium leading-[100%] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#FFFFFF] peer-focus:dark:text-[#FFFFFF] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name <span class="text-[#FF4306]">*</span></label>
+            </div>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-[#FFFFFFB2] text-sm font-poppins font-normal leading-[100%] bg-transparent border-0 border-b-2 border-[#FFFFFF] appearance-none focus:outline-none focus:ring-0 focus:border-[#FFFFFF] peer peer" placeholder=" " required="">
+                <label for="floating_last_name" class="peer-focus:font-medium absolute text-[#FFFFFF] text-[14px] lg:text-[16px] font-poppins font-normal lg:font-medium leading-[100%] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#FFFFFF] peer-focus:dark:text-[#FFFFFF] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name <span class="text-[#FF4306]">*</span></label>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-[#FFFFFFB2] text-sm font-poppins font-normal leading-[100%] bg-transparent border-0 border-b-2 border-[#FFFFFF] appearance-none focus:outline-none focus:ring-0 focus:border-[#FFFFFF] peer" placeholder=" " required="">
+                <label for="floating_phone" class="peer-focus:font-medium absolute text-[#FFFFFF] text-[14px] lg:text-[16px] font-poppins font-normal lg:font-medium leading-[100%] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#FFFFFF] peer-focus:dark:text-[#FFFFFF] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">E-Mail</label>
+            </div>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="floating_company" id="floating_company" class="block py-2.5 px-0 w-full text-[#FFFFFFB2] text-sm font-poppins font-normal leading-[100%] bg-transparent border-0 border-b-2 border-[#FFFFFF] appearance-none focus:outline-none focus:ring-0 focus:border-[#FFFFFF] peer" placeholder=" " required="">
+                <label for="floating_company" class="peer-focus:font-medium absolute text-[#FFFFFF] text-[14px] lg:text-[16px] font-poppins font-normal lg:font-medium leading-[100%] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#FFFFFF] peer-focus:dark:text-[#FFFFFF] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Organization</label>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-[#FFFFFFB2] text-sm font-poppins font-normal leading-[100%] bg-transparent border-0 border-b-2 border-[#FFFFFF] appearance-none focus:outline-none focus:ring-0 focus:border-[#FFFFFF] peer" placeholder=" " required="">
+                <label for="floating_phone" class="peer-focus:font-medium absolute text-[#FFFFFF] text-[14px] lg:text-[16px] font-poppins font-normal lg:font-medium leading-[100%] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#FFFFFF] peer-focus:dark:text-[#FFFFFF] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Job title</label>
+            </div>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="floating_company" id="floating_company" class="block py-2.5 px-0 w-full text-[#FFFFFFB2] text-sm font-poppins font-normal leading-[100%] bg-transparent border-0 border-b-2 border-[#FFFFFF] appearance-none focus:outline-none focus:ring-0 focus:border-[#FFFFFF] peer" placeholder=" " required="">
+                <label for="floating_company" class="peer-focus:font-medium absolute text-[#FFFFFF] text-[14px] lg:text-[16px] font-poppins font-normal lg:font-medium leading-[100%] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#FFFFFF] peer-focus:dark:text-[#FFFFFF] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone Number</label>
+            </div>
+        </div>
+        <div class="relative w-full mb-6">
+            <!-- Select -->
+            <select
+              id="query_type"
+              name="query_type"
+              required
+              class="peer w-full bg-transparent text-white text-[14px] lg:text-[16px]
+                    border-0 border-b border-white
+                    focus:outline-none focus:ring-0 focus:border-white
+                    pt-6 pb-2 appearance-none px-1">
+              <option value="" disabled selected hidden></option>
+              <option value="general" class="text-gray-800">Bangladesh</option>
+              <option value="support" class="text-gray-800">India</option>
+              <option value="sales" class="text-gray-800">Nepal</option>
+            </select>
+
+            <!-- Floating Label -->
+            <label
+              for="query_type"
+              class="absolute left-0 top-2 text-[#FFFFFF] text-[14px] lg:text-[16px] font-poppins font-normal lg:font-medium leading-[100%]
+                    transition-all duration-300
+                    peer-focus:text-[16px]
+                    peer-focus:-top-1
+                    peer-valid:text-[16px]
+                    peer-valid:-top-1"
+            >
+              Country <span class="text-[#FF4306]">*</span>
+            </label>
+
+            <!-- Dropdown Icon -->
+            <svg
+              class="absolute right-0 top-6 w-4 h-4 text-white pointer-events-none"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="relative z-0 w-full mb-5 group">
+            <label class="block text-[#FFFFFF] text-[14px] lg:text-[16px] font-poppins font-normal lg:font-medium leading-[100%] mb-2">Message</label>
+            <input type="text" name="message" id="message" class="block py-2.5 px-0 w-full text-[#FFFFFFB2] text-sm font-poppins font-normal bg-transparent border-0 border-b-2 border-[#ffffff] appearance-none dark:text-white dark:border-[#ffffff] dark:focus:border-[#ffffff] focus:outline-none focus:ring-0 focus:border-[#ffffff] peer" placeholder="Tell us about your fantastic project" required="">
+            
+          </div>
+          <div class="relative z-0 w-full mb-5 group">
+            <label class="block text-[#FFFFFF] text-[14px] lg:text-[16px] font-objectsans font-normal lg:leading-[28px] mb-2">Start a conversation with us by filling out the form.</label>
+          </div>
+        <div class="flex justify-center md:justify-start">
+          <button
+            type="submit"
+            class="flex items-center justify-center
+                  text-[#000000] text-sm
+                  bg-white hover:bg-white
+                  focus:ring-4 focus:outline-none focus:ring-white
+                  font-normal rounded-[75px]
+                  px-12 py-3
+                  dark:bg-white">
+            Submit
+          </button>
+        </div>
+    </form>
+
+      </div>
+  </div>
+</section>
+
+<footer class="bg-[#00605C]">
+    <div class="px-6 md:px-12 2xl:px-[12vw] lg:px-[6vw] py-[150px]">
+        <!-- Mobile layout -->
+          <div class="flex flex-col items-center block lg:hidden">
+            <div class="grid grid-cols-1 gap-8 w-full text-center">
+
+              <div class="flex flex-col items-center">
+                <a href="index.html" class="mb-6">
+                  <img src="assets/img/footer-logo.png">
+                </a>
+                <div class="mb-6">
+                  <p class="mb-2 text-[#0EDDC9] text-[20px] md:text-[22px] lg:text-[24px] font-poppins font-medium">
+                    Address: PHP Centre
+                  </p>
+                  <p class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium leading-[26px] tracking-normal">
+                    40/1, Zakir Hossain Road, Khulshi, Chattogram-4225, Bangladesh
+                  </p>
+                </div>
+                <div class="flex flex-col space-y-2 mb-6">
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">info@phpfamily.com</span>
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">+880 2333352316-21</span>
+                </div>
+                <div class="flex justify-center gap-4 mb-6">
+                  <a href="#"><img src="assets/img/website.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/linkedin.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/facebook.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/tiktalk.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/youtube.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/pint.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+
+                <div class="flex flex-col space-y-2">
+                  <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">History</a>
+                  <a href="product-details.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Our Product</a>
+                  <a href="contact-us.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Contact Us</a>
+                </div>
+              </div>
+
+              </div>
+              
+
+            </div>
+          </div>
+           <!-- desktop layout -->
+          <div class="flex flex-col items-center md:items-start hidden lg:block">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full text-center md:text-left items-start ">
+
+              <!-- desktop layout -->
+              <div class="flex flex-col items-center md:items-start hidden md:block">
+                
+                <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[16px] md:text-[24px] lg:text-[36px] leading-[100%]">
+                  PHPCenter
+                </h2>
+
+                <div class="max-w-[264px]">
+                  <p class="mb-2 text-[#0EDDC9] text-[20px] md:text-[22px] lg:text-[24px] font-poppins font-medium">
+                    Address:
+                  </p>
+                  <p class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">
+                    40/1, Zakir Hossain Road, Khulshi, Chattogram-4225 Bangladesh
+                  </p>
+                </div>
+              </div>
+
+              <!-- About -->
+              <div class="flex flex-col items-center md:items-start">
+                <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[16px] md:text-[24px] lg:text-[36px] leading-[100%]">
+                  About
+                </h2>
+
+                <div class="flex flex-col space-y-2">
+                  <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">History</a>
+                  <a href="product-details.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Our Product</a>
+                  <a href="contact-us.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Contact Us</a>
+                </div>
+              </div>
+
+              <!-- Get In Touch -->
+              <div class="flex flex-col items-center md:items-start">
+                <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[16px] md:text-[24px] lg:text-[36px] leading-[100%]">
+                  Get In Touch
+                </h2>
+
+                <div class="flex flex-col space-y-2 mb-6">
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">info@phpfamily.com</span>
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">+880 2333352316-21</span>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex justify-center lg:justify-start lg:gap-1 xl:gap-2">
+                  <a href="#"><img src="assets/img/website.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/linkedin.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/facebook.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/tiktalk.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/youtube.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/pint.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        
+    </div>
+
+  
+    <div class="w-full">
+        <svg viewBox="0 0 1440 112" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Line 1 -->
+            <path fill="none" stroke="#0EDDC9" stroke-width="2"
+                d="M0 40
+                C20 20, 40 20, 60 40
+                C80 60, 100 60, 120 40
+                C140 20, 160 20, 180 40
+                C200 60, 220 60, 240 40
+                C260 20, 280 20, 300 40
+                C320 60, 340 60, 360 40
+                C380 20, 400 20, 420 40
+                C440 60, 460 60, 480 40
+                C500 20, 520 20, 540 40
+                C560 60, 580 60, 600 40
+                C620 20, 640 20, 660 40
+                C680 60, 700 60, 720 40
+                C740 20, 760 20, 780 40
+                C800 60, 820 60, 840 40
+                C860 20, 880 20, 900 40
+                C920 60, 940 60, 960 40
+                C980 20, 1000 20, 1020 40
+                C1040 60, 1060 60, 1080 40
+                C1100 20, 1120 20, 1140 40
+                C1160 60, 1180 60, 1200 40
+                C1220 20, 1240 20, 1260 40
+                C1280 60, 1300 60, 1320 40
+                C1340 20, 1360 20, 1380 40
+                C1400 60, 1420 60, 1440 40" />
+
+            <!-- Line 2 -->
+            <path fill="none" stroke="#0EDDC9" stroke-width="2"
+                d="M0 70
+                C20 50, 40 50, 60 70
+                C80 90, 100 90, 120 70
+                C140 50, 160 50, 180 70
+                C200 90, 220 90, 240 70
+                C260 50, 280 50, 300 70
+                C320 90, 340 90, 360 70
+                C380 50, 400 50, 420 70
+                C440 90, 460 90, 480 70
+                C500 50, 520 50, 540 70
+                C560 90, 580 90, 600 70
+                C620 50, 640 50, 660 70
+                C680 90, 700 90, 720 70
+                C740 50, 760 50, 780 70
+                C800 90, 820 90, 840 70
+                C860 50, 880 50, 900 70
+                C920 90, 940 90, 960 70
+                C980 50, 1000 50, 1020 70
+                C1040 90, 1060 90, 1080 70
+                C1100 50, 1120 50, 1140 70
+                C1160 90, 1180 90, 1200 70
+                C1220 50, 1240 50, 1260 70
+                C1280 90, 1300 90, 1320 70
+                C1340 50, 1360 50, 1380 70
+                C1400 90, 1420 90, 1440 70" />
+
+            <!-- Line 3 -->
+            <path fill="none" stroke="#0EDDC9" stroke-width="2"
+                d="M0 100
+                C20 80, 40 80, 60 100
+                C80 120, 100 120, 120 100
+                C140 80, 160 80, 180 100
+                C200 120, 220 120, 240 100
+                C260 80, 280 80, 300 100
+                C320 120, 340 120, 360 100
+                C380 80, 400 80, 420 100
+                C440 120, 460 120, 480 100
+                C500 80, 520 80, 540 100
+                C560 120, 580 120, 600 100
+                C620 80, 640 80, 660 100
+                C680 120, 700 120, 720 100
+                C740 80, 760 80, 780 100
+                C800 120, 820 120, 840 100
+                C860 80, 880 80, 900 100
+                C920 120, 940 120, 960 100
+                C980 80, 1000 80, 1020 100
+                C1040 120, 1060 120, 1080 100
+                C1100 80, 1120 80, 1140 100
+                C1160 120, 1180 120, 1200 100
+                C1220 80, 1240 80, 1260 100
+                C1280 120, 1300 120, 1320 100
+                C1340 80, 1360 80, 1380 100
+                C1400 120, 1420 120, 1440 100" />
+        </svg>
+
+    </div>
+
+
+
+
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('-translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('-translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
+    });
+
+
+
+
+  </script>
+
+
+ <script>
+  const toggle = document.getElementById("langToggle");
+  const eng = document.getElementById("engBtn");
+  const bn  = document.getElementById("bnBtn");
+
+  toggle.addEventListener("click", () => {
+    eng.classList.toggle("bg-[#57C4BD]");
+    eng.classList.toggle("text-black");
+
+    bn.classList.toggle("bg-[#57C4BD]");
+    bn.classList.toggle("text-white");
+    bn.classList.toggle("text-black");
+    bn.classList.toggle("rounded-full");
+  });
+</script>
+
+
+
+
+<script>
+(function(){
+  const waypoints = Array.from(document.querySelectorAll(".waypoint"));
+
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("fadeIn");
+        entry.target.classList.remove("fadeStart");
+      } else {
+        entry.target.classList.remove("fadeIn");
+        entry.target.classList.add("fadeStart");
+      }
+    });
+  }, {threshold:0.3});
+
+  waypoints.forEach(wp=>observer.observe(wp));
+})();
+</script>
+
+
+
+  <script>
+        const tabs = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.tab-content');
+
+        function setActiveTab(tab) {
+          tabs.forEach(btn => {
+            btn.classList.toggle('bg-[#00605C]', btn.dataset.tab === tab);
+            btn.classList.toggle('text-white', btn.dataset.tab === tab);
+            btn.classList.toggle('text-[#00605C]', btn.dataset.tab !== tab);
+          });
+          contents.forEach(content => {
+            content.classList.toggle('hidden', tab !== 'all' && content.dataset.tab !== tab);
+          });
+        }
+
+        tabs.forEach(btn => {
+          btn.addEventListener('click', () => setActiveTab(btn.dataset.tab));
+        });
+
+        // Default to 'all' tab
+        setActiveTab('all');
+      </script>
+
+
+</body>
+</html>
+
+
+</body>
+</html>
