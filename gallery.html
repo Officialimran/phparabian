@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHP Arabian Horse</title>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"/>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Object+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+
+  <!-- Load Tailwind AFTER config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Correct Tailwind Config for CDN -->
+  <script>
+    window.tailwind = {
+      config: {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins"],
+              objectsans: ['Object Sans', 'sans-serif'],
+              roboto: ['Roboto', 'sans-serif'],
+              montserrat: ['Montserrat', 'sans-serif'],
+            },
+            keyframes: {
+              'fade-in': {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            },
+            animation: {
+              'fade-in': 'fade-in 0.3s ease-out forwards'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+<style>
+  .faq-active {
+    background-color: #00605C!important;
+  }
+</style>
+
+
+</head>
+
+
+
+<body>
+
+<div class="w-full shadow-md bg-[#ffffff] relative z-50">
+
+    <header class="px-6 md:px-12 2xl:px-[10vw] lg:px-[4vw] flex items-center justify-between py-4">
+
+        <a href="index.html" class="text-xl font-bold">
+            <img src="assets/img/logo.png" alt="GamesCreed Logo" class="w-[57px] h-[50px] lg:w-[100px] lg:h-[80px] xl:w-[135px] xl:h-[115px]">
+        </a>
+
+        <nav class="hidden lg:flex md:space-x-2 lg:space-x-4 xl:space-x-6 text-[#00807B] font-objectsans text-[14px] md:text-[16px] font-normal relative">
+
+            <a href="index.html" class="hover:text-[#00807B]">Home</a>
+            <a href="aboutus.html" class="hover:text-[#00807B]t">About Us</a>
+
+            <a href="Product.html" class="relative hover:text-[#00807B]">Product</a>
+
+            <a href="why-choose-php.html" class="relative hover:text-[#00807B]">Why Choose PHP</a>
+
+            <a href="gallery.html" class="relative hover:text-[#00807B]">Gallery</a>
+
+            <a href="news-insights.html" class="relative hover:text-[#00807B]">News & Insights</a>
+            <a href="contact-us.html" class="relative hover:text-[#00807B]">Contact Us</a>
+        
+        </nav>
+
+        <div class="flex items-center space-x-3">
+
+        <!-- Language Toggle -->
+        <div id="langToggle" class="flex items-center bg-[#E2E2E2] rounded-[50px] p-1 w-[140px]">
+
+            <!-- Active: English -->
+            <button id="engBtn" class="flex-1 text-[#FFFFFF] font-roboto text-xs font-normal  rounded-[50px] py-2 bg-[#57C4BD] transition-all duration-300">
+                ENG
+            </button>
+
+            <!-- Inactive: Bangla -->
+            <button id="bnBtn" class="flex-1 text-black font-roboto text-xs font-normal  rounded-[50px] py-2 text-center">
+                বাংলা
+            </button>
+
+        </div>
+
+        <button id="menuBtn" class="lg:hidden z-20">
+            <svg class="w-8 h-8 text-[#00807B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        </div>
+    </header>
+
+        <div id="mobileMenu"
+            class="fixed top-0 left-0 w-full h-full bg-[#ffffff] z-50 transform -translate-x-full transition-transform duration-300 lg:hidden flex flex-col">
+
+            <div class="flex items-center justify-between px-4 py-4 border-b border-[#00807B]">
+            <img src="assets/img/logo.png" class="h-10">
+
+            <button id="closeBtn">
+                <svg class="w-8 h-8 text-[#00807B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            </div>
+
+            <nav class="flex flex-col space-y-6 px-6 pt-8 text-[#00807B] font-encode text-[20px] font-medium">
+
+            <a href="index.html" class="hover:text-[#00807B]">Home</a>
+            <a href="aboutus.html" class="hover:text-[#00807B]">About Us</a>
+            <a href="product.html" class="hover:text-[#00807B]">Product</a>
+            <a href="why-choose-php" class="hover:text-[#00807B]">Why Choose PHP</a>
+            <a href="gallery.html" class="hover:text-[#00807B]">Gallery</a>
+            <a href="news-insights.html" class="hover:text-[#00807B]">News & Insights</a>
+            <a href="contact-us.html" class="hover:text-[#00807B]">Contact Us</a>
+
+            </nav>
+        </div>
+
+</div>
+
+<section class="px-6 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px] z-10  -translate-y-[50px] md:-translate-y-[63px] lg:-translate-y-[66px] transition-transform duration-300 ease-out">
+
+  <!-- SHAPES & BACKGROUND -->
+
+  
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-[#57C5BC]"
+      style="clip-path: polygon(55% 10%, 104% 36%, 100% 39%, 0 100%, 0 33%);"></div>
+
+    <div class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('assets/img/home-hero.png');
+      clip-path: polygon(55% 10%, 97% 36%, 200% 100%, 0 100%, 0 36%);"></div>
+
+    <div class="absolute inset-0 bg-[#038C86]/90"
+      style="clip-path: polygon(55% 10%, 100% 37%, 100% 100%, 0 100%, 0 36%);"></div>
+
+    <div class="absolute inset-0 bg-black/20"
+      style="clip-path: polygon(55% 10%, 100% 37%, 100% 100%, 0 100%, 0 36%);"></div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 min-h-[520px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[664px]
+              flex items-center">
+
+    <!-- LEFT CONTENT -->
+    <div class="w-full mt-[100px] md:mt-[150x] lg:mt-[180x] xl:mt-[200px]">
+
+      <h1 class="text-[#FFFFFF] text-[30px] sm:text-[50px] md:text-[60px] lg:text-[80px] xl:text-[96px] font-extrabold font-objectsans leading-[100%] lg:leading-[96px] tracking-normal mb-8">
+        Gallery
+      </h1>
+
+      <p class="max-w-xl pr-10 text-[#FFFFFF]  text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-[30px] font-normal font-objectsans mt-4">
+        PHP Arabian Horse Super is mostly trusted because it maintains perfect weight, accurate size, and consistent thickness in every Dhew Tin; something many brands fail to deliver. 
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= PHOTO GALLERY ================= -->
+<section class="px-6 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+
+  <!-- Heading -->
+  <h2 class="text-[#00605C] text-[24px] lg:text-[48px] font-normal font-objectsans leading-[36px] lg:leading-[58px] uppercase mb-6 lg:tracking-normal tracking-[0.02em]">
+    Photo Gallery
+  </h2>
+  <p class="text-[#00605C] text-[20px] lg:text-[32px] font-normal font-objectsans leading-[36px] lg:leading-[58px] uppercase mb-6 lg:tracking-normal tracking-[0.02em]">Event Photos</p>
+
+  <!-- Grid -->
+  <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 gap-5">
+
+    <!-- Card -->
+    <div class="gallery-item relative cursor-pointer" data-caption="Annual Islamic Conference 2023">
+      <img src="assets/img/gallery/1.png" class="w-full h-[276px] lg:h-[458px] object-cover rounded-xl" />
+      <div class="absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100 transition">
+        <div class="flex items-center justify-center">
+          <img src="assets/img/gallery/lightbox-icon.svg">
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item relative cursor-pointer" data-caption="Honoring Distinguished Scholars">
+      <img src="assets/img/gallery/2.png" class="w-full h-[276px] lg:h-[458px] object-cover rounded-xl" />
+      <div class="absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100 transition">
+        <div class="flex items-center justify-center">
+          <img src="assets/img/gallery/lightbox-icon.svg">
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item relative cursor-pointer" data-caption="Business Forum Award Ceremony">
+      <img src="assets/img/gallery/3.png" class="w-full h-[276px] lg:h-[458px] object-cover rounded-xl" />
+      <div class="absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100 transition">
+        <div class="flex items-center justify-center">
+          <img src="assets/img/gallery/lightbox-icon.svg">
+        </div>
+      </div>
+    </div>
+    <div class="gallery-item relative cursor-pointer" data-caption="Business Forum Award Ceremony">
+      <img src="assets/img/gallery/4.png" class="w-full h-[276px] lg:h-[458px] object-cover rounded-xl" />
+      <div class="absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100 transition">
+        <div class="flex items-center justify-center">
+          <img src="assets/img/gallery/lightbox-icon.svg">
+        </div>
+      </div>
+    </div>
+    <div class="gallery-item relative cursor-pointer" data-caption="Business Forum Award Ceremony">
+      <img src="assets/img/gallery/5.png" class="w-full h-[276px] lg:h-[458px] object-cover rounded-xl" />
+      <div class="absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100 transition">
+        <div class="flex items-center justify-center">
+          <img src="assets/img/gallery/lightbox-icon.svg">
+        </div>
+      </div>
+    </div>
+    <div class="gallery-item relative cursor-pointer" data-caption="Business Forum Award Ceremony">
+      <img src="assets/img/gallery/6.png" class="w-full h-[276px] lg:h-[458px] object-cover rounded-xl" />
+      <div class="absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100 transition">
+        <div class="flex items-center justify-center">
+          <img src="assets/img/gallery/lightbox-icon.svg">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Load More -->
+  <div class="text-center mt-10">
+    <button id="loadMore" class="text-[14px] leading-[100%] font-poppins font-semibold px-[21px] py-[14px] border border-[#00605C] text-[#00605C] rounded-full hover:bg-[#00605C] hover:text-[#fff] transition">
+      Load More
+    </button>
+  </div>
+</section>
+
+<!-- ================= LIGHTBOX ================= -->
+<div id="lightbox"
+  class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50">
+
+  <!-- Close -->
+  <button onclick="closeLightbox()"
+    class="absolute top-6 right-6 text-white text-4xl">&times;</button>
+
+  <!-- Swiper -->
+  <div class="swiper lightboxSwiper w-full max-w-5xl px-4">
+    <div class="swiper-wrapper" id="lightboxWrapper"></div>
+
+    <!-- Nav -->
+    <div class="swiper-button-next text-white"></div>
+    <div class="swiper-button-prev text-white"></div>
+  </div>
+</div>
+
+
+<section class="px-6 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+
+  <!-- Heading -->
+  <h2 class="text-[#00605C] text-[20px] lg:text-[32px] font-normal font-objectsans leading-[36px] lg:leading-[58px] uppercase mb-6 lg:tracking-normal tracking-[0.02em]">
+    Social Media Content
+  </h2>
+  
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 bg-white items-center justify-center">
+      <div class="relative group text-center w-full aspect-square md:h-[300px] sm:h-[400px] h-[150px]">
+          <a href="#">
+              <img src="assets/img/gallery/social-1.png" loading="lazy" decoding="async" data-nimg="fill" sizes="100vw" class="w-full object-cover h-[100%] absolute text-transparent inset-0 rounded-lg">
+          </a>
+          <a href="https://www.facebook.com/PHPArabianHorseSuper" target="_blank" class="absolute inset-0 z-10 flex space-x-2 items-center justify-center w-full h-full scale-0 group-hover:scale-100 transition duration-500 bg-[#00605C]/50 rounded-lg">
+            <img src="assets/img/gallery/facebook.png" alt="facebook">
+            <h2 class="text-[16px] lg:text-[24px] text-[#FFFFFF] font-poppins font-semibold leading-[100%]">PHP summit in vaban</h2>
+          </a>
+      </div>
+      <div class="relative group text-center w-full aspect-square md:h-[300px] sm:h-[400px] h-[150px]">
+          <a href="#">
+              <img src="assets/img/gallery/social-3.png" loading="lazy" decoding="async" data-nimg="fill" sizes="100vw" class="w-full object-cover h-[100%] absolute text-transparent inset-0 rounded-lg">
+          </a>
+          <a href="https://www.facebook.com/PHPArabianHorseSuper" target="_blank" class="absolute inset-0 z-10 flex space-x-2 items-center justify-center w-full h-full scale-0 group-hover:scale-100 transition duration-500 bg-[#00605C]/50 rounded-lg">
+            <img src="assets/img/gallery/facebook.png" alt="facebook">
+            <h2 class="text-[16px] lg:text-[24px] text-[#FFFFFF] font-poppins font-semibold leading-[100%]">PHP summit in vaban</h2>
+          </a>
+      </div>
+      <div class="relative group text-center w-full aspect-square md:h-[300px] sm:h-[400px] h-[150px]">
+          <a href="#">
+              <img src="assets/img/gallery/social-2.png" loading="lazy" decoding="async" data-nimg="fill" sizes="100vw" class="w-full object-cover h-[100%] absolute text-transparent inset-0 rounded-lg">
+          </a>
+          <a href="https://www.facebook.com/PHPArabianHorseSuper" target="_blank" class="absolute inset-0 z-10 flex space-x-2 items-center justify-center w-full h-full scale-0 group-hover:scale-100 transition duration-500 bg-[#00605C]/50 rounded-lg">
+            <img src="assets/img/gallery/facebook.png" alt="facebook">
+            <h2 class="text-[16px] lg:text-[24px] text-[#FFFFFF] font-poppins font-semibold leading-[100%]">PHP summit in vaban</h2>
+          </a>
+      </div>
+
+
+  </div>
+
+  <!-- Load More -->
+  <div class="text-center mt-10">
+    <button id="loadMore" class="text-[14px] leading-[100%] font-poppins font-semibold px-[21px] py-[14px] border border-[#00605C] text-[#00605C] rounded-full hover:bg-[#00605C] hover:text-[#fff] transition">
+      Load More
+    </button>
+  </div>
+</section>
+
+
+
+<section class="px-6 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+
+  <h2 class="text-[#00605C] text-[20px] lg:text-[32px] font-normal font-objectsans leading-[36px] lg:leading-[58px] uppercase mb-6 lg:tracking-normal tracking-[0.02em]">
+    Video Gallery
+  </h2>
+
+  <div id="videoGallery" class="grid grid-cols-1 lg:grid-cols-3 gap-4 bg-white items-center justify-center">
+    <template id="videoTemplate">
+      <div class="relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
+        <img src="" alt="Video Title" class="w-full h-[276px] lg:h-[458px] object-cover">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="bg-[#00605C] bg-opacity-90 rounded-[20px] py-4 px-8">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full bg-[#00605C] p-4 text-white">
+          <h3 class="font-semibold text-lg">Video Title</h3>
+          <p class="text-sm">26th, September, 2025</p>
+        </div>
+        <a href="" class="absolute inset-0 video-link"></a>
+      </div>
+    </template>
+  </div>
+
+  <div class="text-center mt-10">
+    <button id="loadMoreVideo" class="text-[14px] leading-[100%] font-poppins font-semibold px-[21px] py-[14px] border border-[#00605C] text-[#00605C] rounded-full hover:bg-[#00605C] hover:text-[#fff] transition">
+      Load More
+    </button>
+  </div>
+</section>
+
+<div id="videoModal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+  <div class="relative w-full max-w-4xl mx-4 lg:mx-0">
+    <button id="closeModal" class="absolute top-4 right-4 text-white text-2xl font-bold z-50">&times;</button>
+    <iframe id="modalVideo" class="w-full h-[60vh] lg:h-[80vh]" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+const videoData = [
+  {title: "PHP Weekly Summit", date: "26th, September, 2025", thumb: "assets/img/gallery/video-thumb.png", url: "https://www.youtube.com/embed/DVFS0AUf2ZI"},
+  {title: "Laravel Tips", date: "12th, October, 2025", thumb: "assets/img/gallery/video-thumb.png", url: "https://www.youtube.com/embed/DVFS0AUf2ZI"},
+  {title: "JavaScript Tricks", date: "5th, November, 2025", thumb: "assets/img/gallery/video-thumb.png", url: "https://www.youtube.com/embed/DVFS0AUf2ZI"},
+  {title: "Vue.js Mastery", date: "18th, December, 2025", thumb: "assets/img/gallery/video-thumb.png", url: "https://www.youtube.com/embed/DVFS0AUf2ZI"},
+  {title: "React Components", date: "20th, December, 2025", thumb: "assets/img/gallery/video-thumb.png", url: "https://www.youtube.com/embed/DVFS0AUf2ZI"},
+  {title: "Tailwind CSS Deep Dive", date: "22nd, December, 2025", thumb: "assets/img/gallery/video-thumb.png", url: "https://www.youtube.com/embed/DVFS0AUf2ZI"},
+];
+
+let loadedCount = 0;
+const loadStep = 3;
+const galleryVid = document.getElementById('videoGallery');
+const template = document.getElementById('videoTemplate');
+const loadMoreBtn = document.getElementById('loadMoreVideo');
+
+function loadVideos() {
+  const nextVideos = videoData.slice(loadedCount, loadedCount + loadStep);
+  nextVideos.forEach(video => {
+    const clone = template.content.cloneNode(true);
+    clone.querySelector('img').src = video.thumb;
+    clone.querySelector('img').alt = video.title;
+    clone.querySelector('h3').textContent = video.title;
+    clone.querySelector('p').textContent = video.date;
+    clone.querySelector('.video-link').href = video.url; // embed URL
+    galleryVid.appendChild(clone);
+  });
+  loadedCount += nextVideos.length;
+  if (loadedCount >= videoData.length) loadMoreBtn.style.display = 'none';
+}
+
+// Initial load
+loadVideos();
+loadMoreBtn.addEventListener('click', loadVideos);
+
+// Modal
+const modal = document.getElementById('videoModal');
+const modalVideo = document.getElementById('modalVideo');
+
+galleryVid.addEventListener('click', e => {
+  const link = e.target.closest('.video-link');
+  if (link) {
+    e.preventDefault();
+    let videoSrc = link.href;
+    videoSrc += videoSrc.includes('?') ? '&autoplay=1' : '?autoplay=1';
+    modalVideo.src = videoSrc;
+    modal.classList.remove('hidden');
+  }
+});
+
+document.getElementById('closeModal').addEventListener('click', () => {
+  modalVideo.src = '';
+  modal.classList.add('hidden');
+});
+
+modal.addEventListener('click', e => {
+  if (e.target === modal) {
+    modalVideo.src = '';
+    modal.classList.add('hidden');
+  }
+});
+</script>
+
+
+
+
+
+
+
+<footer class="bg-[#00605C]">
+    <div class="px-6 md:px-12 2xl:px-[12vw] lg:px-[6vw] py-[150px]">
+        <!-- Mobile layout -->
+          <div class="flex flex-col items-center block lg:hidden">
+            <div class="grid grid-cols-1 gap-8 w-full text-center">
+
+              <div class="flex flex-col items-center">
+                <a href="index.html" class="mb-6">
+                  <img src="assets/img/footer-logo.png">
+                </a>
+                <div class="mb-6">
+                  <p class="mb-2 text-[#0EDDC9] text-[20px] md:text-[22px] lg:text-[24px] font-poppins font-medium">
+                    Address: PHP Centre
+                  </p>
+                  <p class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium leading-[26px] tracking-normal">
+                    40/1, Zakir Hossain Road, Khulshi, Chattogram-4225, Bangladesh
+                  </p>
+                </div>
+                <div class="flex flex-col space-y-2 mb-6">
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">info@phpfamily.com</span>
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">+880 2333352316-21</span>
+                </div>
+                <div class="flex justify-center gap-4 mb-6">
+                  <a href="#"><img src="assets/img/website.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/linkedin.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/facebook.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/tiktalk.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/youtube.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/pint.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+
+                <div class="flex flex-col space-y-2">
+                  <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">History</a>
+                  <a href="product-details.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Our Product</a>
+                  <a href="contact-us.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Contact Us</a>
+                </div>
+              </div>
+
+              </div>
+              
+
+            </div>
+          </div>
+           <!-- desktop layout -->
+          <div class="flex flex-col items-center md:items-start hidden lg:block">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full text-center md:text-left items-start ">
+
+              <!-- desktop layout -->
+              <div class="flex flex-col items-center md:items-start hidden md:block">
+                
+                <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[16px] md:text-[24px] lg:text-[36px] leading-[100%]">
+                  PHPCenter
+                </h2>
+
+                <div class="max-w-[264px]">
+                  <p class="mb-2 text-[#0EDDC9] text-[20px] md:text-[22px] lg:text-[24px] font-poppins font-medium">
+                    Address:
+                  </p>
+                  <p class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">
+                    40/1, Zakir Hossain Road, Khulshi, Chattogram-4225 Bangladesh
+                  </p>
+                </div>
+              </div>
+
+              <!-- About -->
+              <div class="flex flex-col items-center md:items-start">
+                <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[16px] md:text-[24px] lg:text-[36px] leading-[100%]">
+                  About
+                </h2>
+
+                <div class="flex flex-col space-y-2">
+                  <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">History</a>
+                  <a href="product-details.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Our Product</a>
+                  <a href="contact-us.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Contact Us</a>
+                </div>
+              </div>
+
+              <!-- Get In Touch -->
+              <div class="flex flex-col items-center md:items-start">
+                <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[16px] md:text-[24px] lg:text-[36px] leading-[100%]">
+                  Get In Touch
+                </h2>
+
+                <div class="flex flex-col space-y-2 mb-6">
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">info@phpfamily.com</span>
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">+880 2333352316-21</span>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex justify-center lg:justify-start lg:gap-1 xl:gap-2">
+                  <a href="#"><img src="assets/img/website.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/linkedin.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/facebook.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/tiktalk.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/youtube.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/pint.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        
+    </div>
+
+  
+    <div class="w-full">
+        <svg viewBox="0 0 1440 112" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Line 1 -->
+            <path fill="none" stroke="#0EDDC9" stroke-width="2"
+                d="M0 40
+                C20 20, 40 20, 60 40
+                C80 60, 100 60, 120 40
+                C140 20, 160 20, 180 40
+                C200 60, 220 60, 240 40
+                C260 20, 280 20, 300 40
+                C320 60, 340 60, 360 40
+                C380 20, 400 20, 420 40
+                C440 60, 460 60, 480 40
+                C500 20, 520 20, 540 40
+                C560 60, 580 60, 600 40
+                C620 20, 640 20, 660 40
+                C680 60, 700 60, 720 40
+                C740 20, 760 20, 780 40
+                C800 60, 820 60, 840 40
+                C860 20, 880 20, 900 40
+                C920 60, 940 60, 960 40
+                C980 20, 1000 20, 1020 40
+                C1040 60, 1060 60, 1080 40
+                C1100 20, 1120 20, 1140 40
+                C1160 60, 1180 60, 1200 40
+                C1220 20, 1240 20, 1260 40
+                C1280 60, 1300 60, 1320 40
+                C1340 20, 1360 20, 1380 40
+                C1400 60, 1420 60, 1440 40" />
+
+            <!-- Line 2 -->
+            <path fill="none" stroke="#0EDDC9" stroke-width="2"
+                d="M0 70
+                C20 50, 40 50, 60 70
+                C80 90, 100 90, 120 70
+                C140 50, 160 50, 180 70
+                C200 90, 220 90, 240 70
+                C260 50, 280 50, 300 70
+                C320 90, 340 90, 360 70
+                C380 50, 400 50, 420 70
+                C440 90, 460 90, 480 70
+                C500 50, 520 50, 540 70
+                C560 90, 580 90, 600 70
+                C620 50, 640 50, 660 70
+                C680 90, 700 90, 720 70
+                C740 50, 760 50, 780 70
+                C800 90, 820 90, 840 70
+                C860 50, 880 50, 900 70
+                C920 90, 940 90, 960 70
+                C980 50, 1000 50, 1020 70
+                C1040 90, 1060 90, 1080 70
+                C1100 50, 1120 50, 1140 70
+                C1160 90, 1180 90, 1200 70
+                C1220 50, 1240 50, 1260 70
+                C1280 90, 1300 90, 1320 70
+                C1340 50, 1360 50, 1380 70
+                C1400 90, 1420 90, 1440 70" />
+
+            <!-- Line 3 -->
+            <path fill="none" stroke="#0EDDC9" stroke-width="2"
+                d="M0 100
+                C20 80, 40 80, 60 100
+                C80 120, 100 120, 120 100
+                C140 80, 160 80, 180 100
+                C200 120, 220 120, 240 100
+                C260 80, 280 80, 300 100
+                C320 120, 340 120, 360 100
+                C380 80, 400 80, 420 100
+                C440 120, 460 120, 480 100
+                C500 80, 520 80, 540 100
+                C560 120, 580 120, 600 100
+                C620 80, 640 80, 660 100
+                C680 120, 700 120, 720 100
+                C740 80, 760 80, 780 100
+                C800 120, 820 120, 840 100
+                C860 80, 880 80, 900 100
+                C920 120, 940 120, 960 100
+                C980 80, 1000 80, 1020 100
+                C1040 120, 1060 120, 1080 100
+                C1100 80, 1120 80, 1140 100
+                C1160 120, 1180 120, 1200 100
+                C1220 80, 1240 80, 1260 100
+                C1280 120, 1300 120, 1320 100
+                C1340 80, 1360 80, 1380 100
+                C1400 120, 1420 120, 1440 100" />
+        </svg>
+
+    </div>
+
+
+
+
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  // Generic function to change the main image
+  function changeImage(img, mainImageId) {
+    const mainImage = document.getElementById(mainImageId);
+
+    mainImage.style.opacity = 0; // fade out
+    setTimeout(() => {
+      mainImage.src = img.src;
+      mainImage.style.opacity = 1; // fade in
+    }, 200);
+  }
+
+  // Initialize Swiper for mobile
+  const thumbSwiperMobile = new Swiper('.thumbSwiperMobile', {
+    slidesPerView: 3,
+    loop: true,
+    centeredSlides: true,
+    speed: 1000,
+  });
+
+  // Initialize Swiper for desktop
+ const thumbSwiperDesktop = new Swiper('.thumbSwiperDesktop', {
+  slidesPerView: 'auto',
+  spaceBetween: 10,
+  loop: false,
+  centeredSlides: false,
+});
+</script>
+
+
+<script>
+  const relatedSwiper = new Swiper(".relatedSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: true,
+    autoplay: {
+      delay: 3000,      // Slide every 3 seconds
+      disableOnInteraction: false, // Keep autoplay even after user interacts
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('-translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('-translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
+    });
+
+
+
+
+  </script>
+
+
+ <script>
+  const toggle = document.getElementById("langToggle");
+  const eng = document.getElementById("engBtn");
+  const bn  = document.getElementById("bnBtn");
+
+  toggle.addEventListener("click", () => {
+    eng.classList.toggle("bg-[#57C4BD]");
+    eng.classList.toggle("text-black");
+
+    bn.classList.toggle("bg-[#57C4BD]");
+    bn.classList.toggle("text-white");
+    bn.classList.toggle("text-black");
+    bn.classList.toggle("rounded-full");
+  });
+</script>
+
+
+
+
+<script>
+(function(){
+  const waypoints = Array.from(document.querySelectorAll(".waypoint"));
+
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("fadeIn");
+        entry.target.classList.remove("fadeStart");
+      } else {
+        entry.target.classList.remove("fadeIn");
+        entry.target.classList.add("fadeStart");
+      }
+    });
+  }, {threshold:0.3});
+
+  waypoints.forEach(wp=>observer.observe(wp));
+})();
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const playButton = document.getElementById('playButton');
+  const videoModal = document.getElementById('videoModal');
+  const closeModal = document.getElementById('closeModal');
+  const videoFrame = document.getElementById('videoFrame');
+
+  // Open modal and autoplay video
+  playButton.addEventListener('click', () => {
+    let videoURL = playButton.getAttribute('data-video');
+    const autoplay = playButton.getAttribute('data-autoplay');
+    if(autoplay === "true"){
+      videoURL += videoURL.includes('?') ? '&autoplay=1' : '?autoplay=1';
+    }
+    videoFrame.src = videoURL;
+    videoModal.classList.remove('hidden');
+  });
+
+  // Close modal
+  const closeVideo = () => {
+    videoFrame.src = ""; // stop video
+    videoModal.classList.add('hidden');
+  };
+
+  closeModal.addEventListener('click', closeVideo);
+
+  // Close modal by clicking outside iframe
+  videoModal.addEventListener('click', (e) => {
+    if(e.target === videoModal){
+      closeVideo();
+    }
+  });
+
+  // Optional: Close modal with ESC key
+  document.addEventListener('keydown', (e) => {
+    if(e.key === "Escape" && !videoModal.classList.contains('hidden')){
+      closeVideo();
+    }
+  });
+});
+</script>
+
+
+
+<script>
+  const faqButtons = document.querySelectorAll('.faq-btn');
+
+  faqButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const content = item.querySelector('.faq-content');
+      const vertical = item.querySelector('.vertical');
+
+      const isOpen =
+        content.style.maxHeight && content.style.maxHeight !== '0px';
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('faq-active'); // ❌ remove bg
+        i.querySelector('.faq-content').style.maxHeight = '0px';
+        i.querySelector('.vertical').classList.remove('opacity-0');
+        i.querySelector('.faq-btn').classList.remove('text-[#EBEBEB]');
+      });
+
+      // Open current
+      if (!isOpen) {
+        item.classList.add('faq-active'); // ✅ add bg
+        content.style.maxHeight = content.scrollHeight + 'px';
+        vertical.classList.add('opacity-0'); // minus
+        btn.classList.add('text-[#EBEBEB]');
+      }
+    });
+  });
+</script>
+
+<script>
+  let swiper;
+  const gallery = document.getElementById("gallery");
+  const lightbox = document.getElementById("lightbox");
+  const wrapper = document.getElementById("lightboxWrapper");
+
+  function initGallery() {
+    document.querySelectorAll(".gallery-item").forEach((item, index) => {
+      item.onclick = () => openLightbox(index);
+    });
+  }
+
+  function openLightbox(startIndex) {
+    wrapper.innerHTML = "";
+
+    document.querySelectorAll(".gallery-item").forEach(item => {
+      const img = item.querySelector("img").src;
+      const caption = item.dataset.caption;
+
+      wrapper.innerHTML += `
+        <div class="swiper-slide flex flex-col items-center">
+          <img src="${img}" class="h-[276px] lg:h-[458px] rounded-lg mb-4"/>
+          <p class="text-white text-center text-sm">${caption}</p>
+        </div>
+      `;
+    });
+
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+
+    swiper = new Swiper(".lightboxSwiper", {
+      initialSlide: startIndex,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }
+
+  function closeLightbox() {
+    lightbox.classList.add("hidden");
+    swiper.destroy();
+  }
+
+  /* LOAD MORE */
+  document.getElementById("loadMore").onclick = () => {
+    const more = [
+      { img: "assets/img/gallery/4.png", cap: "Conference Networking Session" },
+      { img: "assets/img/gallery/5.png", cap: "Guest Arrival Ceremony" },
+      { img: "assets/img/gallery/6.png", cap: "Panel Discussion Moment" },
+    ];
+
+    more.forEach(item => {
+      gallery.innerHTML += `
+        <div class="gallery-item relative cursor-pointer" data-caption="${item.cap}">
+          <img src="${item.img}" class="w-full h-[276px] lg:h-[458px] object-cover rounded-xl"/>
+          <div class="absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100 transition">
+            <div class="flex items-center justify-center">
+              <img src="assets/img/gallery/lightbox-icon.svg">
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    initGallery();
+  };
+
+  initGallery();
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html>
