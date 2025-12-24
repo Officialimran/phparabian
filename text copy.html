@@ -1,103 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bazna Style Video Gallery</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Step Carousel</title>
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- FontAwesome for play icon -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Swiper CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
 
-  <!-- Magnific Popup CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-  
-  <!-- jQuery + Magnific Popup JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+  <style>
+    .swiper-slide img {
+      width: 100%;
+      object-fit: contain;
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
 
-<section class="px-6 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+<body class="bg-white">
 
-  <h2 class="text-[#00605C] text-[20px] lg:text-[32px] font-normal font-objectsans leading-[36px] lg:leading-[58px] uppercase mb-6 lg:tracking-normal tracking-[0.02em]">
-    Video Gallery
-  </h2>
+<div class="max-w-5xl mx-auto px-4 py-6">
 
-  <div id="videoGallery" class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-    <!-- Video template will be cloned here -->
+  <!-- ITEMS NAMES CAROUSEL -->
+  <div class="relative mb-6">
+
+    <!-- LINE INDICATOR -->
+    <div class="absolute top-2/3 left-2 right-2 h-[2px] bg-gray-300 -z-10"></div>
+
+    <!-- ITEMS SWIPER -->
+    <div class="swiper mySwiperItems">
+      <div class="swiper-wrapper">
+
+        <!-- STEP 1 -->
+        <div class="swiper-slide text-center cursor-pointer flex flex-col space-y-1">
+          <div class="step-number text-[20px] text-[#9EA4AD] font-normal font-objectsans">1</div>
+          <div class="step-content text-[#FFFFFF] text-[14px] font-bold font-objectsans items-center py-4 rounded-lg">
+            NOF TIN
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="swiper-slide text-center cursor-pointer flex flex-col space-y-1">
+          <div class="step-number text-[20px] text-[#9EA4AD] font-normal font-objectsans">2</div>
+          <div class="step-content text-[#FFFFFF] text-[14px] font-bold font-objectsans items-center py-4 rounded-lg">
+            COLOR TIN
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="swiper-slide text-center cursor-pointer flex flex-col space-y-1">
+          <div class="step-number text-[20px] text-[#9EA4AD] font-normal font-objectsans">3</div>
+          <div class="step-content text-[#FFFFFF] text-[14px] font-bold font-objectsans items-center py-4 rounded-lg">
+            ALUMINIUM TIN
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="swiper-slide text-center cursor-pointer flex flex-col space-y-1">
+          <div class="step-number text-[20px] text-[#9EA4AD] font-normal font-objectsans">4</div>
+          <div class="step-content text-[#FFFFFF] text-[14px] font-bold font-objectsans items-center py-4 rounded-lg">
+            PROFILE SHEET
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
-  <div class="text-center mt-10">
-    <button id="loadMore" class="text-[14px] leading-[100%] font-poppins font-semibold px-[21px] py-[14px] border border-[#00605C] text-[#00605C] rounded-full hover:bg-[#00605C] hover:text-[#fff] transition">
-      Load More
-    </button>
+  <!-- IMAGE CAROUSEL -->
+  <div class="swiper mySwiperImages">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide flex justify-center">
+        <img src="assets/img/tin.png" alt="NOF TIN" class="w-64">
+      </div>
+
+      <div class="swiper-slide flex justify-center">
+        <img src="assets/img/tin.png" alt="COLOR TIN" class="w-64">
+      </div>
+
+      <div class="swiper-slide flex justify-center">
+        <img src="assets/img/tin.png" alt="ALUMINIUM TIN" class="w-64">
+      </div>
+
+      <div class="swiper-slide flex justify-center">
+        <img src="assets/img/tin.png" alt="PROFILE SHEET" class="w-64">
+      </div>
+
+    </div>
   </div>
-</section>
+
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 <script>
-  const videoData = [
-    {title: "PHP Weekly Summit", date: "26th, September, 2025", thumb: "https://img.youtube.com/vi/owZ6KL7R4A4/hqdefault.jpg", url: "https://www.youtube.com/watch?v=owZ6KL7R4A4"},
-    {title: "Laravel Tips", date: "12th, October, 2025", thumb: "https://img.youtube.com/vi/owZ6KL7R4A4/hqdefault.jpg", url: "https://www.youtube.com/watch?v=owZ6KL7R4A4"},
-    {title: "JavaScript Tricks", date: "5th, November, 2025", thumb: "https://img.youtube.com/vi/owZ6KL7R4A4/hqdefault.jpg", url: "https://www.youtube.com/watch?v=owZ6KL7R4A4"},
-    {title: "Vue.js Mastery", date: "18th, December, 2025", thumb: "https://img.youtube.com/vi/owZ6KL7R4A4/hqdefault.jpg", url: "https://www.youtube.com/watch?v=owZ6KL7R4A4"},
-    {title: "React Components", date: "20th, December, 2025", thumb: "https://img.youtube.com/vi/owZ6KL7R4A4/hqdefault.jpg", url: "https://www.youtube.com/watch?v=owZ6KL7R4A4"},
-    {title: "Tailwind CSS Deep Dive", date: "22nd, December, 2025", thumb: "https://img.youtube.com/vi/owZ6KL7R4A4/hqdefault.jpg", url: "https://www.youtube.com/watch?v=owZ6KL7R4A4"},
-  ];
+  // ITEMS SWIPER
+  const swiperItems = new Swiper(".mySwiperItems", {
+    slidesPerView: 2.5,
+    spaceBetween: 8,
+    loop: false,
+    breakpoints: {
+      640: { slidesPerView: 2.5 },
+      768: { slidesPerView: 3 },
+      1024: { slidesPerView: 4 },
+    },
+  });
 
-  let loadedCount = 0;
-  const loadStep = 3;
-  const gallery = document.getElementById('videoGallery');
-  const loadMoreBtn = document.getElementById('loadMore');
+  // IMAGE SWIPER
+  const swiperImages = new Swiper(".mySwiperImages", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    on: {
+      slideChange: function () {
+        swiperItems.slideTo(this.realIndex);
+        updateActiveStep(this.realIndex);
+      },
+    },
+  });
 
-  function loadVideos() {
-    const nextVideos = videoData.slice(loadedCount, loadedCount + loadStep);
+  function updateActiveStep(index) {
+    swiperItems.slides.forEach((slide, i) => {
+      const number = slide.querySelector(".step-number");
+      const content = slide.querySelector(".step-content");
 
-    nextVideos.forEach(video => {
-      const videoItem = document.createElement('div');
-      videoItem.className = 'video-item relative cursor-pointer overflow-hidden rounded-lg shadow-lg';
-      
-      videoItem.innerHTML = `
-        <img src="${video.thumb}" alt="${video.title}" class="w-full h-[276px] lg:h-[458px] object-cover">
-        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <i class="fas fa-play text-white text-4xl"></i>
-        </div>
-        <div class="absolute bottom-0 left-0 w-full bg-[#00605C] p-4 text-white">
-          <h3 class="font-semibold text-lg">${video.title}</h3>
-          <p class="text-sm">${video.date}</p>
-        </div>
-        <a class="popup-youtube absolute inset-0" href="${video.url}"></a>
-      `;
-      gallery.appendChild(videoItem);
-    });
+      if (i === index) {
+        // ACTIVE
+        number.classList.add("text-[#57C4BD]");
+        number.classList.remove("text-[#9EA4AD]");
 
-    loadedCount += nextVideos.length;
-    if (loadedCount >= videoData.length) loadMoreBtn.style.display = 'none';
+        content.classList.add("bg-[#57C4BD]", "text-white");
+        content.classList.remove("bg-[#D9D9D9]");
+      } else {
+        // INACTIVE
+        number.classList.add("text-[#9EA4AD]");
+        number.classList.remove("text-[#57C4BD]");
 
-    // Initialize Magnific Popup on newly added items with autoplay
-    $('.popup-youtube').magnificPopup({
-      type: 'iframe',
-      mainClass: 'mfp-fade',
-      preloader: true,
-      removalDelay: 300,
-      fixedContentPos: false,
-      iframe: {
-        patterns: {
-          youtube: {
-            index: 'youtube.com/',
-            id: 'v=',
-            src: 'https://www.youtube.com/embed/%id%?autoplay=1&mute=1'
-          }
-        }
+        content.classList.add("bg-[#D9D9D9]", "text-white");
+        content.classList.remove("bg-[#57C4BD]");
       }
     });
   }
 
-  // Initial load
-  loadVideos();
-  loadMoreBtn.addEventListener('click', loadVideos);
+  // CLICK STEP → CHANGE IMAGE
+  swiperItems.slides.forEach((slide, index) => {
+    slide.addEventListener("click", () => {
+      swiperImages.slideToLoop(index);
+    });
+  });
+
+  
+
+  // INIT
+  updateActiveStep(0);
 </script>
 
 </body>

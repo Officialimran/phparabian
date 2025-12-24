@@ -10,10 +10,8 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Object+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
 
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="assets/custom.css"/>
 
 
   <!-- Load Tailwind AFTER config -->
@@ -72,15 +70,18 @@
   }
 </style>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
 </head>
 
 
 
 <body>
 
-<div class="w-full shadow-sm bg-[#ffffff] relative z-50">
+<div class="w-full bg-[#ffffff] relative z-50 wow animate__animated animate__slideInDown" data-wow-duration="2s">
 
-    <header class="px-6 md:px-12 2xl:px-[10vw] lg:px-[4vw] flex items-center justify-between py-2">
+    <header class="px-4 md:px-12 2xl:px-[10vw] lg:px-[4vw] flex items-center justify-between py-2">
 
         <a href="index.html" class="text-xl font-bold">
             <img src="assets/img/logo.png" alt="GamesCreed Logo" class="w-[57px] h-[50px] lg:w-[100px] lg:h-[80px] xl:w-[135px] xl:h-[115px]">
@@ -91,7 +92,48 @@
             <a href="index.html" class="hover:text-[#00807B]">Home</a>
             <a href="aboutus.html" class="hover:text-[#00807B]t">About Us</a>
 
-            <a href="Product.html" class="relative hover:text-[#00807B]">Product</a>
+            <!-- Product Dropdown -->
+            <div class="relative group">
+                <a href="#"
+                  class="relative hover:text-[#00807B] flex items-center gap-1">
+                    Product
+                </a>
+
+                <!-- Dropdown -->
+                <div
+                    class="absolute top-full left-0 mt-3 w-[220px] bg-white shadow-lg rounded-lg
+                          opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                          transition-all duration-300 z-50">
+
+                    <ul class="py-2 text-[14px]">
+                        <li>
+                            <a href="product-details.html"
+                              class="block px-4 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                                PHP Arabian Horse Super NOF Dhew Tin
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product-details.html"
+                              class="block px-4 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                                PHP Arabian Horse Super Color Tin
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product-details.html"
+                              class="block px-4 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                                PHP Arabian Horse Super Alume Tin
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product-details.html"
+                              class="block px-4 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                                PHP Arabian Horse Super Profile Sheet
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
 
             <a href="why-choose-php.html" class="relative hover:text-[#00807B]">Why Choose PHP</a>
 
@@ -147,8 +189,48 @@
 
             <a href="index.html" class="hover:text-[#00807B]">Home</a>
             <a href="aboutus.html" class="hover:text-[#00807B]">About Us</a>
-            <a href="product.html" class="hover:text-[#00807B]">Product</a>
-            <a href="why-choose-php" class="hover:text-[#00807B]">Why Choose PHP</a>
+            
+            <!-- Dropdown Wrapper -->
+            <div class="mobile-dropdown">
+
+                <button
+                    class="dropdown-toggle w-full flex items-center justify-between text-[#00807B] text-[20px] font-medium">
+
+                    <span>Product</span>
+
+                    <svg class="dropdown-icon w-5 h-5 transition-transform duration-300"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 max-h-0">
+
+                    <div class="flex flex-col mt-4 space-y-4 pl-2 text-[18px] font-normal">
+                        <a href="product-details.html"
+                          class="block px-1 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                            PHP Arabian Horse Super NOF Dhew Tin
+                        </a>
+                        <a href="product-details.html"
+                          class="block px-1 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                            PHP Arabian Horse Super Color Tin
+                        </a>
+                        <a href="product-details.html"
+                          class="block px-1 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                            PHP Arabian Horse Super Alume Tin
+                        </a>
+                        <a href="product-details.html"
+                          class="block px-1 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                            PHP Arabian Horse Super Profile Sheet
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <a href="why-choose-php.html" class="hover:text-[#00807B]">Why Choose PHP</a>
             <a href="gallery.html" class="hover:text-[#00807B]">Gallery</a>
             <a href="news-insights.html" class="hover:text-[#00807B]">News & Insights</a>
             <a href="contact-us.html" class="hover:text-[#00807B]">Contact Us</a>
@@ -158,508 +240,607 @@
 
 </div>
 
-<section class="px-6 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px] z-10  -translate-y-[50px] md:-translate-y-[63px] lg:-translate-y-[66px] transition-transform duration-300 ease-out">
-  <!-- SHAPES & BACKGROUND -->
-  <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-[#57C5BC]"
-      style="clip-path: polygon(50% 10%, 104% 36%, 100% 39%, 0 100%, 0 33%);"></div>
+  <section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px] z-10 -translate-y-[50px] md:-translate-y-[63px] lg:-translate-y-[66px]">
+    <!-- SHAPES & BACKGROUND -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-[#57C5BC]"
+        style="clip-path: polygon(50% 10%, 104% 36%, 100% 39%, 0 100%, 0 33%);"></div>
 
-    <div class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('assets/img/home-hero.png');
-      clip-path: polygon(50% 10%, 97% 36%, 200% 100%, 0 100%, 0 36%);"></div>
+      <div class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('assets/img/home-hero.png');
+        clip-path: polygon(50% 10%, 97% 36%, 200% 100%, 0 100%, 0 36%);"></div>
 
-    <div class="absolute inset-0 bg-[#038C86]/90"
-      style="clip-path: polygon(50% 10%, 100% 37%, 100% 100%, 0 100%, 0 36%);"></div>
+      <div class="absolute inset-0 bg-[#038C86]/90"
+        style="clip-path: polygon(50% 10%, 100% 37%, 100% 100%, 0 100%, 0 36%);"></div>
 
-    <div class="absolute inset-0 bg-black/20"
-      style="clip-path: polygon(50% 10%, 100% 37%, 100% 100%, 0 100%, 0 36%);"></div>
-  </div>
-
-  <!-- CONTENT -->
-  <div class="px-4 sm:px-6 lg:px-[4vw] py-6 md:py-10 min-h-[520px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[720px] relative z-10 flex flex-col lg:flex-row">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full mt-[100px] md:mt-[150x] lg:mt-[180x] xl:mt-[200px]">
-
-      <!-- TEXT -->
-      <div class="flex flex-col justify-start lg:justify-end order-1 lg:order-2">
-        <div class="lg:text-left lg:pt-0 pt-[60px] w-[250px] lg:w-full pull-right">
-          <h2 class="text-[#57C5BC] font-extrabold font-objectsans
-                     text-[20px] sm:text-[22px] md:text-[26px] lg:text-[36px] xl:text-[40px]
-                     leading-[110%] uppercase">
-            PHP ARABIAN <br>HORSE SUPER 
-            <span class="text-[#57C5BC] font-poppins 
-                         text-[12px] sm:text-[18px] md:text-[22px] lg:text-[28px]">
-              is the
-            </span>
-          </h2>
-
-          <h1 class="text-white font-extrabold font-poppins
-                     text-[36px] sm:text-[48px] md:text-[72px] lg:text-[70px] xl:text-[100px]
-                     leading-[100%] mt-3 uppercase">
-            LARGEST
-          </h1>
-
-          <p class="text-white font-objectsans font-normal
-                     text-[12px] sm:text-[16px] md:text-[18px] lg:text-[20px]
-                     leading-[130%] mt-3">
-            multi-diversified corrugated iron 
-            steel manufacturing industry in the
-            south Asia
-          </p>
-        </div>
-      </div>
-
-      <!-- IMAGE -->
-      <div class="lg:col-span-2 relative order-2 lg:order-1 mt-6 lg:mt-0">
-        <img src="assets/img/3d-house.png"
-             class="w-full h-auto relative lg:absolute lg:bottom-[-135px] lg:left-0 z-50">
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-<section class="w-full bg-white py-10">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
-
-    <!-- VISION IMAGE -->
-    <div class="relative overflow-hidden rounded-lg order-1 md:order-1">
-      <img src="assets/img/vission-bg.png" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-teal-800 bg-opacity-70"></div>
-
-      <div class="absolute top-0 left-6 flex items-end gap-3">
-        <span class="block w-[11px] h-[100px] bg-white"></span>
-
-        <h2 class="text-white text-3xl font-bold tracking-wide">VISION</h2>
-
-        <div class="w-10 h-10 flex items-center justify-center bg-white rounded-full">
-          <img src="assets/img/vision-icon.png" class="w-[47px]">
-        </div>
-      </div>
+      <div class="absolute inset-0 bg-black/20"
+        style="clip-path: polygon(50% 10%, 100% 37%, 100% 100%, 0 100%, 0 36%);"></div>
     </div>
 
-    <!-- VISION CONTENT -->
-    <div class="flex items-center justify-center bg-gray-100 rounded-lg p-8 order-2 md:order-2">
-      <p class="text-center text-gray-700 leading-relaxed max-w-md">
-        To be the most trusted and preferred steel brand in Bangladesh and beyond, 
-        setting new benchmarks in quality, sustainability, and customer satisfaction 
-        through continuous innovation and excellence.
-      </p>
-    </div>
+    <!-- CONTENT -->
+    <div class="min-h-[520px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[664px] relative z-10 flex flex-col lg:flex-row">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-4 relative w-full mt-[100px] md:mt-[150px] lg:mt-[180px] xl:mt-[200px]">
 
-    <!-- MISSION IMAGE -->
-    <div class="relative overflow-hidden rounded-lg order-3 md:order-4">
-      <img src="assets/img/mission-bg.png" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-[#00605CE0] bg-opacity-70"></div>
-
-      <div class="absolute bottom-0 right-6 flex items-top gap-3">
-        <div class="w-10 h-10 flex items-center justify-center rounded-full">
-          <img src="assets/img/mission.png" class="w-[47px]">
+        <!-- IMAGE -->
+        <div class="lg:col-span-3 relative order-2 lg:order-1 justify-end bottom-[-50px] md:bottom-[-124px] wow animate__animated animate__slideInUp" data-wow-duration="2s">
+          <img src="assets/img/house-v1.png" class="w-full h-auto relative  lg:left-0 z-50">
         </div>
+        <!-- TEXT -->
+        <div class="relative lg:col-span-2 flex flex-col
+    ml-auto md:ml-0
+    items-start
+    text-left
+    justify-start lg:justify-end
+    lg:bottom-10 bottom-0
+    order-1 lg:order-2
+    wow animate__animated animate__slideInDown"
+    data-wow-duration="2s">
+          <div class="w-full
+    max-w-[250px]
+    sm:max-w-[320px]
+    md:max-w-[350px] md:mx-auto
+    lg:max-w-[400px] lg:mx-0
+    xl:max-w-[450px]
+    pt-[150px] lg:pt-0">
+            <h2 class="text-[#57C5BC] font-extrabold font-objectsans text-[20px] sm:text-[22px] md:text-[26px] lg:text-[30px] xl:text-[40px] leading-[100%] uppercase">
+              PHP ARABIAN <br>HORSE SUPER 
+              <span class="text-[#57C5BC] font-poppins text-[12px] sm:text-[18px] md:text-[22px] lg:text-[28px]">
+                is the
+              </span>
+            </h2>
 
-        <h2 class="text-white text-3xl font-bold tracking-wide">MISSION</h2>
-
-        <span class="block w-[11px] h-[100px] bg-white"></span>
-      </div>
-    </div>
-
-    <!-- MISSION CONTENT -->
-    <div class="flex items-center justify-center bg-gray-100 rounded-lg p-8 order-4 md:order-3">
-      <p class="text-center text-gray-700 leading-relaxed max-w-md">
-        To deliver world-class, durable, and sustainable steel and tin products through 
-        innovation, advanced technology, and uncompromising quality, ensuring lasting 
-        value for customers and contributing to the nation’s industrial growth.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="w-full py-16 bg-white relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4">
-
-    <!-- TITLE -->
-    <h2 class="text-center text-3xl md:text-4xl font-semibold text-[#005A57] mb-4">OUR PRODUCTS</h2>
-    <p class="text-center text-gray-600 max-w-3xl mx-auto mb-16">
-      PHP Arabian Horse Super Dhew Tin is a premium-quality roofing sheet made with the perfect zinc
-      coating for maximum durability and rust resistance...
-    </p>
-
-    <div class="relative w-full max-w-5xl mx-auto">
-
-      <svg viewBox="0 0 1200 500" class="w-full mx-auto">
-
-      <path d="M150 480 A 300 350 0 0 1 240 200"
-            class="stroke-gray-300 stroke-[6] fill-none" />
-
-      <path d="M280 160 A 350 250 0 0 1 920 160"
-            class="stroke-gray-300 stroke-[6] fill-none" />
-
-
-      <path d="M1050 480 A 300 350 0 0 0 960 200"
-      class="stroke-gray-300 stroke-[6] fill-none" />
-
-    </svg>
-
-    <img src="assets/img/tin.png"
-     class="absolute left-1/2 bottom-0 w-[420px] -translate-x-1/2 select-none pointer-events-none">
-
-
-        <!-- STEP 1 -->
-        <div class="">
-            <div class="absolute left-[0px] top-[360px] flex items-center gap-3">
-              <div class="px-4 py-2 bg-teal-500 text-white rounded-md text-sm font-medium shadow">NOF TIN</div>
-            </div>
-            <div class="absolute left-28 top-[420px] flex items-center gap-3">
-              <div class="w-7 h-7 rounded-full bg-teal-500 text-white flex items-center justify-center text-xs font-bold shadow">1</div>
-            </div>
-        </div>
-        
-        <!-- STEP 2 -->
-          <div>
-              <div class="absolute left-[80px] top-[80px] flex items-center gap-3">
-                <div class="px-4 py-2 bg-gray-200 text-gray-600 rounded-md text-sm font-medium shadow uppercase">color tin</div>
-              </div>
-              <div class="absolute left-[208px] top-[140px] flex items-center gap-3">
-                <div class="w-7 h-7 rounded-full bg-teal-500 text-white flex items-center justify-center text-xs font-bold shadow">2</div>
-              </div>
-          </div>
-        
-
-        <!-- STEP 3 -->
-        <div>
-          <div class="absolute right-[50px] top-[80px] flex items-center gap-3">
-            <div class="px-4 py-2 bg-gray-200 text-gray-600 rounded-md text-sm font-medium shadow uppercase">aluminium tin</div>
-          </div>
-          <div class="absolute right-[208px] top-[140px] flex items-center gap-3">
-            <div class="w-7 h-7 rounded-full bg-teal-500 text-white flex items-center justify-center text-xs font-bold shadow">3</div>
-          </div>
-        </div>
-
-      
-
-        <!-- STEP 4 -->
-      <div>
-        <div class="absolute right-[120px] top-[420px] flex items-center gap-3">
-          <div class="w-7 h-7 rounded-full bg-teal-500 text-gray-600 flex items-center justify-center text-xs font-bold shadow">4</div>
-        </div>
-        <div class="absolute right-[-50px] top-[360px] flex items-center gap-3">
-          <div class="px-4 py-2 bg-gray-200 text-gray-600 rounded-md text-sm font-medium shadow uppercase">PROFILE SHEET</div>
-        </div>
-
-      </div>
-
-      </div>
-    
-  </div>
-</section>
-
-
-  <section class="px-4 sm:px-4 md:px-4 lg:px-[4vw] py-6 md:py-10">
-        
-        
-  </section>
-<section class="px-4 sm:px-4 md:px-4 lg:px-[4vw] py-6 md:py-10">
-  
-  <!-- MOBILE SLIDER -->
-  <div class="lg:hidden">
-    <div class="swiper myProductSwiper">
-      <div class="swiper-wrapper">
-
-        <!-- Slide 1 -->
-        <div class="swiper-slide">
-          <div class="waypoint fadeStart sticky-section">
-            <h1 class="text-[#00605C] text-[24px] leading-9 font-objectsans py-6">
-              PHP ARABIAN HORSE SUPER NOF DHEW TIN
+            <h1 class="text-white font-extrabold font-poppins text-[48px] sm:text-[60px] md:text-[70px] lg:text-[78px] xl:text-[110px] leading-[100%] mt-3 uppercase">
+              LARGEST
             </h1>
 
-            <div class="w-full">
-              <img src="assets/img/l-1 1.png" class="w-full h-auto mb-6" />
+            <p class="text-white font-objectsans font-normal text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] leading-[100%] mt-3">
+              multi-diversified corrugated iron 
+              steel manufacturing industry in the
+              south Asia
+            </p>
+          </div>
+        </div>
+
+        
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[4vw] bg-white py-6 md:py-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- VISION IMAGE -->
+      <div class="relative overflow-hidden rounded-lg order-1 md:order-1 wow animate__animated animate__slideInDown" data-wow-duration="2s">
+        <img src="assets/img/vission-bg.png" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-teal-800 bg-opacity-70"></div>
+
+        <div class="absolute top-0 left-6 flex items-end gap-3">
+          <span class="block w-[11px] h-[100px] bg-white"></span>
+
+          <h2 class="text-white text-3xl font-bold tracking-wide">VISION</h2>
+
+          <div class="w-10 h-10 flex items-center justify-center bg-white rounded-full">
+            <img src="assets/img/vision-icon.png" class="w-[47px]">
+          </div>
+        </div>
+      </div>
+
+      <!-- VISION CONTENT -->
+      <div class="flex items-center justify-center bg-gray-100 rounded-lg p-8 order-2 md:order-2 wow animate__animated animate__slideInDown" data-wow-duration="2s">
+        <p class="text-center text-gray-700 leading-relaxed max-w-md">
+          To be the most trusted and preferred steel brand in Bangladesh and beyond, 
+          setting new benchmarks in quality, sustainability, and customer satisfaction 
+          through continuous innovation and excellence.
+        </p>
+      </div>
+
+      <!-- MISSION IMAGE -->
+      <div class="relative overflow-hidden rounded-lg order-3 md:order-4 wow animate__animated animate__slideInUp">
+        <img src="assets/img/mission-bg.png" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-[#00605CE0] bg-opacity-70"></div>
+
+        <div class="absolute bottom-0 right-6 flex items-top gap-3">
+          <div class="w-10 h-10 flex items-center justify-center rounded-full">
+            <img src="assets/img/mission.png" class="w-[47px]">
+          </div>
+
+          <h2 class="text-white text-3xl font-bold tracking-wide">MISSION</h2>
+
+          <span class="block w-[11px] h-[100px] bg-white"></span>
+        </div>
+      </div>
+
+      <!-- MISSION CONTENT -->
+      <div class="flex items-center justify-center bg-gray-100 rounded-lg p-8 order-4 md:order-3 wow animate__animated animate__slideInDown" data-wow-duration="2s">
+        <p class="text-center text-gray-700 leading-relaxed max-w-md">
+          To deliver world-class, durable, and sustainable steel and tin products through 
+          innovation, advanced technology, and uncompromising quality, ensuring lasting 
+          value for customers and contributing to the nation’s industrial growth.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[4vw] py-6 md:py-10 bg-white relative overflow-hidden">
+    <div class="w-full relative">
+
+      <!-- TITLE -->
+      <h2 class="text-center text-3xl md:text-4xl font-semibold text-[#005A57] mb-4 wow animate__animated animate__slideInDown" data-wow-duration="2s">OUR PRODUCTS</h2>
+      <p class="text-center text-gray-600 max-w-3xl mx-auto mb-16 wow animate__animated animate__slideInDown" data-wow-duration="2s">
+        PHP Arabian Horse Super Dhew Tin is a premium-quality roofing sheet made with the perfect zinc
+        coating for maximum durability and rust resistance...
+      </p>
+
+      <div class="relative w-full max-w-[900px] mx-auto hidden lg:block wow animate__animated animate__slideInDown" data-wow-duration="2s">
+
+        <svg viewBox="0 0 1200 500" class="w-full mx-auto">
+
+        <path d="M150 480 A 300 500 0 0 1 240 200"
+              class="stroke-[#E0DEDF] stroke-[12] fill-none" />
+
+        <path d="M263 163 A 370 280 0 0 1 930 165"
+              class="stroke-[#E0DEDF] stroke-[12] fill-none" />
+
+
+        <path d="M1050 480 A 300 500 0 0 0 960 200"
+        class="stroke-[#E0DEDF] stroke-[12] fill-none" />
+
+      </svg>
+
+      <img id="mainTinImage" src="assets/img/tin.png" class="absolute left-1/2 bottom-0 w-[420px] -translate-x-1/2 select-none pointer-events-none">
+
+
+          <!-- STEP 1 -->
+          <div class="">
+              <div class="absolute left-[-20px] top-[300px] step-item">
+                <div class="step-label step-label-item bg-[#57C4BD] text-white text-[14px] font-bold font-objectsans leading-[26px] px-4 py-2">
+                  NOF TIN
+                </div>
+              </div>
+
+              <div class="connector-line absolute left-[77px] top-[315px] h-[2px] w-[86px]
+              bg-[#E0DEDF] rotate-[60deg] origin-top-left"
+      data-step="0"></div>
+
+              <div class="absolute left-[95px] top-[370px] flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full bg-[#57C4BD] text-white flex items-center justify-center text-xs font-bold shadow cursor-pointer step-btn step-circle" data-img="assets/img/tin.png">1</div>
+              </div>
+          </div>
+          
+          <!-- STEP 2 -->
+            <div class="px-0">
+                <div class="absolute left-[40px] top-[70px] flex items-center gap-3">
+                  <div class="step-label-2 step-label-item px-4 py-2 bg-[#E0DEDF] text-[#9EA4AD] text-[14px] font-bold font-objectsans leading-[26px] uppercase">color tin</div>
+                </div>
+                <div class="connector-line absolute left-[158px] top-[86px] h-[2px] w-[60px]
+              bg-[#E0DEDF] rotate-[60deg] origin-top-left"
+      data-step="1"></div>
+                <div class="absolute left-[175px] top-[122px] flex items-center gap-3">
+                  <div class="w-7 h-7 rounded-full bg-[#E0DEDF] text-[#999999] flex items-center justify-center text-xs font-bold shadow cursor-pointer step-btn step-circle" data-img="assets/img/tin.png">2</div>
+                </div>
             </div>
+          
+
+          <!-- STEP 3 -->
+          <div>
+            <div class="absolute right-[5px] top-[70px] flex items-center gap-3">
+              <div class="step-label-3 step-label-item px-4 py-2 bg-[#E0DEDF] text-[#9EA4AD] text-[14px] font-bold font-objectsans leading-[26px] uppercase">aluminium tin</div>
+            </div>
+            <div class="connector-line absolute right-[80px] top-[86px] h-[2px] w-[70px]
+              bg-[#E0DEDF] rotate-[125deg] origin-top-left"
+      data-step="2"></div>
+            <div class="absolute right-[177px] top-[122px] flex items-center gap-3">
+              <div class="w-7 h-7 rounded-full bg-[#E0DEDF] text-[#999999] flex items-center justify-center text-xs font-bold shadow cursor-pointer step-btn step-circle" data-img="assets/img/tin.png">3</div>
+            </div>
+          </div>
+
+        
+
+          <!-- STEP 4 -->
+        <div>
+          <div class="absolute right-[-85px] top-[300px] flex items-center gap-3">
+            <div class="step-label-4 step-label-item px-4 py-2 bg-[#E0DEDF] text-[#9EA4AD] text-[14px] font-bold font-objectsans leading-[26px] uppercase">PROFILE SHEET</div>
+          </div>
+          <div class="connector-line absolute right-[-5px] bottom-[55px] h-[2px] w-[70px]
+              bg-[#E0DEDF] rotate-[125deg] origin-top-left"
+      data-step="3"></div>
+          <div class="absolute right-[95px] top-[370px] flex items-center gap-3">
+            <div class="w-7 h-7 rounded-full bg-[#E0DEDF] text-[#999999] flex items-center justify-center text-xs font-bold shadow cursor-pointer step-btn step-circle" data-img="assets/img/tin.png">4</div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div class="max-w-5xl mx-auto px-4 block lg:hidden wow animate__animated animate__slideInUp" data-wow-duration="2s">
+
+          <!-- ITEMS NAMES CAROUSEL -->
+          <div class="relative mb-6">
+
+            <!-- LINE INDICATOR -->
+            <div class="absolute top-2/3 left-2 right-2 h-[2px] bg-gray-300 -z-10"></div>
+
+            <!-- ITEMS SWIPER -->
+            <div class="swiper mySwiperItems">
+              <div class="swiper-wrapper">
+
+                <!-- STEP 1 -->
+                <div class="swiper-slide text-center cursor-pointer flex flex-col space-y-1">
+                  <div class="step-number text-[20px] text-[#9EA4AD] font-normal font-objectsans">1</div>
+                  <div class="step-content text-[#FFFFFF] text-[14px] font-bold font-objectsans items-center py-4 rounded-lg">
+                    NOF TIN
+                  </div>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="swiper-slide text-center cursor-pointer flex flex-col space-y-1">
+                  <div class="step-number text-[20px] text-[#9EA4AD] font-normal font-objectsans">2</div>
+                  <div class="step-content text-[#FFFFFF] text-[14px] font-bold font-objectsans items-center py-4 rounded-lg">
+                    COLOR TIN
+                  </div>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="swiper-slide text-center cursor-pointer flex flex-col space-y-1">
+                  <div class="step-number text-[20px] text-[#9EA4AD] font-normal font-objectsans">3</div>
+                  <div class="step-content text-[#FFFFFF] text-[14px] font-bold font-objectsans items-center py-4 rounded-lg">
+                    ALUMINIUM TIN
+                  </div>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="swiper-slide text-center cursor-pointer flex flex-col space-y-1">
+                  <div class="step-number text-[20px] text-[#9EA4AD] font-normal font-objectsans">4</div>
+                  <div class="step-content text-[#FFFFFF] text-[14px] font-bold font-objectsans items-center py-4 rounded-lg">
+                    PROFILE SHEET
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- IMAGE CAROUSEL -->
+          <div class="swiper mySwiperImages">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide flex justify-center">
+                <img src="assets/img/tin.png" alt="NOF TIN" class="w-64">
+              </div>
+
+              <div class="swiper-slide flex justify-center">
+                <img src="assets/img/tin.png" alt="COLOR TIN" class="w-64">
+              </div>
+
+              <div class="swiper-slide flex justify-center">
+                <img src="assets/img/tin.png" alt="ALUMINIUM TIN" class="w-64">
+              </div>
+
+              <div class="swiper-slide flex justify-center">
+                <img src="assets/img/tin.png" alt="PROFILE SHEET" class="w-64">
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      
+    </div>
+  </section>
+
+
+
+  <section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[4vw] py-6 md:py-10">
+    
+    <!-- MOBILE SLIDER -->
+    <div class="lg:hidden">
+      <div class="swiper myProductSwiper">
+        <div class="swiper-wrapper">
+
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="waypoint fadeStart sticky-section">
+              <h1 class="text-[#00605C] text-[24px] leading-9 font-objectsans py-6">
+                PHP ARABIAN HORSE SUPER NOF DHEW TIN
+              </h1>
+
+              <div class="w-full">
+                <img src="assets/img/l-1 1.png" class="w-full h-auto mb-6" />
+              </div>
+
+              <p class="text-[14px] leading-7 mb-6">
+                PHP Arabian Horse Super NOF Dhew Tin is a premium grade corrugated galvanized iron sheet...
+              </p>
+
+              <h2 class="text-[#00605C] text-[20px] mb-4">KEY FEATURES</h2>
+
+                <ul class="space-y-8">
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/strong.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Strong & Durable</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/weather.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Weather Resistant</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/Lightweigh.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Lightweight & Easy to Install</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/clock.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">High Load Capacity</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/option.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Customizable Options</span>
+                    </li>
+                </ul>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <!-- SAME STRUCTURE FOR OTHER PRODUCTS -->
+            <h1 class="text-[#00605C] text-[24px] leading-9 font-objectsans py-6">
+              PHP ARABIAN HORSE SUPER COLOR TIN
+            </h1>
+
+            <img src="assets/img/l-1 1.png" class="w-full h-auto mb-6" />
 
             <p class="text-[14px] leading-7 mb-6">
-              PHP Arabian Horse Super NOF Dhew Tin is a premium grade corrugated galvanized iron sheet...
+              PHP Arabian Horse Super Color Tin is...
             </p>
 
             <h2 class="text-[#00605C] text-[20px] mb-4">KEY FEATURES</h2>
 
-              <ul class="space-y-8">
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/strong.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Strong & Durable</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/weather.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Weather Resistant</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/Lightweigh.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Lightweight & Easy to Install</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/clock.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">High Load Capacity</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/option.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Customizable Options</span>
-                  </li>
-              </ul>
+                <ul class="space-y-8">
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/strong.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Strong & Durable</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/weather.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Weather Resistant</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/Lightweigh.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Lightweight & Easy to Install</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/clock.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">High Load Capacity</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/option.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Customizable Options</span>
+                    </li>
+                </ul>
+            </ul>
           </div>
+
+
         </div>
 
-        <!-- Slide 2 -->
-        <div class="swiper-slide">
-          <!-- SAME STRUCTURE FOR OTHER PRODUCTS -->
-          <h1 class="text-[#00605C] text-[24px] leading-9 font-objectsans py-6">
-            PHP ARABIAN HORSE SUPER COLOR TIN
-          </h1>
-
-          <img src="assets/img/l-1 1.png" class="w-full h-auto mb-6" />
-
-          <p class="text-[14px] leading-7 mb-6">
-            PHP Arabian Horse Super Color Tin is...
-          </p>
-
-          <h2 class="text-[#00605C] text-[20px] mb-4">KEY FEATURES</h2>
-
-              <ul class="space-y-8">
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/strong.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Strong & Durable</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/weather.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Weather Resistant</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/Lightweigh.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Lightweight & Easy to Install</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/clock.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">High Load Capacity</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/option.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Customizable Options</span>
-                  </li>
-              </ul>
-          </ul>
-        </div>
-
-
+        <!-- Pagination Dots -->
+        <div class="swiper-pagination !bottom-0"></div>
       </div>
-
-      <!-- Pagination Dots -->
-      <div class="swiper-pagination !bottom-0"></div>
     </div>
-  </div>
 
-  <!-- DESKTOP NORMAL LAYOUT -->
-  <div class="hidden lg:block">
-    <!-- Your original desktop design stays SAME -->
-    <div class="waypoint fadeStart sticky-section">
-          <h1 class="text-[#00605C] text-[24px] md:text-[40px] lg:text-[48px] leading-9 md:leading-[100%] font-normal font-objectsans py-8">
-            PHP ARABIAN HORSE SUPER NOF DHEW TIN
-          </h1>
-          <div class="flex flex-col lg:flex-row gap-6">
-            <div class="lg:w-1/2">
-              <p class="text-[#000000] text-[14px] md:text-[16px] font-normal font-objectsans leading-7 mb-8">
-                PHP Arabian Horse Super NOF Dhew Tin is a premium grade corrugated galvanized iron (CGI) sheet manufactured using advanced Non-Oxidizing Furnace (NOF) technology, a process that ensures exceptional coating uniformity, superior rust protection, and longer lifespan.
-              </p>
-              <!-- Key Features -->
-              <h2 class="text-[#00605C] text-[20px] md:text-[32px] font-normal font-objectsans leading-7 md:leading-[100%] mb-8">KEY FEATURES</h2>
-              <ul class="space-y-8">
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/strong.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Strong & Durable</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/weather.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Weather Resistant</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/Lightweigh.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Lightweight & Easy to Install</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/clock.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">High Load Capacity</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/option.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Customizable Options</span>
-                  </li>
-              </ul>
+    <!-- DESKTOP NORMAL LAYOUT -->
+    <div class="hidden lg:block">
+      <!-- Your original desktop design stays SAME -->
+      <div class="waypoint fadeStart sticky-section">
+            <h1 class="text-[#00605C] text-[24px] md:text-[40px] lg:text-[48px] leading-9 md:leading-[100%] font-normal font-objectsans py-8">
+              PHP ARABIAN HORSE SUPER NOF DHEW TIN
+            </h1>
+            <div class="flex flex-col lg:flex-row gap-6">
+              <div class="lg:w-1/2">
+                <p class="text-[#000000] text-[14px] md:text-[16px] font-normal font-objectsans leading-7 mb-8">
+                  PHP Arabian Horse Super NOF Dhew Tin is a premium grade corrugated galvanized iron (CGI) sheet manufactured using advanced Non-Oxidizing Furnace (NOF) technology, a process that ensures exceptional coating uniformity, superior rust protection, and longer lifespan.
+                </p>
+                <!-- Key Features -->
+                <h2 class="text-[#00605C] text-[20px] md:text-[32px] font-normal font-objectsans leading-7 md:leading-[100%] mb-8">KEY FEATURES</h2>
+                <ul class="space-y-8">
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/strong.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Strong & Durable</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/weather.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Weather Resistant</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/Lightweigh.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Lightweight & Easy to Install</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/clock.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">High Load Capacity</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/option.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Customizable Options</span>
+                    </li>
+                </ul>
 
-            </div>
-            <div class="lg:w-1/2">
-              <div class="w-full py-6">
-                  <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-[514px] h-auto">
+              </div>
+              <div class="lg:w-1/2">
+                <div class="w-full py-6">
+                    <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-[514px] h-auto">
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="waypoint fadeStart sticky-section bg-white">
-          <h1 class="text-[#00605C] text-[24px] md:text-[40px] lg:text-[48px] leading-9 md:leading-[100%] font-normal font-objectsans py-8">
-            PHP ARABIAN HORSE SUPER COLOR TIN
-          </h1>
-          <div class="flex flex-col lg:flex-row gap-6">
-            <div class="lg:w-1/2">
-              <p class="text-[#000000] text-[14px] md:text-[16px] font-normal font-objectsans leading-7 mb-8">
-                PHP Arabian Horse Super NOF Dhew Tin is a premium grade corrugated galvanized iron (CGI) sheet manufactured using advanced Non-Oxidizing Furnace (NOF) technology, a process that ensures exceptional coating uniformity, superior rust protection, and longer lifespan.
-              </p>
-              <!-- Key Features -->
-              <h2 class="text-[#00605C] text-[20px] md:text-[32px] font-normal font-objectsans leading-7 md:leading-[100%] mb-8">KEY FEATURES</h2>
-              <ul class="space-y-8">
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/strong.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Strong & Durable</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/weather.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Weather Resistant</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/Lightweigh.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Lightweight & Easy to Install</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/clock.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">High Load Capacity</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/option.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Customizable Options</span>
-                  </li>
-              </ul>
+          <div class="waypoint fadeStart sticky-section bg-white">
+            <h1 class="text-[#00605C] text-[24px] md:text-[40px] lg:text-[48px] leading-9 md:leading-[100%] font-normal font-objectsans py-8">
+              PHP ARABIAN HORSE SUPER COLOR TIN
+            </h1>
+            <div class="flex flex-col lg:flex-row gap-6">
+              <div class="lg:w-1/2">
+                <p class="text-[#000000] text-[14px] md:text-[16px] font-normal font-objectsans leading-7 mb-8">
+                  PHP Arabian Horse Super NOF Dhew Tin is a premium grade corrugated galvanized iron (CGI) sheet manufactured using advanced Non-Oxidizing Furnace (NOF) technology, a process that ensures exceptional coating uniformity, superior rust protection, and longer lifespan.
+                </p>
+                <!-- Key Features -->
+                <h2 class="text-[#00605C] text-[20px] md:text-[32px] font-normal font-objectsans leading-7 md:leading-[100%] mb-8">KEY FEATURES</h2>
+                <ul class="space-y-8">
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/strong.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Strong & Durable</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/weather.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Weather Resistant</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/Lightweigh.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Lightweight & Easy to Install</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/clock.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">High Load Capacity</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/option.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Customizable Options</span>
+                    </li>
+                </ul>
 
-            </div>
-            <div class="lg:w-1/2">
-              <div class="w-full py-6">
-                  <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-[514px] h-auto">
+              </div>
+              <div class="lg:w-1/2">
+                <div class="w-full py-6">
+                    <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-[514px] h-auto">
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="waypoint fadeStart sticky-section bg-white">
-          <h1 class="text-[#00605C] text-[24px] md:text-[40px] lg:text-[48px] leading-9 md:leading-[100%] font-normal font-objectsans py-8">
-            PHP ARABIAN HORSE SUPER ALUMINUM TIN
-          </h1>
-          <div class="flex flex-col lg:flex-row gap-6">
-            <div class="lg:w-1/2">
-              <p class="text-[#000000] text-[14px] md:text-[16px] font-normal font-objectsans leading-7 mb-8">
-                PHP Arabian Horse Super NOF Dhew Tin is a premium grade corrugated galvanized iron (CGI) sheet manufactured using advanced Non-Oxidizing Furnace (NOF) technology, a process that ensures exceptional coating uniformity, superior rust protection, and longer lifespan.
-              </p>
-              <!-- Key Features -->
-              <h2 class="text-[#00605C] text-[20px] md:text-[32px] font-normal font-objectsans leading-7 md:leading-[100%] mb-8">KEY FEATURES</h2>
-              <ul class="space-y-8">
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/strong.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Strong & Durable</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/weather.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Weather Resistant</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/Lightweigh.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Lightweight & Easy to Install</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/clock.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">High Load Capacity</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/option.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Customizable Options</span>
-                  </li>
-              </ul>
+          <div class="waypoint fadeStart sticky-section bg-white">
+            <h1 class="text-[#00605C] text-[24px] md:text-[40px] lg:text-[48px] leading-9 md:leading-[100%] font-normal font-objectsans py-8">
+              PHP ARABIAN HORSE SUPER ALUMINUM TIN
+            </h1>
+            <div class="flex flex-col lg:flex-row gap-6">
+              <div class="lg:w-1/2">
+                <p class="text-[#000000] text-[14px] md:text-[16px] font-normal font-objectsans leading-7 mb-8">
+                  PHP Arabian Horse Super NOF Dhew Tin is a premium grade corrugated galvanized iron (CGI) sheet manufactured using advanced Non-Oxidizing Furnace (NOF) technology, a process that ensures exceptional coating uniformity, superior rust protection, and longer lifespan.
+                </p>
+                <!-- Key Features -->
+                <h2 class="text-[#00605C] text-[20px] md:text-[32px] font-normal font-objectsans leading-7 md:leading-[100%] mb-8">KEY FEATURES</h2>
+                <ul class="space-y-8">
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/strong.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Strong & Durable</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/weather.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Weather Resistant</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/Lightweigh.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Lightweight & Easy to Install</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/clock.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">High Load Capacity</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/option.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Customizable Options</span>
+                    </li>
+                </ul>
 
-            </div>
-            <div class="lg:w-1/2">
-              <div class="w-full py-6">
-                  <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-[514px] h-auto">
+              </div>
+              <div class="lg:w-1/2">
+                <div class="w-full py-6">
+                    <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-[514px] h-auto">
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="waypoint fadeStart sticky-section bg-white">
-          <h1 class="text-[#00605C] text-[24px] md:text-[40px] lg:text-[48px] leading-9 md:leading-[100%] font-normal font-objectsans py-8">
-            PHP ARABIAN HORSE SUPER PROFILE SHEET
-          </h1>
-          <div class="flex flex-col lg:flex-row gap-6">
-            <div class="lg:w-1/2">
-              <p class="text-[#000000] text-[14px] md:text-[16px] font-normal font-objectsans leading-7 mb-8">
-                PHP Arabian Horse Super NOF Dhew Tin is a premium grade corrugated galvanized iron (CGI) sheet manufactured using advanced Non-Oxidizing Furnace (NOF) technology, a process that ensures exceptional coating uniformity, superior rust protection, and longer lifespan.
-              </p>
-              <!-- Key Features -->
-              <h2 class="text-[#00605C] text-[20px] md:text-[32px] font-normal font-objectsans leading-7 md:leading-[100%] mb-8">KEY FEATURES</h2>
-              <ul class="space-y-8">
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/strong.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Strong & Durable</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/weather.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Weather Resistant</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/Lightweigh.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Lightweight & Easy to Install</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/clock.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">High Load Capacity</span>
-                  </li>
-                  <li class="flex items-center gap-4">
-                      <div class="rounded-full flex-shrink-0"><img src="assets/img/option.svg" /></div>
-                      <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Customizable Options</span>
-                  </li>
-              </ul>
+          <div class="waypoint fadeStart sticky-section bg-white">
+            <h1 class="text-[#00605C] text-[24px] md:text-[40px] lg:text-[48px] leading-9 md:leading-[100%] font-normal font-objectsans py-8">
+              PHP ARABIAN HORSE SUPER PROFILE SHEET
+            </h1>
+            <div class="flex flex-col lg:flex-row gap-6">
+              <div class="lg:w-1/2">
+                <p class="text-[#000000] text-[14px] md:text-[16px] font-normal font-objectsans leading-7 mb-8">
+                  PHP Arabian Horse Super NOF Dhew Tin is a premium grade corrugated galvanized iron (CGI) sheet manufactured using advanced Non-Oxidizing Furnace (NOF) technology, a process that ensures exceptional coating uniformity, superior rust protection, and longer lifespan.
+                </p>
+                <!-- Key Features -->
+                <h2 class="text-[#00605C] text-[20px] md:text-[32px] font-normal font-objectsans leading-7 md:leading-[100%] mb-8">KEY FEATURES</h2>
+                <ul class="space-y-8">
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/strong.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Strong & Durable</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/weather.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Weather Resistant</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/Lightweigh.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Lightweight & Easy to Install</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/clock.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">High Load Capacity</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <div class="rounded-full flex-shrink-0"><img src="assets/img/option.svg" /></div>
+                        <span class="text-[#000000] text-[14px] md:text-[20px] leading-[26px] font-normal font-objectsans">Customizable Options</span>
+                    </li>
+                </ul>
 
-            </div>
-            <div class="lg:w-1/2">
-              <div class="w-full py-6">
-                  <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-[514px] h-auto">
+              </div>
+              <div class="lg:w-1/2">
+                <div class="w-full py-6">
+                    <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-[514px] h-auto">
+                </div>
               </div>
             </div>
           </div>
-        </div>
-  </div>
+    </div>
 
-</section>
+  </section>
 
 
-    <section class="px-4 lg:px-[4vw] py-6 md:py-10">
-        <div class="max-w-4xl mx-auto text-center space-y-10">
-          <h2 class="text-[#00605C] text-[24px] md:text-3xl lg:text-[48px] font-normal font-objectsans mb-4">LATEST TVC/OVC</h2>
-          <p class="text-[#000000] text-[14px] md:text-[16px] leading-[26px] font-objectsans font-normal">
-            PHP Arabian Horse Super Dhew Tin is a premium-quality roofing sheet made with the perfect zinc coating for maximum durability and rust resistance. Its advanced production process ensures a strong, shiny surface that doesn’t fade or catch white marks easily. Built to last, it offers long-term protection and reliability for every home.
-          </p>
-        </div>
-    </section>
+  <section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[4vw] py-6 md:py-10 wow animate__animated animate__slideInDown" data-wow-duration="2s">
+      <div class="max-w-4xl mx-auto text-center space-y-10">
+        <h2 class="text-[#00605C] text-[24px] md:text-3xl lg:text-[48px] font-normal font-objectsans mb-4">LATEST TVC/OVC</h2>
+        <p class="text-[#000000] text-[14px] md:text-[16px] leading-[26px] font-objectsans font-normal">
+          PHP Arabian Horse Super Dhew Tin is a premium-quality roofing sheet made with the perfect zinc coating for maximum durability and rust resistance. Its advanced production process ensures a strong, shiny surface that doesn’t fade or catch white marks easily. Built to last, it offers long-term protection and reliability for every home.
+        </p>
+      </div>
+  </section>
 
-    <section class="w-full h-[40vh] md:h-[70vh] lg:h-[80vh] relative flex items-center justify-center">
-        <img src="assets/img/video-bg.png" class="absolute inset-0 w-full h-full object-cover object-center opacity-90"/>
-        <div class="absolute inset-0 bg-black/40"></div>
-        <!-- Play Button -->
-        <button id="playButton"
-          data-video="https://www.youtube.com/embed/dXJinJ7_hFs?si=eACpqoaWCoTnQqR6"
-          data-autoplay="true"
-          class="relative z-10 w-20 h-20 md:w-24 md:h-24 bg-[#57C4BD] rounded-[20px] flex items-center justify-center hover:bg-[#57C4BD] transition">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" class="w-10 h-10 md:w-12 md:h-12">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </button>
+  <section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[4vw] py-6 md:py-10 wow animate__animated animate__slideInUp" data-wow-duration="2s">
+    <div class="relative h-[40vh] md:h-[70vh] lg:h-[80vh] rounded-lg overflow-hidden flex items-center justify-center">
+      
+      <!-- Background Image -->
+      <img src="assets/img/video-bg.png" class="absolute inset-0 w-full h-full object-cover opacity-90"/>
 
-    </section>
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <!-- Play Button -->
+      <button id="playButton"
+        data-video="https://www.youtube.com/embed/dXJinJ7_hFs?si=eACpqoaWCoTnQqR6"
+        data-autoplay="true"
+        class="relative z-10 w-20 h-20 md:w-24 md:h-24 bg-[#57C4BD] rounded-[20px] flex items-center justify-center hover:scale-105 transition">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"
+          class="w-10 h-10 md:w-12 md:h-12">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </button>
+
+    </div>
+  </section>
+
 
     <!-- Video Modal -->
     <div id="videoModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden">
@@ -689,116 +870,179 @@
 
 
 
-<section class="relative w-full min-h-screen overflow-hidden bg-white flex justify-center items-center">
+  <section class="relative w-full min-h-screen overflow-hidden bg-white flex justify-center items-center wow animate__animated animate__slideInUp" data-wow-duration="2s">
 
-  <!-- GRAY BACKGROUND BOTTOM -->
-  <div class="absolute bottom-0 left-0 w-full lg:w-[50%] h-[200px] md:h-[300px] lg:h-[400px] bg-[#D9D9D9]"></div>
+    <!-- GRAY BACKGROUND BOTTOM -->
+    <div class="absolute bottom-0 left-0 w-full lg:w-[50%] h-[200px] md:h-[300px] lg:h-[400px] bg-[#D9D9D9]"></div>
 
-  <!-- MAIN CONTAINER -->
-  <div class="relative w-[1100px] max-w-full h-full flex flex-col-reverse lg:flex-row items-center lg:items-center gap-10 px-6 lg:gap-0 py-10 lg:py-20">
+    <!-- MAIN CONTAINER -->
+    <div class="relative w-[1100px] max-w-full h-full flex flex-col-reverse lg:flex-row items-center lg:items-center gap-10 px-6 lg:gap-0 py-10 lg:py-20">
 
-    <!-- LEFT SIDE IMAGE -->
-    <div class="w-full flex justify-center lg:justify-start">
-      <div class="relative w-[260px] sm:w-[340px] md:w-[420px] lg:w-[480px] aspect-[3/4] overflow-hidden rounded-[319px]">
-        <img
-          src="assets/img/bg-factory.png"
-          alt="Factory"
-          class="absolute w-full h-full object-cover rounded-[319px] grayscale"
-        />
+      <!-- LEFT SIDE IMAGE -->
+      <div class="w-full flex justify-center lg:justify-start">
+        <div class="relative w-[260px] sm:w-[340px] md:w-[420px] lg:w-[480px] aspect-[3/4] overflow-hidden rounded-[319px]">
+          <img
+            src="assets/img/bg-factory.png"
+            alt="Factory"
+            class="absolute w-full h-full object-cover rounded-[319px] grayscale"
+          />
+        </div>
       </div>
-    </div>
 
-    <!-- RIGHT SIDE CONTENT -->
-    <div class="w-full flex items-center justify-center px-6 sm:px-12 lg:px-20">
-      <div class="text-center lg:text-left">
-        <h2 class="text-[#00605C] text-[24px] md:text-[60px] lg:text-[80px] mb-6 font-extrabold font-objectsans leading-[36px] md:leading-[60px] lg:leading-[80px]">
-          OUR FACTORY
-        </h2>
+      <!-- RIGHT SIDE CONTENT -->
+      <div class="w-full flex items-center justify-center px-6 sm:px-12 lg:px-20">
+        <div class="text-center lg:text-left">
+          <h2 class="text-[#00605C] text-[24px] md:text-[60px] lg:text-[80px] mb-6 font-extrabold font-objectsans leading-[36px] md:leading-[60px] lg:leading-[80px]">
+            OUR FACTORY
+          </h2>
 
-        <p class="text-[#000000] text-[14px] lg:text-[16px] font-normal font-objectsans leading-[26px]">
-          The PHP Family factory in Chattogram is one of Bangladesh's most advanced
-          steel and tin manufacturing plants. It uses state-of-the-art technology
-          to produce durable, high-quality products like PHP Arabian Horse Super
-          Dhew Tin. With a focus on innovation and sustainability, the factory
-          ensures world-class quality while maintaining eco-friendly production
-          standards.
-        </p>
+          <p class="text-[#000000] text-[14px] lg:text-[16px] font-normal font-objectsans leading-[26px]">
+            The PHP Family factory in Chattogram is one of Bangladesh's most advanced
+            steel and tin manufacturing plants. It uses state-of-the-art technology
+            to produce durable, high-quality products like PHP Arabian Horse Super
+            Dhew Tin. With a focus on innovation and sustainability, the factory
+            ensures world-class quality while maintaining eco-friendly production
+            standards.
+          </p>
+        </div>
       </div>
+
     </div>
-
-  </div>
-</section>
+  </section>
 
 
 
+  <section class="relative w-full h-[400px] overflow-hidden">
+    <div class="relative w-full h-full">
+      <!-- Background Video -->
+      <video 
+          id="bgVideo" 
+          class="w-full h-full object-cover block cursor-pointer" 
+          muted autoplay loop playsinline
+          aria-label="Background video — click to pause or play"
+      >
+        <source src="assets/video/horse-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-
+      <!-- Overlay Icon 
+      <div id="videoOverlay" class="hidden pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div class="bg-black bg-opacity-40 rounded-full p-2">
+          <svg id="overlayIcon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" class="w-10 h-10 md:w-12 md:h-12">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </div>
+      </div>
+      -->
+    </div>
+  </section>
 
 
 
 <footer class="bg-[#00605C]">
-    <div class="2xl:px-[4vw] lg:px-[4vw] px-6 md:px-12 py-[150px]">
-        <div class="flex flex-col lg:flex-row justify-between gap-10">
-        
-            <!-- Left Section -->
-            <div class="flex flex-col">
-            <!-- Logo -->
-            <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[24px] md:text-[30px] lg:text-[36px] leading-[100%]">
-                PHPCenter
-            </h2>
-            <div class="max-w-[264px] mb-4">
-                <p class="mb-2 text-[#0EDDC9] text-[20px] md:text-[24px] font-poppins leading-[100%] font-medium">Address:</p>
-                <p class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">40/1,ZakirHossainRoad, Khulshi,Chattogram-4225 Bangladesh</p>
-            </div>
-            <!-- Social Icons -->
-            <div class="flex space-x-4 mb-6 ">
-                <a href="#"><img src="assets/img/instagram.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
-                <a href="#"><img src="assets/img/facebook.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
-                <a href="#"><img src="assets/img/x.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
-                <a href="#"><img src="assets/img/whatsup.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
-            </div>
+    <div class="px-6 md:px-12 2xl:px-[12vw] lg:px-[6vw] py-[150px]">
+        <!-- Mobile layout -->
+          <div class="flex flex-col items-center block lg:hidden">
+            <div class="grid grid-cols-1 gap-8 w-full text-center">
 
-            </div>
-
-            <!-- Right Section -->
-            <div class="lg:w-1/2 flex flex-col items-center md:items-start font-encode">
-                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-                    
-                    <!-- About -->
-                    <div class="w-full">
-                        <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[24px] md:text-[30px] lg:text-[36px] leading-[100%]">About</h2>
-                        <div class="flex flex-col space-y-2">
-                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">History</a>
-                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Our Team</a>
-                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Product</a>
-                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Terms & Condition</a>
-                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Privacy Policy</a>
-                        </div>
-                    </div>
-
-                    <!-- Services -->
-                    <div class="w-full">
-                        <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[24px] md:text-[30px] lg:text-[36px] leading-[100%]">Services</h2>
-                        <div class="flex flex-col space-y-2">
-                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">How to Order</a>
-                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Our Product</a>
-                        </div>
-                    </div>
-
-                    <!-- Other -->
-                    <div class="w-full">
-                        <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[24px] md:text-[30px] lg:text-[36px] leading-[100%]">Other</h2>
-                        <div class="flex flex-col space-y-2">
-                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Contact Us</a>
-                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Help</a>
-                            <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[20px] font-poppins font-medium">Privacy</a>
-                        </div>
-                    </div>
-
+              <div class="flex flex-col items-center">
+                <a href="index.html" class="mb-6">
+                  <img src="assets/img/footer-logo.png">
+                </a>
+                <div class="mb-6">
+                  <p class="mb-2 text-[#0EDDC9] text-[20px] md:text-[22px] lg:text-[24px] font-poppins font-medium">
+                    Address: PHP Centre
+                  </p>
+                  <p class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium leading-[26px] tracking-normal">
+                    40/1, Zakir Hossain Road, Khulshi, Chattogram-4225, Bangladesh
+                  </p>
                 </div>
+                <div class="flex flex-col space-y-2 mb-6">
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">info@phpfamily.com</span>
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">+880 2333352316-21</span>
+                </div>
+                <div class="flex justify-center gap-4 mb-6">
+                  <a href="#"><img src="assets/img/website.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/linkedin.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/facebook.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/tiktalk.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/youtube.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/pint.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+
+                <div class="flex flex-col space-y-2">
+                  <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">History</a>
+                  <a href="product-details.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Our Product</a>
+                  <a href="contact-us.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Contact Us</a>
+                </div>
+              </div>
+
+              </div>
+              
+
             </div>
+          </div>
+           <!-- desktop layout -->
+          <div class="flex flex-col items-center md:items-start hidden lg:block">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full text-center md:text-left items-start ">
+
+              <!-- desktop layout -->
+              <div class="flex flex-col items-center md:items-start hidden md:block">
+                
+                <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[16px] md:text-[24px] lg:text-[36px] leading-[100%]">
+                  PHPCenter
+                </h2>
+
+                <div class="max-w-[264px]">
+                  <p class="mb-2 text-[#0EDDC9] text-[20px] md:text-[22px] lg:text-[24px] font-poppins font-medium">
+                    Address:
+                  </p>
+                  <p class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">
+                    40/1, Zakir Hossain Road, Khulshi, Chattogram-4225 Bangladesh
+                  </p>
+                </div>
+              </div>
+
+              <!-- About -->
+              <div class="flex flex-col items-center md:items-start">
+                <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[16px] md:text-[24px] lg:text-[36px] leading-[100%]">
+                  About
+                </h2>
+
+                <div class="flex flex-col space-y-2">
+                  <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">History</a>
+                  <a href="product-details.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Our Product</a>
+                  <a href="contact-us.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Contact Us</a>
+                </div>
+              </div>
+
+              <!-- Get In Touch -->
+              <div class="flex flex-col items-center md:items-start">
+                <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[16px] md:text-[24px] lg:text-[36px] leading-[100%]">
+                  Get In Touch
+                </h2>
+
+                <div class="flex flex-col space-y-2 mb-6">
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">info@phpfamily.com</span>
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">+880 2333352316-21</span>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex justify-center lg:justify-start lg:gap-1 xl:gap-2">
+                  <a href="#"><img src="assets/img/website.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/linkedin.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/facebook.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/tiktalk.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/youtube.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/pint.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         
-        </div>
     </div>
 
   
@@ -897,10 +1141,31 @@
 
 </footer>
 
+<div
+    id="page-loader"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-white"
+  >
+    <div class="flex flex-col items-center gap-4">
+      <!-- Spinner -->
+      <div class="h-12 w-12 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
 
+      <!-- Text -->
+      <p class="text-sm text-gray-500">Loading...</p>
+    </div>
+  </div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+  new WOW({
+    boxClass: 'wow',      // default
+    animateClass: 'animate__animated', // must include Animate.css prefix
+    offset: 0,            // start animation when element is in view
+    mobile: true,         // animate on mobile
+    live: true
+  }).init();
+</script>
 
 <script>
   const swiper = new Swiper(".myProductSwiper", {
@@ -913,15 +1178,21 @@
   });
 </script>
 
+<script>
+    window.addEventListener("load", () => {
+      document.getElementById("page-loader").style.display = "none";
+    });
+  </script>
 
 
-  <!-- JavaScript -->
-  <script>
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const closeBtn = document.getElementById('closeBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
+  <!-- menu -->
+<script>
+  // ===== Mobile Menu Toggle =====
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
 
+  if (menuBtn && closeBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.remove('-translate-x-full');
       mobileMenu.classList.add('translate-x-0');
@@ -931,11 +1202,21 @@
       mobileMenu.classList.add('-translate-x-full');
       mobileMenu.classList.remove('translate-x-0');
     });
+  }
 
+  // ===== REUSABLE DROPDOWN LOGIC =====
+  document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    const icon = dropdown.querySelector('.dropdown-icon');
 
-
-
-  </script>
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('max-h-0');
+      menu.classList.toggle('max-h-[500px]');
+      icon.classList.toggle('rotate-180');
+    });
+  });
+</script>
 
 
  <script>
@@ -1020,7 +1301,199 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<!--Product desktop layout-->
+<script>
+  const mainImage = document.getElementById('mainTinImage');
+  const stepButtons = document.querySelectorAll('.step-btn');
+  const stepLabels = document.querySelectorAll('.step-label-item');
+  const connectorLines = document.querySelectorAll('.connector-line');
 
+  let currentStep = 0;
+  let autoInterval;
+
+  function activateStep(index) {
+
+    /* IMAGE FADE */
+    mainImage.classList.replace('opacity-100', 'opacity-0');
+
+    setTimeout(() => {
+      mainImage.src = stepButtons[index].dataset.img;
+      mainImage.classList.replace('opacity-0', 'opacity-100');
+    }, 250);
+
+    /* RESET */
+    stepButtons.forEach(b => {
+      b.classList.remove('bg-[#57C4BD]', 'text-white');
+      b.classList.add('bg-[#E0DEDF]', 'text-[#999999]');
+    });
+
+    stepLabels.forEach(l => {
+      l.classList.remove('bg-[#57C4BD]', 'text-white');
+      l.classList.add('bg-[#E0DEDF]', 'text-[#9EA4AD]');
+    });
+
+    connectorLines.forEach(l => {
+      l.classList.remove('bg-[#57C4BD]');
+      l.classList.add('bg-[#E0DEDF]');
+    });
+
+    /* ACTIVE */
+    stepButtons[index].classList.replace('bg-[#E0DEDF]', 'bg-[#57C4BD]');
+    stepButtons[index].classList.replace('text-[#999999]', 'text-white');
+
+    if (stepLabels[index]) {
+      stepLabels[index].classList.replace('bg-[#E0DEDF]', 'bg-[#57C4BD]');
+      stepLabels[index].classList.replace('text-[#9EA4AD]', 'text-white');
+    }
+
+    if (connectorLines[index]) {
+      connectorLines[index].classList.replace('bg-[#E0DEDF]', 'bg-[#57C4BD]');
+    }
+
+    currentStep = index;
+  }
+
+  /* CLICK CONTROL */
+  stepButtons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      activateStep(index);
+      resetAuto();
+    });
+  });
+
+  /* AUTO LOOP 
+  function startAuto() {
+    autoInterval = setInterval(() => {
+      let next = (currentStep + 1) % stepButtons.length;
+      activateStep(next);
+    }, 3000);
+  }
+
+  function resetAuto() {
+    clearInterval(autoInterval);
+    startAuto();
+  }
+    */
+
+  /* INIT */
+  activateStep(0);
+  startAuto();
+</script>
+
+  <!-- product mobile slider -->
+
+<script>
+  // ITEMS SWIPER
+  const swiperItems = new Swiper(".mySwiperItems", {
+    slidesPerView: 2.5,
+    spaceBetween: 8,
+    loop: false,
+    breakpoints: {
+      640: { slidesPerView: 2.5 },
+      768: { slidesPerView: 3 },
+      1024: { slidesPerView: 4 },
+    },
+  });
+
+  // IMAGE SWIPER
+  const swiperImages = new Swiper(".mySwiperImages", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    on: {
+      slideChange: function () {
+        swiperItems.slideTo(this.realIndex);
+        updateActiveStep(this.realIndex);
+      },
+    },
+  });
+
+  function updateActiveStep(index) {
+    swiperItems.slides.forEach((slide, i) => {
+      const number = slide.querySelector(".step-number");
+      const content = slide.querySelector(".step-content");
+
+      if (i === index) {
+        // ACTIVE
+        number.classList.add("text-[#57C4BD]");
+        number.classList.remove("text-[#9EA4AD]");
+
+        content.classList.add("bg-[#57C4BD]", "text-white");
+        content.classList.remove("bg-[#D9D9D9]");
+      } else {
+        // INACTIVE
+        number.classList.add("text-[#9EA4AD]");
+        number.classList.remove("text-[#57C4BD]");
+
+        content.classList.add("bg-[#D9D9D9]", "text-white");
+        content.classList.remove("bg-[#57C4BD]");
+      }
+    });
+  }
+
+  // CLICK STEP → CHANGE IMAGE
+  swiperItems.slides.forEach((slide, index) => {
+    slide.addEventListener("click", () => {
+      swiperImages.slideToLoop(index);
+    });
+  });
+
+  
+
+  // INIT
+  updateActiveStep(0);
+</script>
+
+
+<!---Horse animation-->>
+<script>
+(function () {
+  const video = document.getElementById('bgVideo');
+  const overlay = document.getElementById('videoOverlay');
+
+  // Ensure video is muted, looped, and plays inline
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+
+  // Autoplay video with fallback
+  video.play().catch(() => overlay.classList.remove('hidden'));
+
+  // Force smooth looping (prevents brief freeze)
+  video.addEventListener('ended', () => {
+    video.currentTime = 0;
+    video.play();
+  });
+
+  // Toggle play/pause on click
+  video.addEventListener('click', () => {
+    if (video.paused) {
+      video.play().then(() => overlay.classList.add('hidden'));
+    } else {
+      video.pause();
+      overlay.classList.remove('hidden');
+    }
+  });
+
+  // Update overlay visibility on play/pause
+  video.addEventListener('play', () => overlay.classList.add('hidden'));
+  video.addEventListener('pause', () => overlay.classList.remove('hidden'));
+
+  // Keyboard support: space/enter toggles play/pause
+  document.addEventListener('keydown', (e) => {
+    if (['Space', 'Enter'].includes(e.code) || e.key === ' ') {
+      const active = document.activeElement;
+      if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable)) return;
+      e.preventDefault();
+      video.click();
+    }
+  });
+})();
+</script>
 
 
 </body>

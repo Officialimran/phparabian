@@ -18,43 +18,136 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 </head>
-<body class="bg-gray-100">
+<body>
 
-<section class="px-6 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
-  <h2 class="text-[#00605C] text-[20px] lg:text-[32px] uppercase mb-6">Video Gallery</h2>
 
-  <div id="videoGallery" class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+<section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[4vw] py-6 md:py-10 bg-white relative overflow-hidden">
+  <div class="w-full relative">
 
-    <!-- Example Video Item -->
-    <div class="video-item relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
-      <img src="https://img.youtube.com/vi/owZ6KL7R4A4/hqdefault.jpg" 
-           class="w-full h-[276px] lg:h-[458px] object-cover">
-      <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-        <i class="text-white text-4xl fas fa-play"></i>
+    <!-- TITLE -->
+    <h2 class="text-center text-3xl md:text-4xl font-semibold text-[#005A57] mb-4">OUR PRODUCTS</h2>
+    <p class="text-center text-gray-600 max-w-3xl mx-auto mb-16">
+      PHP Arabian Horse Super Dhew Tin is a premium-quality roofing sheet made with the perfect zinc
+      coating for maximum durability and rust resistance...
+    </p>
+
+    <div class="relative w-full ">
+
+      <svg viewBox="0 0 1200 500" class="w-full mx-auto">
+
+      <path d="M150 480 A 300 500 0 0 1 240 200"
+            class="stroke-gray-300 stroke-[12] fill-none" />
+
+      <path d="M263 163 A 370 280 0 0 1 930 165"
+            class="stroke-gray-300 stroke-[12] fill-none" />
+
+
+      <path d="M1050 480 A 300 500 0 0 0 960 200"
+      class="stroke-gray-300 stroke-[12] fill-none" />
+
+    </svg>
+
+    <img src="assets/img/tin.png" class="absolute left-1/2 bottom-0 w-[420px] -translate-x-1/2 select-none pointer-events-none">
+
+
+        <!-- STEP 1 -->
+        <div class="">
+            <div class="absolute left-[0px] top-[360px] flex items-center gap-3">
+              <div class="px-4 py-2 bg-teal-500 text-white rounded-md text-sm font-medium shadow">NOF TIN</div>
+            </div>
+            <div class="absolute left-28 top-[420px] flex items-center gap-3">
+              <div class="w-7 h-7 rounded-full bg-teal-500 text-white flex items-center justify-center text-xs font-bold shadow">1</div>
+            </div>
+        </div>
+        
+        <!-- STEP 2 -->
+          <div>
+              <div class="absolute left-[80px] top-[80px] flex items-center gap-3">
+                <div class="px-4 py-2 bg-gray-200 text-gray-600 rounded-md text-sm font-medium shadow uppercase">color tin</div>
+              </div>
+              <div class="absolute left-[200px] top-[140px] flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full bg-teal-500 text-white flex items-center justify-center text-xs font-bold shadow">2</div>
+              </div>
+          </div>
+        
+
+        <!-- STEP 3 -->
+        <div>
+          <div class="absolute right-[50px] top-[80px] flex items-center gap-3">
+            <div class="px-4 py-2 bg-gray-200 text-gray-600 rounded-md text-sm font-medium shadow uppercase">aluminium tin</div>
+          </div>
+          <div class="absolute right-[204px] top-[141px] flex items-center gap-3">
+            <div class="w-7 h-7 rounded-full bg-teal-500 text-white flex items-center justify-center text-xs font-bold shadow">3</div>
+          </div>
+        </div>
+
+      
+
+        <!-- STEP 4 -->
+      <div>
+        <div class="absolute right-[110px] top-[420px] flex items-center gap-3">
+          <div class="w-7 h-7 rounded-full bg-teal-500 text-gray-600 flex items-center justify-center text-xs font-bold shadow">4</div>
+        </div>
+        <div class="absolute right-[-50px] top-[360px] flex items-center gap-3">
+          <div class="px-4 py-2 bg-gray-200 text-gray-600 rounded-md text-sm font-medium shadow uppercase">PROFILE SHEET</div>
+        </div>
+
       </div>
-      <a class="popup-youtube absolute inset-0" 
-         href="https://www.youtube.com/watch?v=owZ6KL7R4A4?autoplay=1&mute=1"></a>
+
     </div>
-
-    <!-- More video items -->
-    <!-- …repeat similarly… -->
-
+    
   </div>
 </section>
 
+<div class="relative w-full aspect-[12/5]">
 
-<script>
-  $(document).ready(function() {
-    $('.popup-youtube').magnificPopup({
-      type: 'iframe',
-      mainClass: 'mfp-fade',
-      preloader: true,
-      removalDelay: 300,
-      fixedContentPos: false
-    });
-  });
-</script>
+  <!-- SVG -->
+  <svg viewBox="0 0 1200 500" class="absolute inset-0 w-full h-full">
+    <path d="M150 480 A 300 500 0 0 1 240 200"
+          class="stroke-gray-300 stroke-[12] fill-none" />
+    <path d="M263 163 A 370 280 0 0 1 930 165"
+          class="stroke-gray-300 stroke-[12] fill-none" />
+    <path d="M1050 480 A 300 500 0 0 0 960 200"
+          class="stroke-gray-300 stroke-[12] fill-none" />
+  </svg>
 
+  <!-- Center Image -->
+  <img src="assets/img/tin.png"
+       class="absolute left-1/2 bottom-0 w-[420px] -translate-x-1/2 pointer-events-none" />
+
+  <!-- STEP 1 -->
+  <div class="absolute left-[0%] top-[72%]">
+    <div class="px-4 py-2 bg-teal-500 text-white rounded text-sm">NOF TIN</div>
+  </div>
+  <div class="absolute left-[12%] top-[84%]">
+    <div class="w-7 h-7 bg-teal-500 text-white rounded-full flex items-center justify-center text-xs">1</div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="absolute left-[8%] top-[16%]">
+    <div class="px-4 py-2 bg-gray-200 rounded text-sm uppercase">COLOR TIN</div>
+  </div>
+  <div class="absolute left-[18%] top-[28%]">
+    <div class="w-7 h-7 bg-teal-500 text-white rounded-full flex items-center justify-center text-xs">2</div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="absolute right-[8%] top-[16%]">
+    <div class="px-4 py-2 bg-gray-200 rounded text-sm uppercase">ALUMINIUM TIN</div>
+  </div>
+  <div class="absolute right-[18%] top-[28%]">
+    <div class="w-7 h-7 bg-teal-500 text-white rounded-full flex items-center justify-center text-xs">3</div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="absolute right-[12%] top-[84%]">
+    <div class="w-7 h-7 bg-teal-500 text-white rounded-full flex items-center justify-center text-xs">4</div>
+  </div>
+  <div class="absolute right-[0%] top-[72%]">
+    <div class="px-4 py-2 bg-gray-200 rounded text-sm uppercase">PROFILE SHEET</div>
+  </div>
+
+</div>
 
 </body>
 </html>

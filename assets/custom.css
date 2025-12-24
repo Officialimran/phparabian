@@ -1,3 +1,99 @@
 #langToggle input:checked + .toggle-bg .indicator {
       transform: translateX(70px);
   }
+
+
+
+
+/* label */
+.step-label {
+  position: relative;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px 0px 0px 6px;
+}
+
+/* curved arrow */
+.step-label::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  background: #57C4BD;
+  clip-path: polygon(0 0, 100% 50%, 0 100%, 0% 100%, 0% 0);
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+
+/* label */
+.step-label-2 {
+  position: relative;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px 0px 0px 6px;
+}
+
+/* curved arrow */
+.step-label-2::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 0;
+    width: 11px;
+    height: 100%;
+    background: #E0DEDF;
+    clip-path: polygon(0 0, 100% 50%, 0 100%, 0% 100%, 0% 0);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* label */
+.step-label-3 {
+  position: relative;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px 0px 0px 6px;
+}
+
+/* curved arrow */
+.step-label-3::after {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 0;
+    width: 12px;
+    height: 100%;
+    background: #E0DEDF;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%, 100% 100%, 100% 0);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* label */
+.step-label-4 {
+  position: relative;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px 0px 0px 6px;
+}
+
+/* curved arrow */
+.step-label-4::after {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 0;
+    width: 12px;
+    height: 100%;
+    background: #E0DEDF;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%, 100% 100%, 100% 0);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
