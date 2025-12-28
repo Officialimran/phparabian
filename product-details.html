@@ -43,7 +43,8 @@
     }
   </script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="assets/custom.css"/>
 
 </head>
 
@@ -51,9 +52,9 @@
 
 <body>
 
-<div class="w-full bg-[#ffffff] relative z-50 wow animate__animated animate__slideInDown" data-wow-duration="2s">
+<div class="w-full bg-[#ffffff] relative z-50">
 
-    <header class="px-4 md:px-12 2xl:px-[10vw] lg:px-[4vw] flex items-center justify-between py-2">
+    <header class="px-4 md:px-12 2xl:px-[10vw] lg:px-[4vw] flex items-center justify-between py-2 wow animate__animated animate__slideInDown" data-wow-duration="2s">
 
         <a href="index.html" class="text-xl font-bold">
             <img src="assets/img/logo.png" alt="GamesCreed Logo" class="w-[57px] h-[50px] lg:w-[100px] lg:h-[80px] xl:w-[135px] xl:h-[115px]">
@@ -233,8 +234,7 @@
   </div>
 
   <!-- CONTENT -->
-  <div class="relative z-10 min-h-[520px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[664px]
-              flex items-center">
+  <div class="relative z-10 min-h-[520px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[664px] flex items-center wow animate__animated animate__slideInLeft" data-wow-duration="2s">
 
     <!-- LEFT CONTENT -->
     <div class="w-full mt-[100px] md:mt-[150x] lg:mt-[180x] xl:mt-[200px]">
@@ -385,13 +385,13 @@
 
 
 <section class="px-6 md:px-12 2xl:px-[12vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
-  <div class="text-center mb-10">
+  <div class="text-center mb-10 wow animate__animated animate__slideInLeft" data-wow-duration="2s">
     <h2 class="text-[#00605C] text-[24px] lg:text-5xl font-normal font-objectsans leading-[36px] lg:leading-[58px] uppercase">
       Related Products
     </h2>
   </div>
 
-  <div class="hidden lg:block">
+  <div class="hidden lg:block wow animate__animated animate__slideInUp" data-wow-duration="2s">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
       <!-- Product 1 -->
       <a href="#">
@@ -599,93 +599,19 @@
 
   
     <div class="w-full">
-        <svg viewBox="0 0 1440 112" xmlns="http://www.w3.org/2000/svg">
+        <div style="overflow: hidden;">
+          <svg viewBox="0 0 1440 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            
+            <path class="pulse_wave pulse_wave-1" fill="none" stroke="#0EDDC9" stroke-width="2"
+              d="M0 40 C20 20, 40 20, 60 40 C80 60, 100 60, 120 40 C140 20, 160 20, 180 40 C200 60, 220 60, 240 40 C260 20, 280 20, 300 40 C320 60, 340 60, 360 40 C380 20, 400 20, 420 40 C440 60, 460 60, 480 40 C500 20, 520 20, 540 40 C560 60, 580 60, 600 40 C620 20, 640 20, 660 40 C680 60, 700 60, 720 40 C740 20, 760 20, 780 40 C800 60, 820 60, 840 40 C860 20, 880 20, 900 40 C920 60, 940 60, 960 40 C980 20, 1000 20, 1020 40 C1040 60, 1060 60, 1080 40 C1100 20, 1120 20, 1140 40 C1160 60, 1180 60, 1200 40 C1220 20, 1240 20, 1260 40 C1280 60, 1300 60, 1320 40 C1340 20, 1360 20, 1380 40 C1400 60, 1420 60, 1440 40" />
 
-            <!-- Line 1 -->
-            <path fill="none" stroke="#0EDDC9" stroke-width="2"
-                d="M0 40
-                C20 20, 40 20, 60 40
-                C80 60, 100 60, 120 40
-                C140 20, 160 20, 180 40
-                C200 60, 220 60, 240 40
-                C260 20, 280 20, 300 40
-                C320 60, 340 60, 360 40
-                C380 20, 400 20, 420 40
-                C440 60, 460 60, 480 40
-                C500 20, 520 20, 540 40
-                C560 60, 580 60, 600 40
-                C620 20, 640 20, 660 40
-                C680 60, 700 60, 720 40
-                C740 20, 760 20, 780 40
-                C800 60, 820 60, 840 40
-                C860 20, 880 20, 900 40
-                C920 60, 940 60, 960 40
-                C980 20, 1000 20, 1020 40
-                C1040 60, 1060 60, 1080 40
-                C1100 20, 1120 20, 1140 40
-                C1160 60, 1180 60, 1200 40
-                C1220 20, 1240 20, 1260 40
-                C1280 60, 1300 60, 1320 40
-                C1340 20, 1360 20, 1380 40
-                C1400 60, 1420 60, 1440 40" />
+            <path class="pulse_wave pulse_wave-2" fill="none" stroke="#0EDDC9" stroke-width="2"
+              d="M0 70 C20 50, 40 50, 60 70 C80 90, 100 90, 120 70 C140 50, 160 50, 180 70 C200 90, 220 90, 240 70 C260 50, 280 50, 300 70 C320 90, 340 90, 360 70 C380 50, 400 50, 420 70 C440 90, 460 90, 480 70 C500 50, 520 50, 540 70 C560 90, 580 90, 600 70 C620 50, 640 50, 660 70 C680 90, 700 90, 720 70 C740 50, 760 50, 780 70 C800 90, 820 90, 840 70 C860 50, 880 50, 900 70 C920 90, 940 90, 960 70 C980 50, 1000 50, 1020 70 C1040 90, 1060 90, 1080 70 C1100 50, 1120 50, 1140 70 C1160 90, 1180 90, 1200 70 C1220 50, 1240 50, 1260 70 C1280 90, 1300 90, 1320 70 C1340 50, 1360 50, 1380 70 C1400 90, 1420 90, 1440 70" />
 
-            <!-- Line 2 -->
-            <path fill="none" stroke="#0EDDC9" stroke-width="2"
-                d="M0 70
-                C20 50, 40 50, 60 70
-                C80 90, 100 90, 120 70
-                C140 50, 160 50, 180 70
-                C200 90, 220 90, 240 70
-                C260 50, 280 50, 300 70
-                C320 90, 340 90, 360 70
-                C380 50, 400 50, 420 70
-                C440 90, 460 90, 480 70
-                C500 50, 520 50, 540 70
-                C560 90, 580 90, 600 70
-                C620 50, 640 50, 660 70
-                C680 90, 700 90, 720 70
-                C740 50, 760 50, 780 70
-                C800 90, 820 90, 840 70
-                C860 50, 880 50, 900 70
-                C920 90, 940 90, 960 70
-                C980 50, 1000 50, 1020 70
-                C1040 90, 1060 90, 1080 70
-                C1100 50, 1120 50, 1140 70
-                C1160 90, 1180 90, 1200 70
-                C1220 50, 1240 50, 1260 70
-                C1280 90, 1300 90, 1320 70
-                C1340 50, 1360 50, 1380 70
-                C1400 90, 1420 90, 1440 70" />
-
-            <!-- Line 3 -->
-            <path fill="none" stroke="#0EDDC9" stroke-width="2"
-                d="M0 100
-                C20 80, 40 80, 60 100
-                C80 120, 100 120, 120 100
-                C140 80, 160 80, 180 100
-                C200 120, 220 120, 240 100
-                C260 80, 280 80, 300 100
-                C320 120, 340 120, 360 100
-                C380 80, 400 80, 420 100
-                C440 120, 460 120, 480 100
-                C500 80, 520 80, 540 100
-                C560 120, 580 120, 600 100
-                C620 80, 640 80, 660 100
-                C680 120, 700 120, 720 100
-                C740 80, 760 80, 780 100
-                C800 120, 820 120, 840 100
-                C860 80, 880 80, 900 100
-                C920 120, 940 120, 960 100
-                C980 80, 1000 80, 1020 100
-                C1040 120, 1060 120, 1080 100
-                C1100 80, 1120 80, 1140 100
-                C1160 120, 1180 120, 1200 100
-                C1220 80, 1240 80, 1260 100
-                C1280 120, 1300 120, 1320 100
-                C1340 80, 1360 80, 1380 100
-                C1400 120, 1420 120, 1440 100" />
-        </svg>
-
+            <path class="pulse_wave pulse_wave-3" fill="none" stroke="#0EDDC9" stroke-width="2"
+              d="M0 100 C20 80, 40 80, 60 100 C80 120, 100 120, 120 100 C140 80, 160 80, 180 100 C200 120, 220 120, 240 100 C260 80, 280 80, 300 100 C320 120, 340 120, 360 100 C380 80, 400 80, 420 100 C440 120, 460 120, 480 100 C500 80, 520 80, 540 100 C560 120, 580 120, 600 100 C620 80, 640 80, 660 100 C680 120, 700 120, 720 100 C740 80, 760 80, 780 100 C800 120, 820 120, 840 100 C860 80, 880 80, 900 100 C920 120, 940 120, 960 100 C980 80, 1000 80, 1020 100 C1040 120, 1060 120, 1080 100 C1100 80, 1120 80, 1140 100 C1160 120, 1180 120, 1200 100 C1220 80, 1240 80, 1260 100 C1280 120, 1300 120, 1320 100 C1340 80, 1360 80, 1380 100 C1400 120, 1420 120, 1440 100" />
+          </svg>
+        </div>
     </div>
 
 

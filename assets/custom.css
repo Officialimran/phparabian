@@ -97,3 +97,36 @@
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
 }
+
+
+
+/*footer bottom animation*/
+.pulse_wave {
+  animation: bob 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Offsetting the timing so they don't move all at once */
+.pulse_wave-1 {
+  animation-delay: 0s;
+}
+
+.pulse_wave-2 {
+  animation-delay: -0.8s;
+}
+
+.pulse_wave-3 {
+  animation-delay: -1.6s;
+}
+
+@keyframes bob {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(15px);
+  }
+}
