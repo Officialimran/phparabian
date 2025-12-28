@@ -5,9 +5,22 @@
 <title>Testimonial Carousel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+
 <!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
 
+<style>
+  .swiper {
+  padding-bottom: 40px;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 0 !important;
+}
+</style>
 
 
 </head>
@@ -34,7 +47,24 @@
             </div>
             <div class="bg-[#00605C] h-auto px-4 py-12 lg:p-12 rounded-bl-lg rounded-br-lg lg:rounded-lg lg:absolute lg:left-[-7%] lg:top-[140px]">
                 <img src="assets/img/testimonial/quotation-mark 3.svg" class="mb-6">
-                <p class="mb-6 text-[#FFFFFF] text-center lg:text-left text-[12px] lg:text-[16px] xl:text-[20px] font-medium leading-6 lg:leading-[34px]">Working with PHP has been an absolute pleasure. From the initial consultation to the final delivery, their team demonstrated unparalleled professionalism and expertise. They listened attentively to our needs and provided innovative solutions that exceeded our expectations. </p>
+
+                <div class="swiper mySwiper w-full overflow-hidden">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <p class="mb-6 text-[#FFFFFF] text-center lg:text-left text-[12px] lg:text-[16px] xl:text-[20px] font-medium leading-6 lg:leading-[34px]">First Working with PHP has been an absolute pleasure. From the initial consultation to the final delivery, their team demonstrated unparalleled professionalism and expertise. They listened attentively to our needs and provided innovative solutions that exceeded our expectations. </p>
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="mb-6 text-[#FFFFFF] text-center lg:text-left text-[12px] lg:text-[16px] xl:text-[20px] font-medium leading-6 lg:leading-[34px]">Sconed Working with PHP has been an absolute pleasure. From the initial consultation to the final delivery, their team demonstrated unparalleled professionalism and expertise. They listened attentively to our needs and provided innovative solutions that exceeded our expectations. </p>
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="mb-6 text-[#FFFFFF] text-center lg:text-left text-[12px] lg:text-[16px] xl:text-[20px] font-medium leading-6 lg:leading-[34px]">Third Working with PHP has been an absolute pleasure. From the initial consultation to the final delivery, their team demonstrated unparalleled professionalism and expertise. They listened attentively to our needs and provided innovative solutions that exceeded our expectations. </p>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+                
+                
+                
                 <div class="space-y-2 text-center lg:text-left">
                     <p class="text-[#FFFFFF] text-[18px] lg:text-[24px] font-objectsans font-medium leading-[100%]">Contractor</p>
                     <p class="text-[#FFFFFF] text-[14px] lg:text-[16px] font-objectsans font-normal leading-[100%]">Mistri</p>
@@ -44,81 +74,26 @@
     </div>
 </section>
 
-<section class="px-0 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
-  <div class="flex flex-col lg:flex-row gap-0 lg:gap-6 relative">
 
-    <!-- IMAGE COLUMN -->
-    <div class="w-full lg:w-2/5">
 
-      <!-- MOBILE TITLE -->
-      <div class="block lg:hidden px-4 mb-6">
-        <p class="text-[#0E141F] text-[18px] font-objectsans font-medium mb-2">
-          Testimonials
-        </p>
-        <h2 class="text-[#00605C] text-[24px] font-objectsans font-normal leading-8">
-          Stories from Bangladesh
-        </h2>
-      </div>
 
-      <!-- IMAGE WITH BLACK BG -->
-      <div
-        class="w-full bg-[#23242A]
-               px-6 pt-3 pb-8
-               lg:pl-6 lg:pr-12 lg:py-8">
-        <img
-          src="assets/img/testimonial/testimonial.jpg"
-          class="w-full h-auto lg:h-[555px] object-cover rounded-lg"
-          alt="Testimonial"
-        />
-      </div>
-    </div>
+  
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
-    <!-- CONTENT COLUMN -->
-    <div class="w-full lg:w-3/5 relative">
+  <script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoHeight: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
 
-      <!-- DESKTOP TITLE -->
-      <div class="hidden lg:block">
-        <p class="text-[#0E141F] text-[18px] lg:text-[24px] font-objectsans font-medium mb-6">
-          Testimonials
-        </p>
-        <h2 class="text-[#00605C] text-[24px] lg:text-[42px] font-objectsans font-normal leading-8 lg:leading-[42px] mb-10">
-          Stories from Bangladesh
-        </h2>
-      </div>
-
-      <!-- TESTIMONIAL CARD -->
-      <div
-        class="bg-[#00605C]
-               w-full
-               px-4 py-12
-               lg:p-12
-               rounded-bl-lg rounded-br-lg
-               lg:rounded-lg
-               lg:absolute lg:left-[-7%] lg:top-[140px]">
-
-        <img
-          src="assets/img/testimonial/quotation-mark 3.svg"
-          class="mb-6"
-          alt="Quote"
-        />
-
-        <p class="mb-6 text-white text-[12px] lg:text-[16px] xl:text-[20px] font-medium leading-6 lg:leading-[34px]">
-          Working with PHP has been an absolute pleasure. From the initial consultation to the final delivery, their team demonstrated unparalleled professionalism and expertise. They listened attentively to our needs and provided innovative solutions that exceeded our expectations.
-        </p>
-
-        <div class="space-y-2">
-          <p class="text-white text-[18px] lg:text-[24px] font-objectsans font-medium">
-            Contractor
-          </p>
-          <p class="text-white text-[14px] lg:text-[16px] font-objectsans font-normal">
-            Mistri
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 
 
