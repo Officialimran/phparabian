@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Swiper Testimonial</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<style>
+  .swiper-pagination-bullet {
+    background: rgba(255,255,255,.4);
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active {
+    background: #fff;
+  }
+</style>
+</head>
+
+<body class="bg-white">
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- Title -->
+    <p class="text-sm text-gray-500">Testimonials</p>
+    <h2 class="text-4xl font-semibold text-[#005A57] mb-12">
+      Stories from Bangladesh
+    </h2>
+
+    <!-- WRAPPER -->
+    <div class="relative flex items-center">
+
+      <!-- LEFT DARK BG -->
+      <div class="absolute left-0 top-0 w-[55%] h-full bg-[#1F2328] rounded-xl z-0"></div>
+
+      <!-- STATIC IMAGE -->
+      <div class="relative z-10 w-[45%] pl-10">
+        <img
+          src="https://images.unsplash.com/photo-1581090700227-1e37b190418e"
+          class="rounded-xl w-full h-[380px] object-cover"
+        >
+      </div>
+
+      <!-- SLIDING CONTENT -->
+      <div class="relative z-20 -ml-24 w-[55%]">
+
+        <div class="swiper testimonialSwiper bg-[#005A57] text-white rounded-xl px-4">
+
+          <div class="swiper-wrapper">
+
+            <!-- SLIDE -->
+            <div class="swiper-slide">
+              <div class="text-6xl opacity-20 mb-6">“</div>
+              <p class="leading-relaxed mb-6">
+                Working with PHP has been an absolute pleasure. From the initial consultation to the final delivery, their team demonstrated unparalleled professionalism and expertise. They listened attentively to our needs and provided innovative solutions that exceeded our expectations. 
+              </p>
+              <p class="font-semibold">Contractor</p>
+              <p class="text-sm opacity-80">Misri</p>
+            </div>
+
+            <!-- SLIDE -->
+            <div class="swiper-slide">
+              <div class="text-6xl opacity-20 mb-6">“</div>
+              <p class="leading-relaxed mb-6">
+                Working with PHP has been an absolute pleasure. From the initial consultation to the final delivery, their team demonstrated unparalleled professionalism and expertise. They listened attentively to our needs and provided innovative solutions that exceeded our expectations.
+              </p>
+              <p class="font-semibold">Project Manager</p>
+              <p class="text-sm opacity-80">Dhaka</p>
+            </div>
+
+            <!-- SLIDE -->
+            <div class="swiper-slide">
+              <div class="text-6xl opacity-20 mb-6">“</div>
+              <p class="leading-relaxed mb-6">
+                Working with PHP has been an absolute pleasure. From the initial consultation to the final delivery, their team demonstrated unparalleled professionalism and expertise. They listened attentively to our needs and provided innovative solutions that exceeded our expectations.
+              </p>
+              <p class="font-semibold">Engineer</p>
+              <p class="text-sm opacity-80">Chattogram</p>
+            </div>
+
+          </div>
+
+          <!-- DOTS -->
+          <div class="swiper-pagination mt-6 !static text-left"></div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  new Swiper(".testimonialSwiper", {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    speed: 800
+  });
+</script>
+
+</body>
+</html>
