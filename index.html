@@ -83,11 +83,12 @@
 
     <header class="px-4 md:px-12 2xl:px-[10vw] lg:px-[4vw] flex items-center justify-between py-2">
 
-        <a href="index.html" class="text-xl font-bold">
-            <img src="assets/img/logo.png" alt="GamesCreed Logo" class="w-[57px] h-[50px] lg:w-[100px] lg:h-[80px] xl:w-[135px] xl:h-[115px]">
+        <a class="crossfade w-[57px] h-[50px] lg:w-[100px] lg:h-[80px] xl:w-[135px] xl:h-[115px]" href="index.html">
+            <img src="assets/img/logo.png" alt="GamesCreed Logo" class="w-full">
+            <img src="assets/img/25-logo.png" alt="GamesCreed Logo" class="w-full">
         </a>
 
-        <nav class="hidden lg:flex md:space-x-2 lg:space-x-4 xl:space-x-6 text-[#00807B] font-objectsans text-[14px] md:text-[16px] font-normal relative">
+        <nav class="hidden lg:flex md:space-x-2 lg:space-x-4 xl:space-x-6 text-[#00807B] font-objectsans text-[14px] md:text-[14px] xl:text-[16px] font-normal relative">
 
             <a href="index.html" class="hover:text-[#00807B]">Home</a>
             <a href="aboutus.html" class="hover:text-[#00807B]t">About Us</a>
@@ -136,6 +137,7 @@
 
 
             <a href="why-choose-php.html" class="relative hover:text-[#00807B]">Why Choose PHP</a>
+            <a href="25-years-anniversery.html" class="relative hover:text-[#00807B]">25 Years Anniversery</a>
 
             <a href="gallery.html" class="relative hover:text-[#00807B]">Gallery</a>
 
@@ -147,15 +149,15 @@
         <div class="flex items-center space-x-3">
 
         <!-- Language Toggle -->
-        <div id="langToggle" class="flex items-center bg-[#E2E2E2] rounded-[50px] p-1 w-[140px]">
+        <div id="langToggle" class="flex items-center bg-[#E2E2E2] rounded-[50px] p-1 w-[140px] lg:w-[100px] xl:w-[140px]">
 
             <!-- Active: English -->
-            <button id="engBtn" class="flex-1 text-[#FFFFFF] font-roboto text-xs font-normal  rounded-[50px] py-2 bg-[#57C4BD] transition-all duration-300">
+            <button id="engBtn" class="flex-1 text-[#FFFFFF] font-roboto text-xs font-normal  rounded-[50px] py-2 lg:py-1 xl:py-2 bg-[#57C4BD] transition-all duration-300">
                 ENG
             </button>
 
             <!-- Inactive: Bangla -->
-            <button id="bnBtn" class="flex-1 text-black font-roboto text-xs font-normal  rounded-[50px] py-2 text-center">
+            <button id="bnBtn" class="flex-1 text-black font-roboto text-xs font-normal  rounded-[50px] py-2 lg:py-1 xl:py-2 text-center">
                 বাংলা
             </button>
 
@@ -171,11 +173,10 @@
         </div>
     </header>
 
-        <div id="mobileMenu"
-            class="fixed top-0 left-0 w-full h-full bg-[#ffffff] z-50 transform -translate-x-full transition-transform duration-300 lg:hidden flex flex-col">
+        <div id="mobileMenu" class="fixed top-0 left-0 w-full h-full bg-[#ffffff] z-50 transform -translate-x-full transition-transform duration-300 lg:hidden flex flex-col">
 
             <div class="flex items-center justify-between px-4 py-4 border-b border-[#00807B]">
-            <img src="assets/img/logo.png" class="h-10">
+            <img src="assets/img/25-logo.png" class="h-10">
 
             <button id="closeBtn">
                 <svg class="w-8 h-8 text-[#00807B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -231,6 +232,7 @@
 
 
             <a href="why-choose-php.html" class="hover:text-[#00807B]">Why Choose PHP</a>
+            <a href="25-years-anniversery.html" class="hover:text-[#00807B]">25 Years Anniversery</a>
             <a href="gallery.html" class="hover:text-[#00807B]">Gallery</a>
             <a href="news-insights.html" class="hover:text-[#00807B]">News & Insights</a>
             <a href="contact-us.html" class="hover:text-[#00807B]">Contact Us</a>
@@ -311,12 +313,11 @@
 
       <!-- TITLE -->
       <h2 class="text-center text-3xl md:text-4xl font-semibold text-[#005A57] mb-4 wow animate__animated animate__slideInDown" data-wow-duration="2s">OUR PRODUCTS</h2>
-      <p class="text-center text-gray-600 max-w-3xl mx-auto mb-16 wow animate__animated animate__slideInDown" data-wow-duration="2s">
-        PHP Arabian Horse Super Dhew Tin is a premium-quality roofing sheet made with the perfect zinc
-        coating for maximum durability and rust resistance...
+      <p class="text-center text-gray-600 max-w-4xl mx-auto mb-16 wow animate__animated animate__slideInDown" data-wow-duration="2s">
+        PHP Arabian Horse Super Dhew Tin is a premium-quality roofing sheet made with the perfect zinc coating for maximum durability and rust resistance. Its advanced production process ensures a strong, shiny surface that doesn’t fade or catch white marks easily. Built to last, it offers long-term protection and reliability for every home.
       </p>
 
-      <div class="relative w-full max-w-[900px] mx-auto hidden lg:block">
+      <div class="relative w-full max-w-[170px] md:max-w-[500px] lg:max-w-[900px] mx-auto">
 
         <svg viewBox="0 0 1200 500" class="w-full mx-auto">
 
@@ -332,50 +333,50 @@
 
       </svg>
 
-      <img id="mainTinImage" src="assets/img/tin.png" class="absolute left-1/2 bottom-0 w-[420px] -translate-x-1/2 select-none pointer-events-none">
+      <img id="mainTinImage" src="assets/img/tin.png" class="absolute left-1/2 bottom-0 w-[80px] sm:w-[80px] md:w-[200px] lg:w-[420px] -translate-x-1/2 select-none pointer-events-none">
 
 
           <!-- STEP 1 -->
           <div class="">
-              <div class="absolute left-[-20px] top-[300px] step-item">
-                <div class="step-label step-label-item bg-[#57C4BD] text-white text-[14px] font-bold font-objectsans leading-[26px] px-4 py-2">
-                  NOF TIN
+              <div class="absolute left-[-60px] top-[29px] md:left-[-35px] lg:left-[-20px] md:top-[148px] lg:top-[300px] step-item">
+                <div class="step-label step-label-item bg-[#57C4BD] text-white text-[12px] lg:text-[14px] font-bold font-objectsans leading-[26px] px-1 lg:px-4 py-1 lg:py-2">
+                  <h2>NOF TIN</h2>
                 </div>
               </div>
 
-              <div class="connector-line absolute left-[77px] top-[315px] h-[2px] w-[86px]
-              bg-[#E0DEDF] rotate-[60deg] origin-top-left"
-      data-step="0"></div>
+              <div class="connector-line absolute left-[2px] top-[40px] md:left-[28px] lg:left-[77px] md:top-[162px] lg:top-[315px] h-[2px] w-[45px] md:w-[67px] lg:w-[86px] bg-[#E0DEDF] rotate-[60deg] origin-top-left" data-step="0"></div>
 
-              <div class="absolute left-[95px] top-[370px] flex items-center gap-3">
-                <div class="w-7 h-7 rounded-full bg-[#57C4BD] text-white flex items-center justify-center text-xs font-bold shadow cursor-pointer step-btn step-circle" data-img="assets/img/tin.png">1</div>
+              <div class="absolute left-[10px] top-[70px] md:left-[46px] lg:left-[95px] md:top-[204px] lg:top-[370px] flex items-center gap-3">
+                <div class="w-4 h-4 md:w-6 md:h-6 lg:w-7 lg:h-7 rounded-full bg-[#57C4BD] text-white flex items-center justify-center text-xs font-bold shadow cursor-pointer step-btn step-circle" data-img="assets/img/tin.png">1</div>
               </div>
           </div>
           
           <!-- STEP 2 -->
-            <div class="px-0">
-                <div class="absolute left-[40px] top-[70px] flex items-center gap-3">
-                  <div class="step-label-2 step-label-item px-4 py-2 bg-[#E0DEDF] text-[#9EA4AD] text-[14px] font-bold font-objectsans leading-[26px] uppercase">color tin</div>
+            <div>
+                <div class="absolute left-[-70px] top-[-20px] md:left-[-14px] lg:left-[40px] md:top-[4px] lg:top-[70px] flex items-center gap-3">
+                  <div class="step-label-2 step-label-item px-1 lg:px-4 py-1 lg:py-2 bg-[#E0DEDF] text-[#9EA4AD] text-[12px] lg:text-[14px] font-bold font-objectsans leading-[26px] uppercase">
+                    <h2>color tin</h2>
+                  </div>
                 </div>
-                <div class="connector-line absolute left-[158px] top-[86px] h-[2px] w-[60px]
-              bg-[#E0DEDF] rotate-[60deg] origin-top-left"
-      data-step="1"></div>
-                <div class="absolute left-[175px] top-[122px] flex items-center gap-3">
-                  <div class="w-7 h-7 rounded-full bg-[#E0DEDF] text-[#999999] flex items-center justify-center text-xs font-bold shadow cursor-pointer step-btn step-circle" data-img="assets/img/tin-2.png">2</div>
+                <div class="connector-line absolute left-[9px] top-[-10px] md:left-[69px] lg:left-[158px] md:top-[21px] lg:top-[86px] h-[2px] w-[46px] md:w-[55px] lg:w-[46px]
+              bg-[#E0DEDF] rotate-[60deg] origin-top-left" data-step="1"></div>
+                <div class="absolute left-[26px] top-[20px] md:left-[92px] lg:left-[175px] md:top-[62px] lg:top-[122px] flex items-center gap-3">
+                  <div class="w-4 h-4 md:w-6 md:h-6 lg:w-7 lg:h-7 rounded-full bg-[#E0DEDF] text-[#999999] flex items-center justify-center text-xs font-bold shadow cursor-pointer step-btn step-circle" data-img="assets/img/tin-2.png">2</div>
                 </div>
             </div>
           
 
           <!-- STEP 3 -->
           <div>
-            <div class="absolute right-[5px] top-[70px] flex items-center gap-3">
-              <div class="step-label-3 step-label-item px-4 py-2 bg-[#E0DEDF] text-[#9EA4AD] text-[14px] font-bold font-objectsans leading-[26px] uppercase">aluminium tin</div>
+            <div class="absolute right-[-90px] top-[-20px] md:right-[-30px] lg:right-[5px] md:top-[4px] lg:top-[70px] flex items-center gap-3">
+              <div class="step-label-3 step-label-item px-1 lg:px-4 py-1 lg:py-2 bg-[#E0DEDF] text-[#9EA4AD] text-[12px] lg:text-[14px] font-bold font-objectsans leading-[26px] uppercase">
+                <h2>aluminium tin</h2>
+              </div>
             </div>
-            <div class="connector-line absolute right-[80px] top-[86px] h-[2px] w-[70px]
-              bg-[#E0DEDF] rotate-[125deg] origin-top-left"
-      data-step="2"></div>
-            <div class="absolute right-[177px] top-[122px] flex items-center gap-3">
-              <div class="w-7 h-7 rounded-full bg-[#E0DEDF] text-[#999999] flex items-center justify-center text-xs font-bold shadow cursor-pointer step-btn step-circle" data-img="assets/img/tin-3.png">3</div>
+            <div class="connector-line absolute right-[-36px] top-[-14px] md:right-[20px] lg:right-[80px] md:top-[22px] lg:top-[86px] h-[2px] w-[42px] md:w-[53px] lg:w-[70px]
+              bg-[#E0DEDF] rotate-[125deg] origin-top-left" data-step="2"></div>
+            <div class="absolute right-[26px] top-[20px] md:right-[92px] lg:right-[177px] md:top-[63px] lg:top-[122px] flex items-center gap-3">
+              <div class="w-4 h-4 md:w-6 md:h-6 lg:w-7 lg:h-7 rounded-full bg-[#E0DEDF] text-[#999999] flex items-center justify-center text-xs font-bold shadow cursor-pointer step-btn step-circle" data-img="assets/img/tin-3.png">3</div>
             </div>
           </div>
 
@@ -383,93 +384,23 @@
 
           <!-- STEP 4 -->
         <div>
-          <div class="absolute right-[-85px] top-[300px] flex items-center gap-3">
-            <div class="step-label-4 step-label-item px-4 py-2 bg-[#E0DEDF] text-[#9EA4AD] text-[14px] font-bold font-objectsans leading-[26px] uppercase">PROFILE SHEET</div>
+          <div class="absolute right-[-105px] top-[30px] md:right-[-80px] lg:right-[-85px] md:top-[142px] lg:top-[300px] flex items-center gap-3">
+            <div class="step-label-4 step-label-item px-1 lg:px-4 py-1 lg:py-2 bg-[#E0DEDF] text-[#9EA4AD] text-[12px] lg:text-[14px] font-bold font-objectsans leading-[26px] uppercase">
+              <h2>PROFILE SHEET</h2>
+            </div>
           </div>
-          <div class="connector-line absolute right-[-5px] bottom-[55px] h-[2px] w-[70px]
-              bg-[#E0DEDF] rotate-[125deg] origin-top-left"
-      data-step="3"></div>
-          <div class="absolute right-[95px] top-[370px] flex items-center gap-3">
-            <div class="w-7 h-7 rounded-full bg-[#E0DEDF] text-[#999999] flex items-center justify-center text-xs font-bold shadow cursor-pointer step-btn step-circle" data-img="assets/img/tin-4.png">4</div>
+          <div class="connector-line absolute right-[-33px] md:right-[-53px] lg:right-[-5px] bottom-[20px] md:bottom-[55px] lg:bottom-[55px] h-[2px] w-[35px] md:w-[75px] lg:w-[70px] bg-[#E0DEDF] rotate-[125deg] origin-top-left" data-step="3"></div>
+          <div class="absolute right-[10px] md:right-[46px] lg:right-[95px] md:top-[204px] lg:top-[370px] flex items-center gap-3">
+            <div class="w-4 h-4 md:w-6 md:h-6 lg:w-7 lg:h-7 rounded-full bg-[#E0DEDF] text-[#999999] flex items-center justify-center text-xs font-bold shadow cursor-pointer step-btn step-circle" data-img="assets/img/tin-4.png">4</div>
           </div>
 
 
         </div>
 
       </div>
+      
 
-      <div class="max-w-5xl mx-auto px-4 block lg:hidden wow animate__animated animate__slideInUp" data-wow-duration="2s">
-
-          <!-- ITEMS NAMES CAROUSEL -->
-          <div class="relative mb-6">
-
-            <!-- LINE INDICATOR -->
-            <div class="absolute top-2/3 left-2 right-2 h-[2px] bg-gray-300 -z-10"></div>
-
-            <!-- ITEMS SWIPER -->
-            <div class="swiper mySwiperItems">
-              <div class="swiper-wrapper">
-
-                <!-- STEP 1 -->
-                <div class="swiper-slide text-center cursor-pointer flex flex-col space-y-1">
-                  <div class="step-number text-[20px] text-[#9EA4AD] font-normal font-objectsans">1</div>
-                  <div class="step-content text-[#FFFFFF] text-[14px] font-bold font-objectsans items-center py-4 rounded-lg">
-                    NOF TIN
-                  </div>
-                </div>
-
-                <!-- STEP 2 -->
-                <div class="swiper-slide text-center cursor-pointer flex flex-col space-y-1">
-                  <div class="step-number text-[20px] text-[#9EA4AD] font-normal font-objectsans">2</div>
-                  <div class="step-content text-[#FFFFFF] text-[14px] font-bold font-objectsans items-center py-4 rounded-lg">
-                    COLOR TIN
-                  </div>
-                </div>
-
-                <!-- STEP 3 -->
-                <div class="swiper-slide text-center cursor-pointer flex flex-col space-y-1">
-                  <div class="step-number text-[20px] text-[#9EA4AD] font-normal font-objectsans">3</div>
-                  <div class="step-content text-[#FFFFFF] text-[14px] font-bold font-objectsans items-center py-4 rounded-lg">
-                    ALUMINIUM TIN
-                  </div>
-                </div>
-
-                <!-- STEP 4 -->
-                <div class="swiper-slide text-center cursor-pointer flex flex-col space-y-1">
-                  <div class="step-number text-[20px] text-[#9EA4AD] font-normal font-objectsans">4</div>
-                  <div class="step-content text-[#FFFFFF] text-[14px] font-bold font-objectsans items-center py-4 rounded-lg">
-                    PROFILE SHEET
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <!-- IMAGE CAROUSEL -->
-          <div class="swiper mySwiperImages">
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide flex justify-center">
-                <img src="assets/img/tin.png" alt="NOF TIN" class="w-64">
-              </div>
-
-              <div class="swiper-slide flex justify-center">
-                <img src="assets/img/tin.png" alt="COLOR TIN" class="w-64">
-              </div>
-
-              <div class="swiper-slide flex justify-center">
-                <img src="assets/img/tin.png" alt="ALUMINIUM TIN" class="w-64">
-              </div>
-
-              <div class="swiper-slide flex justify-center">
-                <img src="assets/img/tin.png" alt="PROFILE SHEET" class="w-64">
-              </div>
-
-            </div>
-          </div>
-
-        </div>
+      
       
     </div>
   </section>
@@ -611,7 +542,7 @@
               </div>
               <div class="lg:w-1/2">
                 <div class="w-full py-6">
-                    <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-[514px] h-auto">
+                    <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-full h-auto wow animate__animated animate__slideInRight" data-wow-duration="2s">
                 </div>
               </div>
             </div>
@@ -653,7 +584,7 @@
               </div>
               <div class="lg:w-1/2">
                 <div class="w-full py-6">
-                    <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-[514px] h-auto">
+                    <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-full h-auto wow animate__animated animate__slideInRight" data-wow-duration="2s">
                 </div>
               </div>
             </div>
@@ -695,7 +626,7 @@
               </div>
               <div class="lg:w-1/2">
                 <div class="w-full py-6">
-                    <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-[514px] h-auto">
+                    <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-full h-auto wow animate__animated animate__slideInRight" data-wow-duration="2s">
                 </div>
               </div>
             </div>
@@ -737,7 +668,7 @@
               </div>
               <div class="lg:w-1/2">
                 <div class="w-full py-6">
-                    <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-[514px] h-auto">
+                    <img src="assets/img/l-1 1.png" alt="PHP Arabian Horse Super Dhew Tin" class="w-full h-auto wow animate__animated animate__slideInRight" data-wow-duration="2s">
                 </div>
               </div>
             </div>
@@ -768,9 +699,7 @@
       <!-- VISION CONTENT -->
       <div class="flex items-center justify-center bg-gray-100 rounded-lg p-8 order-2 md:order-2 wow animate__animated animate__slideInDown" data-wow-duration="2s">
         <p class="text-center text-gray-700 leading-relaxed max-w-md">
-          To be the most trusted and preferred steel brand in Bangladesh and beyond, 
-          setting new benchmarks in quality, sustainability, and customer satisfaction 
-          through continuous innovation and excellence.
+          To be the most trusted and preferred steel brand in Bangladesh and beyond, setting new benchmarks in quality, sustainability, and customer satisfaction through continuous innovation and excellence.
         </p>
       </div>
 
@@ -793,17 +722,12 @@
       <!-- MISSION CONTENT -->
       <div class="flex items-center justify-center bg-gray-100 rounded-lg p-8 order-4 md:order-3 wow animate__animated animate__slideInLeft" data-wow-duration="2s">
         <p class="text-center text-gray-700 leading-relaxed max-w-md">
-          To deliver world-class, durable, and sustainable steel and tin products through 
-          innovation, advanced technology, and uncompromising quality, ensuring lasting 
-          value for customers and contributing to the nation’s industrial growth.
+          To deliver world-class, durable, and sustainable steel and tin products through innovation, advanced technology, and uncompromising quality, ensuring lasting value for customers and contributing to the nation’s industrial growth.
         </p>
       </div>
 
     </div>
   </section>
-
-
-
 
   <section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[4vw] py-6 md:py-10">
       <div class="max-w-4xl mx-auto text-center space-y-10 wow animate__animated animate__slideInLeft" data-wow-duration="2s">

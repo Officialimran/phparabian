@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHP Arabian Horse</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"/>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Object+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+
+  <!-- Load Tailwind AFTER config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Correct Tailwind Config for CDN -->
+  <script>
+    window.tailwind = {
+      config: {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins"],
+              objectsans: ['Object Sans', 'sans-serif'],
+              roboto: ['Roboto', 'sans-serif'],
+              montserrat: ['Montserrat', 'sans-serif'],
+            },
+            keyframes: {
+              'fade-in': {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            },
+            animation: {
+              'fade-in': 'fade-in 0.3s ease-out forwards'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+
+
+<link rel="stylesheet" href="assets/custom.css"/>
+
+  <style>
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active .outer-ring {
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active .inner-dot {
+      background: white;
+    }
+    .swiper-pagination-bullet {
+        background: transparent;
+        border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+        display: inline-block;
+        opacity: unset;
+    }
+
+    
+</style>
+
+</head>
+
+
+
+<body>
+
+<div class="w-full bg-[#ffffff] relative z-50">
+
+    <header class="px-4 md:px-12 2xl:px-[10vw] lg:px-[4vw] flex items-center justify-between py-2">
+
+        <a class="crossfade w-[57px] h-[50px] lg:w-[100px] lg:h-[80px] xl:w-[135px] xl:h-[115px]" href="index.html">
+            <img src="assets/img/logo.png" alt="GamesCreed Logo" class="w-full">
+            <img src="assets/img/25-logo.png" alt="GamesCreed Logo" class="w-full">
+        </a>
+
+        <nav class="hidden lg:flex md:space-x-2 lg:space-x-4 xl:space-x-6 text-[#00807B] font-objectsans text-[14px] md:text-[14px] xl:text-[16px] font-normal relative">
+
+            <a href="index.html" class="hover:text-[#00807B]">Home</a>
+            <a href="aboutus.html" class="hover:text-[#00807B]t">About Us</a>
+
+            <!-- Product Dropdown -->
+            <div class="relative group">
+                <a href="#"
+                  class="relative hover:text-[#00807B] flex items-center gap-1">
+                    Product
+                </a>
+
+                <!-- Dropdown -->
+                <div
+                    class="absolute top-full left-0 mt-3 w-[220px] bg-white shadow-lg rounded-lg
+                          opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                          transition-all duration-300 z-50">
+
+                    <ul class="py-2 text-[14px]">
+                        <li>
+                            <a href="product-details.html"
+                              class="block px-4 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                                PHP Arabian Horse Super NOF Dhew Tin
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product-details.html"
+                              class="block px-4 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                                PHP Arabian Horse Super Color Tin
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product-details.html"
+                              class="block px-4 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                                PHP Arabian Horse Super Alume Tin
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product-details.html"
+                              class="block px-4 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                                PHP Arabian Horse Super Profile Sheet
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <a href="why-choose-php.html" class="relative hover:text-[#00807B]">Why Choose PHP</a>
+            <a href="25-years-anniversery.html" class="relative hover:text-[#00807B]">25 Years Anniversery</a>
+
+            <a href="gallery.html" class="relative hover:text-[#00807B]">Gallery</a>
+
+            <a href="news-insights.html" class="relative hover:text-[#00807B]">News & Insights</a>
+            <a href="contact-us.html" class="relative hover:text-[#00807B]">Contact Us</a>
+        
+        </nav>
+
+        <div class="flex items-center space-x-3">
+
+        <!-- Language Toggle -->
+        <div id="langToggle" class="flex items-center bg-[#E2E2E2] rounded-[50px] p-1 w-[140px] lg:w-[100px] xl:w-[140px]">
+
+            <!-- Active: English -->
+            <button id="engBtn" class="flex-1 text-[#FFFFFF] font-roboto text-xs font-normal  rounded-[50px] py-2 lg:py-1 xl:py-2 bg-[#57C4BD] transition-all duration-300">
+                ENG
+            </button>
+
+            <!-- Inactive: Bangla -->
+            <button id="bnBtn" class="flex-1 text-black font-roboto text-xs font-normal  rounded-[50px] py-2 lg:py-1 xl:py-2 text-center">
+                বাংলা
+            </button>
+
+        </div>
+
+        <button id="menuBtn" class="lg:hidden z-20">
+            <svg class="w-8 h-8 text-[#00807B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        </div>
+    </header>
+
+        <div id="mobileMenu" class="fixed top-0 left-0 w-full h-full bg-[#ffffff] z-50 transform -translate-x-full transition-transform duration-300 lg:hidden flex flex-col">
+
+            <div class="flex items-center justify-between px-4 py-4 border-b border-[#00807B]">
+            <img src="assets/img/25-logo.png" class="h-10">
+
+            <button id="closeBtn">
+                <svg class="w-8 h-8 text-[#00807B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            </div>
+
+            <nav class="flex flex-col space-y-6 px-6 pt-8 text-[#00807B] font-encode text-[20px] font-medium">
+
+            <a href="index.html" class="hover:text-[#00807B]">Home</a>
+            <a href="aboutus.html" class="hover:text-[#00807B]">About Us</a>
+            
+            <!-- Dropdown Wrapper -->
+            <div class="mobile-dropdown">
+
+                <button
+                    class="dropdown-toggle w-full flex items-center justify-between text-[#00807B] text-[20px] font-medium">
+
+                    <span>Product</span>
+
+                    <svg class="dropdown-icon w-5 h-5 transition-transform duration-300"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 max-h-0">
+
+                    <div class="flex flex-col mt-4 space-y-4 pl-2 text-[18px] font-normal">
+                        <a href="product-details.html"
+                          class="block px-1 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                            PHP Arabian Horse Super NOF Dhew Tin
+                        </a>
+                        <a href="product-details.html"
+                          class="block px-1 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                            PHP Arabian Horse Super Color Tin
+                        </a>
+                        <a href="product-details.html"
+                          class="block px-1 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                            PHP Arabian Horse Super Alume Tin
+                        </a>
+                        <a href="product-details.html"
+                          class="block px-1 py-2 hover:bg-[#F1F9F8] hover:text-[#00807B]">
+                            PHP Arabian Horse Super Profile Sheet
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <a href="why-choose-php.html" class="hover:text-[#00807B]">Why Choose PHP</a>
+            <a href="25-years-anniversery.html" class="hover:text-[#00807B]">25 Years Anniversery</a>
+            <a href="gallery.html" class="hover:text-[#00807B]">Gallery</a>
+            <a href="news-insights.html" class="hover:text-[#00807B]">News & Insights</a>
+            <a href="contact-us.html" class="hover:text-[#00807B]">Contact Us</a>
+
+            </nav>
+        </div>
+
+</div>
+
+<section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px] z-10  -translate-y-[50px] md:-translate-y-[63px] lg:-translate-y-[66px]">
+
+  <!-- SHAPES & BACKGROUND -->
+
+  
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-[#57C5BC]"
+      style="clip-path: polygon(48% 10%, 104% 36%, 100% 39%, 0 100%, 0 33%);"></div>
+
+    <div class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('assets/img/home-hero.png');
+      clip-path: polygon(48% 10%, 97% 36%, 200% 100%, 0 100%, 0 36%);"></div>
+
+    <div class="absolute inset-0 bg-[#038C86]/90"
+      style="clip-path: polygon(48% 10%, 100% 37%, 100% 100%, 0 100%, 0 36%);"></div>
+
+    <div class="absolute inset-0 bg-black/20"
+      style="clip-path: polygon(48% 10%, 100% 37%, 100% 100%, 0 100%, 0 36%);"></div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 min-h-[520px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[664px] flex items-center">
+
+    <!-- LEFT CONTENT -->
+    <div class="relative w-full max-w-2xl mt-[100px] md:mt-[150px] lg:mt-[180px] xl:mt-[200px] wow animate__animated animate__slideInLeft" data-wow-duration="2s">
+
+      <h1 class="text-[#FFFFFF] text-[30px] sm:text-[50px] md:text-[60px] lg:text-[80px] xl:text-[96px] font-extrabold font-objectsans leading-[100%] lg:leading-[96px] tracking-normal mb-8">
+        25 Years Of Greatness
+      </h1>
+
+      <p class="max-w-xl pr-10 text-[#FFFFFF]  text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-[30px] font-normal font-objectsans mt-4">
+        PHP Arabian Horse Super is one of the most trusted CI sheet brands in Bangladesh, manufactured by PHP Family using advanced NOF technology.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+    <div class="w-full flex flex-col items-center justify-center text-left lg:text-center">
+        <div class="max-w-md mx-auto mb-[50px] lg:mb-[100px] wow animate__animated animate__slideInLeft" data-wow-duration="2s">
+            <img src="assets/img/25year-center-logo.png" class="object-fill w-full h-auto" alt="25 Years Anniversery">
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <h1 class="max-w-3xl text-[#00605C] text-[24px] md:text-[32px] lg:text-[48px] leading-9 lg:leading-[58px] font-objectsans font-normal uppercase mb-8 wow animate__animated animate__slideInLeft" data-wow-duration="2s">25 Years of Trust—Because You Chose Us</h1>
+          <p class="text-[#4D4D4F] text-[14px] lg:text-[16px] font-normal font-objectsans leading-[26px] mb-2 wow animate__animated animate__slideInLeft" data-wow-duration="2s">For 25 years, PHP Arabian Horse Super has been a part of Bangladesh’s homes, businesses, and industries. This journey was never ours alone; it was built with the trust of customers, the strength of our dealer network, and the dedication of our teams.</p>
+          <p class="text-[#4D4D4F] text-[14px] lg:text-[16px] font-normal font-objectsans leading-[26px] wow animate__animated animate__slideInLeft" data-wow-duration="2s">As we celebrate this milestone, we reaffirm our promise to deliver consistent quality, perfect weight, accurate size, optimal thickness, and reliable performance—providing roofing solutions that stand strong in Bangladesh’s climate. Thank you for making PHP Arabian Horse Super a name that generations <br>continue to rely on.</p>
+    
+        </div>
+      </div>
+</section>
+
+<section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+
+  <div class="relative wow animate__animated animate__slideInDown" data-wow-duration="2s">
+    <div class="relative timeline mb-16 hidden lg:block">
+        <div class="grid grid-cols-5 gap-6 text-center relative z-10">
+          <!-- ===== Item 1 ===== -->
+          <div class="flex flex-col items-center h-full">
+            <h3 class="text-[31px] font-semibold text-[#414042] leading-[100%] mb-3">1999</h3>
+            <span class="w-4 h-4 rounded-full bg-[#00605C] mb-5"></span>
+            <p class="text-[#414042] text-[12px] lg:text-[20px] font-poppins font-normal lg:font-medium leading-[28px] mb-6 max-w-[220px] min-h-[84px]">
+              The Beginning of Trust
+            </p>
+            <img src="assets/img/mile-item1.png" alt="" class="w-[157px] h-[130px] object-cover rounded-lg mt-auto">
+          </div>
+
+          <!-- ===== Item 2 ===== -->
+          <div class="flex flex-col items-center">
+            <h3 class="text-[31px] font-medium text-[#414042] leading-none mb-3">2006</h3>
+            <span class="w-4 h-4 rounded-full bg-[#00605C] mb-5"></span>
+            <p class="text-[#414042] text-[12px] lg:text-[20px] font-poppins font-normal lg:font-medium leading-[28px] mb-6 max-w-[220px] min-h-[84px]">
+              Growing Stronger with Two Modern Factories
+            </p>
+            <img src="assets/img/mile-item1.png" alt="" class="w-[157px] h-[130px] object-cover rounded-lg mt-auto">
+          </div>
+
+          <!-- ===== Item 3 ===== -->
+          <div class="flex flex-col items-center">
+            <h3 class="text-[31px] font-medium text-[#414042] leading-none mb-3">2013</h3>
+            <span class="w-4 h-4 rounded-full bg-[#00605C] mb-5"></span>
+            <p class="text-[#414042] text-[12px] lg:text-[20px] font-poppins font-normal lg:font-medium leading-[28px] mb-6 max-w-[220px] min-h-[84px]">
+              Advance NOF Technology
+            </p>
+            <img src="assets/img/mile-item1.png" alt="" class="w-[157px] h-[130px] object-cover rounded-lg mt-auto">
+          </div>
+
+          <!-- ===== Item 4 ===== -->
+          <div class="flex flex-col items-center">
+            <h3 class="text-[31px] font-medium text-[#414042] leading-none mb-3">2019</h3>
+            <span class="w-4 h-4 rounded-full bg-[#00605C] mb-5"></span>
+            <p class="text-[#414042] text-[12px] lg:text-[20px] font-poppins font-normal lg:font-medium leading-[28px] mb-6 max-w-[220px] min-h-[84px]">
+              Millions of Roofs Protected
+            </p>
+            <img src="assets/img/mile-item1.png" alt="" class="w-[157px] h-[130px] object-cover rounded-lg mt-auto">
+          </div>
+
+          <!-- ===== Item 5 ===== -->
+          <div class="flex flex-col items-center">
+            <h3 class="text-[31px] font-medium text-[#414042] leading-none mb-3">2026</h3>
+            <span class="w-4 h-4 rounded-full bg-[#00605C] mb-5"></span>
+            <p class="text-[#414042] text-[12px] lg:text-[20px] font-poppins font-normal lg:font-medium leading-[28px] mb-6 max-w-[220px] min-h-[84px]">
+              25+ Years of Trust & Beyond
+            </p>
+            <img src="assets/img/mile-item1.png" alt="" class="w-[157px] h-[130px] object-cover rounded-lg mt-auto">
+          </div>
+
+        </div>
+    </div>
+    <!-- ===== MOBILE SWIPER ===== -->
+    <div class="relative timeline mb-4 lg:hidden block">
+      <div class="swiper timelineSwiper">
+        <div class="swiper-wrapper">
+
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="flex flex-col items-center text-center">
+              <h3 class="text-[24px] lg:text-[31px] font-semibold font-poppins leading-[100%] text-[#414042] mb-2">1999</h3>
+              <span class="w-3 h-3 rounded-full bg-[#00605C] mb-4"></span>
+              <p class="text-[#414042] text-[16px] leading-[24px] mb-5 max-w-[220px] min-h-[72px]">
+                The Beginning of Trust
+              </p>
+              <img src="assets/img/mile-item1.png" class="w-[106px] h-[80px] object-cover rounded-lg">
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+           <div class="swiper-slide">
+            <div class="flex flex-col items-center text-center">
+              <h3 class="text-[24px] lg:text-[31px] font-semibold font-poppins leading-[100%] text-[#414042] mb-2">2006</h3>
+              <span class="w-3 h-3 rounded-full bg-[#00605C] mb-4"></span>
+              <p class="text-[#414042] text-[16px] leading-[24px] mb-5 max-w-[220px] min-h-[72px]">
+                Growing Stronger with Two Modern Factories
+              </p>
+              <img src="assets/img/mile-item1.png" class="w-[106px] h-[80px] object-cover rounded-lg">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="flex flex-col items-center text-center">
+              <h3 class="text-[24px] lg:text-[31px] font-semibold font-poppins leading-[100%] text-[#414042] mb-2">2013</h3>
+              <span class="w-3 h-3 rounded-full bg-[#00605C] mb-4"></span>
+              <p class="text-[#414042] text-[16px] leading-[24px] mb-5 max-w-[220px] min-h-[72px]">
+                Advance NOF Technology
+              </p>
+              <img src="assets/img/mile-item1.png" class="w-[106px] h-[80px] object-cover rounded-lg">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="flex flex-col items-center text-center">
+              <h3 class="text-[24px] lg:text-[31px] font-semibold font-poppins leading-[100%] text-[#414042] mb-2">2019</h3>
+              <span class="w-3 h-3 rounded-full bg-[#00605C] mb-4"></span>
+              <p class="text-[#414042] text-[16px] leading-[24px] mb-5 max-w-[220px] min-h-[72px]">
+                Millions of Roofs Protected
+              </p>
+              <img src="assets/img/mile-item1.png" class="w-[106px] h-[80px] object-cover rounded-lg">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="flex flex-col items-center text-center">
+              <h3 class="text-[24px] lg:text-[31px] font-semibold font-poppins leading-[100%] text-[#414042] mb-2">2026</h3>
+              <span class="w-3 h-3 rounded-full bg-[#00605C] mb-4"></span>
+              <p class="text-[#414042] text-[16px] leading-[24px] mb-5 max-w-[220px] min-h-[72px]">
+                25+ Years of Trust & Beyond
+              </p>
+              <img src="assets/img/mile-item1.png" class="w-[106px] h-[80px] object-cover rounded-lg">
+            </div>
+          </div>
+
+
+
+          <!-- other slides same -->
+        </div>
+
+        <!-- pagination -->
+        <div class="swiper-pagination mt-6"></div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+    <div class="w-full flex flex-col items-center justify-center text-left lg:text-center">
+        <h2 class="max-w-3xl text-[#00605C] text-[24px] md:text-[32px] lg:text-[48px] leading-9 lg:leading-[58px] font-objectsans font-normal uppercase mb-8">WHY PEOPLE TRUST ARABIAN HORSE SUPER</h2> 
+        <div class="relative flex items-center">
+
+            <!-- LEFT IMAGE -->
+            <div class="relative w-[40%] sm:w-[40%] lg:w-[45%] min-w-0 z-30">
+              <img src="assets/img/25/mileston.png" alt="" class="w-full h-auto"/>
+            </div>
+
+              <!-- RIGHT CONTENT -->
+              <div class="relative flex-1 ml-6 sm:ml-12 lg:ml-36 space-y-1 sm:space-y-6 md:space-y-10 lg:space-y-16 z-10">
+
+                <!-- ITEM -->
+                <div class="relative flex items-center">
+
+                  <!-- CONNECTOR LINE -->
+                  <span class="absolute 
+                    -left-[100px] sm:-left-[200px] lg:-left-[270px]
+                    top-1/2 -translate-y-1/2
+                    w-[100px] sm:w-[200px] lg:w-[270px]
+                    h-px bg-[#000000]">
+                  </span>
+
+                  <!-- DOT -->
+                  <span class="absolute 
+                    -left-[8px] sm:-left-[10px] lg:-left-[12px]
+                    w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5
+                    rounded-full border-2 border-[#0A6C63] bg-white">
+                  </span>
+
+                  <!-- TEXT -->
+                  <p class="pl-4 sm:pl-5 lg:pl-6 text-[#000000] text-[12px] sm:text-[14px] lg:text-[20px] leading-[10px] sm:leading-[30px] lg:leading-[32px] wow animate__animated animate__slideInRight" data-wow-duration="2s">
+                    Superior Rust Protection
+                  </p>
+                </div>
+
+                <!-- ITEM 2 -->
+                <div class="relative flex items-center">
+                  <span class="absolute 
+                    -left-[100px] sm:-left-[200px] lg:-left-[270px]
+                    top-1/2 -translate-y-1/2
+                    w-[100px] sm:w-[200px] lg:w-[270px]
+                    h-px bg-[#000000]">
+                  </span>
+
+                  <span class="absolute 
+                    -left-[8px] sm:-left-[10px] lg:-left-[12px]
+                    w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5
+                    rounded-full border-2 border-[#0A6C63] bg-white">
+                  </span>
+
+                 <p class="pl-4 sm:pl-5 lg:pl-6 text-[#000000] text-[12px] sm:text-[14px] lg:text-[20px] leading-[10px] sm:leading-[30px] lg:leading-[32px] wow animate__animated animate__slideInRight" data-wow-duration="2s">
+                    Perfect Weight, Size, and Thickness
+                  </p>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div class="relative flex items-center">
+                  <span class="absolute 
+                    -left-[100px] sm:-left-[200px] lg:-left-[270px]
+                    top-1/2 -translate-y-1/2
+                    w-[100px] sm:w-[200px] lg:w-[270px]
+                    h-px bg-[#000000]">
+                  </span>
+
+                  <span class="absolute 
+                    -left-[8px] sm:-left-[10px] lg:-left-[12px]
+                    w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5
+                    rounded-full border-2 border-[#0A6C63] bg-white">
+                  </span>
+
+                  <p class="pl-4 sm:pl-5 lg:pl-6 text-[#000000] text-[12px] sm:text-[14px] lg:text-[20px] leading-[10px] sm:leading-[30px] lg:leading-[32px] wow animate__animated animate__slideInRight" data-wow-duration="2s">
+                    Advanced Manufacturing Standards
+                  </p>
+                </div>
+
+                <!-- ITEM 4 -->
+                <div class="relative flex items-center">
+                  <span class="absolute 
+                    -left-[100px] sm:-left-[200px] lg:-left-[270px]
+                    top-1/2 -translate-y-1/2
+                    w-[100px] sm:w-[200px] lg:w-[270px]
+                    h-px bg-[#000000]">
+                  </span>
+
+                  <span class="absolute 
+                    -left-[8px] sm:-left-[10px] lg:-left-[12px]
+                    w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5
+                    rounded-full border-2 border-[#0A6C63] bg-white">
+                  </span>
+
+                  <p class="pl-4 sm:pl-5 lg:pl-6 text-[#000000] text-[12px] sm:text-[14px] lg:text-[20px] leading-[10px] sm:leading-[30px] lg:leading-[32px] wow animate__animated animate__slideInRight" data-wow-duration="2s">
+                    Built for all climates.
+                  </p>
+                </div>
+
+              </div>
+          </div>
+    </div>
+</section>
+
+<section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+    <div class="w-full flex flex-col justify-center text-left lg:text-center">
+        <h2 class="text-[#00605C] text-[24px] md:text-[32px] lg:text-[48px] leading-9 lg:leading-[58px] font-objectsans font-normal uppercase mb-8">25 Years Celebration TVC</h2> 
+        <div class="tab-wrapper">
+            <!-- Tabs -->
+            <div class="flex justify-center mb-10">
+              <div class="flex bg-[#2B2B2B] rounded-full p-1">
+                <button data-tab="latest" class="tab-btn px-6 py-2 text-sm lg:text-[16px] font-normal font-poppins rounded-full bg-[#57C4BD] !text-white leading-4">
+                  Latest
+                </button>
+
+                <button data-tab="previous" class="tab-btn px-6 py-2 text-sm lg:text-[16px] font-normal font-poppins rounded-full !text-white leading-4">
+                  Previous
+                </button>
+              </div>
+            </div>
+
+            <!-- Contents -->
+            <div data-content="latest" class="tab-content">
+                <div class="relative h-[40vh] md:h-[70vh] lg:h-[80vh] rounded-lg overflow-hidden flex items-center justify-center">
+          
+                  <!-- Background Image -->
+                  <img src="assets/img/25/video-bg.png" class="absolute inset-0 w-full h-full object-cover opacity-90"/>
+
+                  <!-- Overlay -->
+                  <div class="absolute inset-0 bg-black/40"></div>
+
+                  <!-- Play Button -->
+                    <button class="video-play-btn relative z-10 w-20 h-20 md:w-24 md:h-24 bg-[#57C4BD] rounded-[20px] flex items-center justify-center hover:scale-105 transition"
+                      data-video="https://www.youtube.com/embed/dXJinJ7_hFs?si=eACpqoaWCoTnQqR6"
+                      data-autoplay="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"
+                        class="w-10 h-10 md:w-12 md:h-12">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </button>
+
+                </div>
+                
+            </div>
+
+            <div data-content="previous" class="tab-content hidden">
+                <div class="relative h-[40vh] md:h-[70vh] lg:h-[80vh] rounded-lg overflow-hidden flex items-center justify-center">
+          
+                  <!-- Background Image -->
+                  <img src="assets/img/25/prev.png" class="absolute inset-0 w-full h-full object-cover opacity-90"/>
+
+                  <!-- Overlay -->
+                  <div class="absolute inset-0 bg-black/40"></div>
+
+                  <!-- Play Button -->
+                    <button class="video-play-btn relative z-10 w-20 h-20 md:w-24 md:h-24 bg-[#57C4BD] rounded-[20px] flex items-center justify-center hover:scale-105 transition"
+                      data-video="https://www.youtube.com/embed/DVFS0AUf2ZI?si=EOnim0GgfAhncz-_"
+                      data-autoplay="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"
+                        class="w-10 h-10 md:w-12 md:h-12">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </button>
+
+                </div>
+              
+            </div>
+
+
+            <!-- Video Modal -->
+            <div id="videoModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden">
+              <div class="relative w-full max-w-5xl mx-4 md:mx-auto aspect-video">
+                
+                <!-- Close Icon Button -->
+                <button id="closeModal" 
+                        class="absolute top-4 right-4 z-50 text-white text-3xl rounded-full bg-black/50 hover:bg-black/70 p-2 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+
+                <!-- Video iframe -->
+                <iframe id="videoFrame" 
+                        class="absolute top-0 left-0 w-full h-full rounded-lg" 
+                        src="" 
+                        title="YouTube video" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="px-0 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+    <div class="flex flex-col lg:flex-row gap-0 lg:gap-6 relative">
+        <div class="w-full lg:w-2/5">
+            <div class="flex flex-col block lg:hidden items-center justify-center pb-14">
+              <p class="text-[#0E141F] text-[18px] lg:text-[24px] font-objectsans font-medium leading-[100%] mb-4">Testimonials</p>
+              <h2 class="text-[#00605C] text-[24px] lg:text-[42px] font-objectsans font-normal leading-8 lg:leading-[42px] mb-6">Stories from Bangladesh</h2>
+            </div>
+            <div class="w-full bg-[#23242A] px-20 lg:px-0 lg:pl-6 lg:pr-12 py-6 lg:py-8">
+                <img src="assets/img/testimonial/testimonial.jpg" class="object-cover w-full h-auto lg:h-[555px] rounded-lg mt-[-70px] lg:mt-0">
+            </div>
+        </div>
+        <div class="w-full lg:w-3/5 relative">
+            <div class="hidden lg:block">
+              <p class="text-[#0E141F] text-[18px] lg:text-[24px] font-objectsans font-medium leading-[100%] mb-6">Testimonials</p>
+              <h2 class="text-[#00605C] text-[24px] lg:text-[42px] font-objectsans font-normal leading-8 lg:leading-[42px] mb-10">Stories from Bangladesh</h2>
+            </div>
+            <div class="bg-[#00605C] max-w-[107%] h-auto px-4 py-12 lg:p-12 rounded-bl-lg rounded-br-lg lg:rounded-lg lg:absolute lg:left-[-7%] lg:top-[140px]">
+                <img src="assets/img/testimonial/quotation-mark 3.svg" class="mb-6">
+
+                  <div class="swiper testimonialSwiper">
+                    <div class="swiper-wrapper mb-12 lg:mb-0">
+
+                      <!-- Slide 1 -->
+                      <div class="swiper-slide">
+                        <p class="mb-6 text-[#FFFFFF] text-center lg:text-left text-[12px] lg:text-[16px] xl:text-[20px] font-medium leading-6 lg:leading-[34px]">
+                          "Working with PHP has been an absolute pleasure. From the initial consultation to the final delivery, their team demonstrated unparalleled professionalism and expertise. They listened attentively to our needs and provided innovative solutions that exceeded our expectations. 
+                        </p>
+
+                        <div class="space-y-2 text-center lg:text-left">
+                          <p class="text-[#FFFFFF] text-[18px] lg:text-[24px] font-medium">Contractor</p>
+                          <p class="text-[#FFFFFF] text-[14px] lg:text-[16px]">Mistri</p>
+                        </div>
+                      </div>
+
+                      <!-- Slide 2 -->
+                      <div class="swiper-slide">
+                        <p class="mb-6 text-[#FFFFFF] text-center lg:text-left text-[12px] lg:text-[16px] xl:text-[20px] font-medium leading-6 lg:leading-[34px]">
+                          "Working with PHP has been an absolute pleasure. From the initial consultation to the final delivery, their team demonstrated unparalleled professionalism and expertise. They listened attentively to our needs and provided innovative solutions that exceeded our expectations. 
+                        </p>
+
+                        <div class="space-y-2 text-center lg:text-left">
+                          <p class="text-[#FFFFFF] text-[18px] lg:text-[24px] font-medium">Contractor</p>
+                          <p class="text-[#FFFFFF] text-[14px] lg:text-[16px]">Mistri</p>
+                        </div>
+                      </div>
+                      <!-- Slide 3 -->
+                      <div class="swiper-slide">
+                        <p class="mb-6 text-[#FFFFFF] text-center lg:text-left text-[12px] lg:text-[16px] xl:text-[20px] font-medium leading-6 lg:leading-[34px]">
+                          "Working with PHP has been an absolute pleasure. From the initial consultation to the final delivery, their team demonstrated unparalleled professionalism and expertise. They listened attentively to our needs and provided innovative solutions that exceeded our expectations. 
+                        </p>
+
+                        <div class="space-y-2 text-center lg:text-left">
+                          <p class="text-[#FFFFFF] text-[18px] lg:text-[24px] font-medium">Contractor</p>
+                          <p class="text-[#FFFFFF] text-[14px] lg:text-[16px]">Mistri</p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="swiper-pagination flex items-center justify-center mt-6"></div>
+                  </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="bg-[#00605C]">
+    <div class="px-4 md:px-12 2xl:px-[12vw] lg:px-[6vw] py-[150px]">
+        <!-- Mobile layout -->
+          <div class="flex flex-col items-center block lg:hidden">
+            <div class="grid grid-cols-1 gap-8 w-full text-center">
+
+              <div class="flex flex-col items-center">
+                <a href="index.html" class="mb-6">
+                  <img src="assets/img/footer-logo.png">
+                </a>
+                <div class="mb-6">
+                  <p class="mb-2 text-[#0EDDC9] text-[20px] md:text-[22px] lg:text-[24px] font-poppins font-medium">
+                    Address: PHP Centre
+                  </p>
+                  <p class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium leading-[26px] tracking-normal">
+                    40/1, Zakir Hossain Road, Khulshi, Chattogram-4225, Bangladesh
+                  </p>
+                </div>
+                <div class="flex flex-col space-y-2 mb-6">
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">info@phpfamily.com</span>
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">+880 2333352316-21</span>
+                </div>
+                <div class="flex justify-center gap-4 mb-6">
+                  <a href="#"><img src="assets/img/website.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/linkedin.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/facebook.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/tiktalk.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/youtube.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/pint.svg" class="w-[32px] h-[32px] md:w-[46px] md:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+
+                <div class="flex flex-col space-y-2">
+                  <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">History</a>
+                  <a href="product-details.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Our Product</a>
+                  <a href="contact-us.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Contact Us</a>
+                </div>
+              </div>
+
+              </div>
+              
+
+            </div>
+          </div>
+           <!-- desktop layout -->
+          <div class="flex flex-col items-center md:items-start hidden lg:block">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full text-center md:text-left items-start ">
+
+              <!-- desktop layout -->
+              <div class="flex flex-col items-center md:items-start hidden md:block">
+                
+                <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[16px] md:text-[24px] lg:text-[36px] leading-[100%]">
+                  PHPCenter
+                </h2>
+
+                <div class="max-w-[264px]">
+                  <p class="mb-2 text-[#0EDDC9] text-[20px] md:text-[22px] lg:text-[24px] font-poppins font-medium">
+                    Address:
+                  </p>
+                  <p class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">
+                    40/1, Zakir Hossain Road, Khulshi, Chattogram-4225 Bangladesh
+                  </p>
+                </div>
+              </div>
+
+              <!-- About -->
+              <div class="flex flex-col items-center md:items-start">
+                <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[16px] md:text-[24px] lg:text-[36px] leading-[100%]">
+                  About
+                </h2>
+
+                <div class="flex flex-col space-y-2">
+                  <a href="#" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">History</a>
+                  <a href="product-details.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Our Product</a>
+                  <a href="contact-us.html" class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">Contact Us</a>
+                </div>
+              </div>
+
+              <!-- Get In Touch -->
+              <div class="flex flex-col items-center md:items-start">
+                <h2 class="mb-4 text-[#0EDDC9] font-poppins font-medium text-[16px] md:text-[24px] lg:text-[36px] leading-[100%]">
+                  Get In Touch
+                </h2>
+
+                <div class="flex flex-col space-y-2 mb-6">
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">info@phpfamily.com</span>
+                  <span class="text-[#0EDDC9] text-[16px] md:text-[18px] lg:text-[20px] font-poppins font-medium">+880 2333352316-21</span>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex justify-center lg:justify-start lg:gap-1 xl:gap-2">
+                  <a href="#"><img src="assets/img/website.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/linkedin.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/facebook.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/tiktalk.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/youtube.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                  <a href="#"><img src="assets/img/pint.svg" class="lg:w-[40px] lg:h-[40px] xl:w-[46px] xl:h-[46px] bg-[#ffffff] p-2 rounded-full"></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        
+    </div>
+
+  
+    <div class="w-full">
+      <svg viewBox="0 0 1440 112" xmlns="http://www.w3.org/2000/svg">
+          <!-- Line 1 -->
+          <path
+              fill="none"
+              stroke="#0EDDC9"
+              stroke-width="2"
+              d="M0 40
+                  C20 20, 40 20, 60 40
+                  C80 60, 100 60, 120 40
+                  C140 20, 160 20, 180 40
+                  C200 60, 220 60, 240 40
+                  C260 20, 280 20, 300 40
+                  C320 60, 340 60, 360 40
+                  C380 20, 400 20, 420 40
+                  C440 60, 460 60, 480 40
+                  C500 20, 520 20, 540 40
+                  C560 60, 580 60, 600 40
+                  C620 20, 640 20, 660 40
+                  C680 60, 700 60, 720 40
+                  C740 20, 760 20, 780 40
+                  C800 60, 820 60, 840 40
+                  C860 20, 880 20, 900 40
+                  C920 60, 940 60, 960 40
+                  C980 20, 1000 20, 1020 40
+                  C1040 60, 1060 60, 1080 40
+                  C1100 20, 1120 20, 1140 40
+                  C1160 60, 1180 60, 1200 40
+                  C1220 20, 1240 20, 1260 40
+                  C1280 60, 1300 60, 1320 40
+                  C1340 20, 1360 20, 1380 40
+                  C1400 60, 1420 60, 1440 40"
+          />
+
+          <!-- Line 2 -->
+          <path
+              fill="none"
+              stroke="#0EDDC9"
+              stroke-width="2"
+              d="M0 70
+                  C20 50, 40 50, 60 70
+                  C80 90, 100 90, 120 70
+                  C140 50, 160 50, 180 70
+                  C200 90, 220 90, 240 70
+                  C260 50, 280 50, 300 70
+                  C320 90, 340 90, 360 70
+                  C380 50, 400 50, 420 70
+                  C440 90, 460 90, 480 70
+                  C500 50, 520 50, 540 70
+                  C560 90, 580 90, 600 70
+                  C620 50, 640 50, 660 70
+                  C680 90, 700 90, 720 70
+                  C740 50, 760 50, 780 70
+                  C800 90, 820 90, 840 70
+                  C860 50, 880 50, 900 70
+                  C920 90, 940 90, 960 70
+                  C980 50, 1000 50, 1020 70
+                  C1040 90, 1060 90, 1080 70
+                  C1100 50, 1120 50, 1140 70
+                  C1160 90, 1180 90, 1200 70
+                  C1220 50, 1240 50, 1260 70
+                  C1280 90, 1300 90, 1320 70
+                  C1340 50, 1360 50, 1380 70
+                  C1400 90, 1420 90, 1440 70"
+          />
+
+          <!-- Line 3 -->
+          <path
+              fill="none"
+              stroke="#0EDDC9"
+              stroke-width="2"
+              d="M0 100
+                  C20 80, 40 80, 60 100
+                  C80 120, 100 120, 120 100
+                  C140 80, 160 80, 180 100
+                  C200 120, 220 120, 240 100
+                  C260 80, 280 80, 300 100
+                  C320 120, 340 120, 360 100
+                  C380 80, 400 80, 420 100
+                  C440 120, 460 120, 480 100
+                  C500 80, 520 80, 540 100
+                  C560 120, 580 120, 600 100
+                  C620 80, 640 80, 660 100
+                  C680 120, 700 120, 720 100
+                  C740 80, 760 80, 780 100
+                  C800 120, 820 120, 840 100
+                  C860 80, 880 80, 900 100
+                  C920 120, 940 120, 960 100
+                  C980 80, 1000 80, 1020 100
+                  C1040 120, 1060 120, 1080 100
+                  C1100 80, 1120 80, 1140 100
+                  C1160 120, 1180 120, 1200 100
+                  C1220 80, 1240 80, 1260 100
+                  C1280 120, 1300 120, 1320 100
+                  C1340 80, 1360 80, 1380 100
+                  C1400 120, 1420 120, 1440 100"
+          />
+      </svg>
+    </div>
+
+
+
+
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+  new WOW({
+    boxClass: 'wow',      // default
+    animateClass: 'animate__animated', // must include Animate.css prefix
+    offset: 0,            // start animation when element is in view
+    mobile: true,         // animate on mobile
+    live: true
+  }).init();
+</script>
+
+
+  <!-- JavaScript -->
+<script>
+  // ===== Mobile Menu Toggle =====
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (menuBtn && closeBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('-translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('-translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
+    });
+  }
+
+  // ===== REUSABLE DROPDOWN LOGIC =====
+  document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    const icon = dropdown.querySelector('.dropdown-icon');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('max-h-0');
+      menu.classList.toggle('max-h-[500px]');
+      icon.classList.toggle('rotate-180');
+    });
+  });
+</script>
+
+ <script>
+  const toggle = document.getElementById("langToggle");
+  const eng = document.getElementById("engBtn");
+  const bn  = document.getElementById("bnBtn");
+
+  toggle.addEventListener("click", () => {
+    eng.classList.toggle("bg-[#57C4BD]");
+    eng.classList.toggle("text-black");
+
+    bn.classList.toggle("bg-[#57C4BD]");
+    bn.classList.toggle("text-white");
+    bn.classList.toggle("text-black");
+    bn.classList.toggle("rounded-full");
+  });
+</script>
+
+<script>
+  document.querySelectorAll('.tab-wrapper').forEach(wrapper => {
+    const buttons = wrapper.querySelectorAll('.tab-btn');
+    const contents = wrapper.querySelectorAll('.tab-content');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+
+        // Reset buttons
+        buttons.forEach(b => {
+          b.classList.remove('bg-[#57C4BD]', 'text-white');
+        });
+
+        // Hide contents
+        contents.forEach(c => c.classList.add('hidden'));
+
+        // Activate current
+        btn.classList.add('bg-[#57C4BD]', 'text-white');
+        wrapper.querySelector(`[data-content="${tab}"]`).classList.remove('hidden');
+      });
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const videoModal = document.getElementById("videoModal");
+    const videoFrame = document.getElementById("videoFrame");
+    const closeModal = document.getElementById("closeModal");
+
+    // OPEN VIDEO (event delegation)
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest(".video-play-btn");
+      if (!btn) return;
+
+      let videoURL = btn.dataset.video || "";
+      if (!videoURL) return;
+
+      if (btn.dataset.autoplay === "true") {
+        videoURL += videoURL.includes("?") ? "&autoplay=1" : "?autoplay=1";
+      }
+
+      videoFrame.src = videoURL;
+      videoModal.classList.remove("hidden");
+    });
+
+    // CLOSE FUNCTION
+    const closeVideo = () => {
+      videoFrame.src = "";
+      videoModal.classList.add("hidden");
+    };
+
+    // Close button
+    closeModal.addEventListener("click", closeVideo);
+
+    // Click outside iframe
+    videoModal.addEventListener("click", (e) => {
+      if (e.target === videoModal) closeVideo();
+    });
+
+    // ESC key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !videoModal.classList.contains("hidden")) {
+        closeVideo();
+      }
+    });
+  });
+</script>
+
+
+<script>
+  new Swiper(".testimonialSwiper", {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    speed: 900,
+    autoplay: {
+      delay: 3000,              // 5 seconds
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `
+          <div class="${className} relative flex items-center justify-center w-[30px] h-[30px]">
+            <span class="outer-ring absolute w-full h-full rounded-full border-4 border-white opacity-0"></span>
+            <span class="inner-dot w-[14px] h-[14px] bg-white/80 rounded-full"></span>
+          </div>
+        `;
+      },
+    },
+    effect: "slide",
+  });
+</script>
+
+<script>
+  const timelineSwiper = new Swiper(".timelineSwiper", {
+    slidesPerView: 2.8,   // number of slides visible on mobile
+    spaceBetween: 16,      // spacing between slides
+    loop: true,  
+    grabCursor: true,          // enable infinite loop
+    autoplay: {
+      delay: 2500,         // 2.5 seconds per slide
+      disableOnInteraction: false, // keep autoplay even after user interacts
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,     // allow click on dots
+    },
+  });
+</script>
+
+
+
+
+</body>
+</html>
+
+
+</body>
+</html>

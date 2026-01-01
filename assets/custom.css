@@ -100,4 +100,89 @@
 
 
 
-/*footer bottom animation*/
+/*logo fade animation*/
+.crossfade {
+      position: relative;
+    }
+    .crossfade img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      animation: crossfade 4s infinite;
+    }
+    .crossfade img:nth-child(1) {
+      animation-delay: 0s;
+    }
+    .crossfade img:nth-child(2) {
+      animation-delay: 2s; /* half of total duration for smooth crossfade */
+    }
+
+    @keyframes crossfade {
+      0% { opacity: 0; }
+      25% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+
+
+/* Desktop & default (≥1024px) */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 9%;
+  right: 9%;
+  height: 4px;
+  background: #414042;
+  z-index: 0;
+}
+
+/* Mobile / Tablet (<1024px) */
+@media (max-width: 1023px) {
+  .timeline::before {
+    left: 15.5%;
+    right: -1%;
+    top: 37px;
+    
+  }
+}
+
+/* Timeline dots */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  background-color: #4D4D4D;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+/* Active dot */
+.timeline-item.active::after {
+  top: 45px;
+  width: 21px;
+  height: 21px;
+  background-color: #8DC63F;
+}
+
+/* Fade animation */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-slide.show {
+  opacity: 1;
+  transform: translateY(0);
+}
