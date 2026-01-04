@@ -517,11 +517,12 @@ Not only are they recyclable, but their long lifespan also means fewer replaceme
 
   <!-- JavaScript -->
   <script>
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const closeBtn = document.getElementById('closeBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
+  // ===== Mobile Menu Toggle =====
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
 
+  if (menuBtn && closeBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.remove('-translate-x-full');
       mobileMenu.classList.add('translate-x-0');
@@ -531,11 +532,21 @@ Not only are they recyclable, but their long lifespan also means fewer replaceme
       mobileMenu.classList.add('-translate-x-full');
       mobileMenu.classList.remove('translate-x-0');
     });
+  }
 
+  // ===== REUSABLE DROPDOWN LOGIC =====
+  document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    const icon = dropdown.querySelector('.dropdown-icon');
 
-
-
-  </script>
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('max-h-0');
+      menu.classList.toggle('max-h-[500px]');
+      icon.classList.toggle('rotate-180');
+    });
+  });
+</script>
 
 
  <script>
