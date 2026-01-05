@@ -253,7 +253,7 @@
 </section>
 
 <!-- ================= PHOTO GALLERY ================= -->
-<section class="px-6 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+<section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
 
   <!-- Heading -->
   <h2 class="text-[#00605C] text-[24px] lg:text-[48px] font-normal font-objectsans leading-[36px] lg:leading-[58px] uppercase mb-6 lg:tracking-normal tracking-[0.02em]">
@@ -345,7 +345,7 @@
 </div>
 
 
-<section class="px-6 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+<section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
 
   <!-- Heading -->
   <h2 class="text-[#00605C] text-[20px] lg:text-[32px] font-normal font-objectsans leading-[36px] lg:leading-[58px] uppercase mb-6 lg:tracking-normal tracking-[0.02em]">
@@ -394,16 +394,18 @@
 
 
 
-<section class="px-6 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
+<section class="px-4 md:px-12 2xl:px-[10vw] lg:px-[6vw] w-full relative mb-[50px] sm:mb-[60px] lg:mb-[100px]">
 
   <h2 class="text-[#00605C] text-[20px] lg:text-[32px] font-normal font-objectsans leading-[36px] lg:leading-[58px] uppercase mb-6 lg:tracking-normal tracking-[0.02em]">
     Video Gallery
   </h2>
 
-  <div id="videoGallery" class="grid grid-cols-1 lg:grid-cols-3 gap-4 bg-white items-center justify-center wow animate__animated animate__slideInDown" data-wow-duration="2s">
-    <template id="videoTemplate">
+  <div id="videoGallery" class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+    <!-- ITEM -->
+    <div class="video-item hidden" data-video="https://www.youtube.com/embed/DVFS0AUf2ZI">
       <div class="relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
-        <img src="" alt="Video Title" class="w-full h-[276px] lg:h-[458px] object-cover">
+        <img src="assets/img/gallery/video-thumb.png" alt="Video Title" class="w-full h-[276px] lg:h-[458px] object-cover">
         <div class="absolute inset-0 flex items-center justify-center">
           <div class="bg-[#00605C] bg-opacity-90 rounded-[20px] py-4 px-8">
             <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -411,13 +413,124 @@
             </svg>
           </div>
         </div>
-        <div class="absolute bottom-0 left-0 w-full bg-[#00605C] p-4 text-white">
-          <h3 class="font-semibold text-lg">Video Title</h3>
-          <p class="text-sm">26th, September, 2025</p>
+
+        <div class="absolute bottom-0 w-full bg-[#00605C] p-4 text-white">
+          <h3 class="text-[#FFFFFF] text-[20px] lg:text-[24px] leading-[100%] font-medium font-objectsans">PHP Weekly Summit</h3>
+          <p class="text-[#FFFFFF] text-[14px] lg:text-[16px] leading-[24px] lg:leading-[28px] font-normal font-objectsans">26th, September, 2025</p>
         </div>
-        <a href="" class="absolute inset-0 video-link"></a>
       </div>
-    </template>
+    </div>
+
+    <!-- ITEM -->
+    <div class="video-item hidden" data-video="https://www.youtube.com/embed/0kiZDcojgHo">
+      <div class="relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
+        <img src="assets/img/gallery/video-thumb.png" alt="Video Title" class="w-full h-[276px] lg:h-[458px] object-cover">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="bg-[#00605C] bg-opacity-90 rounded-[20px] py-4 px-8">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="absolute bottom-0 w-full bg-[#00605C] p-4 text-white">
+          <h3 class="text-[#FFFFFF] text-[20px] lg:text-[24px] leading-[100%] font-medium font-objectsans">PHP Weekly Summit</h3>
+          <p class="text-[#FFFFFF] text-[14px] lg:text-[16px] leading-[24px] lg:leading-[28px] font-normal font-objectsans">26th, September, 2025</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM -->
+    <div class="video-item hidden" data-video="https://www.youtube.com/embed/DVFS0AUf2ZI">
+      <div class="relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
+        <img src="assets/img/gallery/video-thumb.png" alt="Video Title" class="w-full h-[276px] lg:h-[458px] object-cover">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="bg-[#00605C] bg-opacity-90 rounded-[20px] py-4 px-8">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="absolute bottom-0 w-full bg-[#00605C] p-4 text-white">
+          <h3 class="text-[#FFFFFF] text-[20px] lg:text-[24px] leading-[100%] font-medium font-objectsans">PHP Weekly Summit</h3>
+          <p class="text-[#FFFFFF] text-[14px] lg:text-[16px] leading-[24px] lg:leading-[28px] font-normal font-objectsans">26th, September, 2025</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM -->
+    <div class="video-item hidden" data-video="https://www.youtube.com/embed/d2j8tDMNtu0">
+      <div class="relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
+        <img src="assets/img/gallery/video-thumb.png" alt="Video Title" class="w-full h-[276px] lg:h-[458px] object-cover">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="bg-[#00605C] bg-opacity-90 rounded-[20px] py-4 px-8">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="absolute bottom-0 w-full bg-[#00605C] p-4 text-white">
+          <h3 class="text-[#FFFFFF] text-[20px] lg:text-[24px] leading-[100%] font-medium font-objectsans">PHP Weekly Summit</h3>
+          <p class="text-[#FFFFFF] text-[14px] lg:text-[16px] leading-[24px] lg:leading-[28px] font-normal font-objectsans">26th, September, 2025</p>
+        </div>
+      </div>
+    </div>
+    <!-- ITEM -->
+    <div class="video-item hidden" data-video="https://www.youtube.com/embed/d2j8tDMNtu0">
+      <div class="relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
+        <img src="assets/img/gallery/video-thumb.png" alt="Video Title" class="w-full h-[276px] lg:h-[458px] object-cover">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="bg-[#00605C] bg-opacity-90 rounded-[20px] py-4 px-8">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="absolute bottom-0 w-full bg-[#00605C] p-4 text-white">
+          <h3 class="text-[#FFFFFF] text-[20px] lg:text-[24px] leading-[100%] font-medium font-objectsans">PHP Weekly Summit</h3>
+          <p class="text-[#FFFFFF] text-[14px] lg:text-[16px] leading-[24px] lg:leading-[28px] font-normal font-objectsans">26th, September, 2025</p>
+        </div>
+      </div>
+    </div>
+    <!-- ITEM -->
+    <div class="video-item hidden" data-video="https://www.youtube.com/embed/d2j8tDMNtu0">
+      <div class="relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
+        <img src="assets/img/gallery/video-thumb.png" alt="Video Title" class="w-full h-[276px] lg:h-[458px] object-cover">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="bg-[#00605C] bg-opacity-90 rounded-[20px] py-4 px-8">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="absolute bottom-0 w-full bg-[#00605C] p-4 text-white">
+          <h3 class="text-[#FFFFFF] text-[20px] lg:text-[24px] leading-[100%] font-medium font-objectsans">PHP Weekly Summit</h3>
+          <p class="text-[#FFFFFF] text-[14px] lg:text-[16px] leading-[24px] lg:leading-[28px] font-normal font-objectsans">26th, September, 2025</p>
+        </div>
+      </div>
+    </div>
+    <!-- ITEM -->
+    <div class="video-item hidden" data-video="https://www.youtube.com/embed/d2j8tDMNtu0">
+      <div class="relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
+        <img src="assets/img/gallery/video-thumb.png" alt="Video Title" class="w-full h-[276px] lg:h-[458px] object-cover">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="bg-[#00605C] bg-opacity-90 rounded-[20px] py-4 px-8">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="absolute bottom-0 w-full bg-[#00605C] p-4 text-white">
+          <h3 class="text-[#FFFFFF] text-[20px] lg:text-[24px] leading-[100%] font-medium font-objectsans">PHP Weekly Summit</h3>
+          <p class="text-[#FFFFFF] text-[14px] lg:text-[16px] leading-[24px] lg:leading-[28px] font-normal font-objectsans">26th, September, 2025</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="text-center mt-10 wow animate__animated animate__slideInDown" data-wow-duration="2s">
@@ -427,79 +540,67 @@
   </div>
 </section>
 
-<div id="videoModal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
-  <div class="relative w-full max-w-4xl mx-4 lg:mx-0">
-    <button id="closeModal" class="absolute top-4 right-4 text-white text-2xl font-bold z-50">&times;</button>
-    <iframe id="modalVideo" class="w-full h-[60vh] lg:h-[80vh]" src="" frameborder="0" allowfullscreen></iframe>
+<div id="videoModal" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 hidden">
+  <div class="relative w-full max-w-5xl mx-4">
+      <button id="closeModal" class="absolute top-4 right-4 z-50 text-white text-3xl rounded-full bg-black/50 hover:bg-black/70 p-2 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+      </button>
+      <iframe id="modalVideo"
+        class="w-full h-[60vh] lg:h-[80vh]"
+        src=""
+        allow="autoplay"
+        allowfullscreen>
+      </iframe>
   </div>
 </div>
 
 <script>
-const videoData = [
-  {title: "PHP Weekly Summit", date: "26th, September, 2025", thumb: "assets/img/gallery/video-thumb.png", url: "https://www.youtube.com/embed/DVFS0AUf2ZI"},
-  {title: "Laravel Tips", date: "12th, October, 2025", thumb: "assets/img/gallery/video-thumb.png", url: "https://www.youtube.com/embed/DVFS0AUf2ZI"},
-  {title: "JavaScript Tricks", date: "5th, November, 2025", thumb: "assets/img/gallery/video-thumb.png", url: "https://www.youtube.com/embed/DVFS0AUf2ZI"},
-  {title: "Vue.js Mastery", date: "18th, December, 2025", thumb: "assets/img/gallery/video-thumb.png", url: "https://www.youtube.com/embed/DVFS0AUf2ZI"},
-  {title: "React Components", date: "20th, December, 2025", thumb: "assets/img/gallery/video-thumb.png", url: "https://www.youtube.com/embed/DVFS0AUf2ZI"},
-  {title: "Tailwind CSS Deep Dive", date: "22nd, December, 2025", thumb: "assets/img/gallery/video-thumb.png", url: "https://www.youtube.com/embed/DVFS0AUf2ZI"},
-];
+const items = document.querySelectorAll(".video-item");
+const loadMoreBtn = document.getElementById("loadMoreVideo");
+const modal = document.getElementById("videoModal");
+const modalVideo = document.getElementById("modalVideo");
+const closeModal = document.getElementById("closeModal");
 
-let loadedCount = 0;
-const loadStep = 3;
-const galleryVid = document.getElementById('videoGallery');
-const template = document.getElementById('videoTemplate');
-const loadMoreBtn = document.getElementById('loadMoreVideo');
+let visibleCount = 0;
+const step = 3;
 
-function loadVideos() {
-  const nextVideos = videoData.slice(loadedCount, loadedCount + loadStep);
-  nextVideos.forEach(video => {
-    const clone = template.content.cloneNode(true);
-    clone.querySelector('img').src = video.thumb;
-    clone.querySelector('img').alt = video.title;
-    clone.querySelector('h3').textContent = video.title;
-    clone.querySelector('p').textContent = video.date;
-    clone.querySelector('.video-link').href = video.url; // embed URL
-    galleryVid.appendChild(clone);
-  });
-  loadedCount += nextVideos.length;
-  if (loadedCount >= videoData.length) loadMoreBtn.style.display = 'none';
-}
-
-// Initial load
-loadVideos();
-loadMoreBtn.addEventListener('click', loadVideos);
-
-// Modal
-const modal = document.getElementById('videoModal');
-const modalVideo = document.getElementById('modalVideo');
-
-galleryVid.addEventListener('click', e => {
-  const link = e.target.closest('.video-link');
-  if (link) {
-    e.preventDefault();
-    let videoSrc = link.href;
-    videoSrc += videoSrc.includes('?') ? '&autoplay=1' : '?autoplay=1';
-    modalVideo.src = videoSrc;
-    modal.classList.remove('hidden');
+/* LOAD MORE */
+function showItems() {
+  for (let i = visibleCount; i < visibleCount + step; i++) {
+    if (items[i]) items[i].classList.remove("hidden");
   }
+  visibleCount += step;
+
+  if (visibleCount >= items.length) {
+    loadMoreBtn.style.display = "none";
+  }
+}
+showItems();
+loadMoreBtn.addEventListener("click", showItems);
+
+/* MODAL */
+document.getElementById("videoGallery").addEventListener("click", e => {
+  const item = e.target.closest(".video-item");
+  if (!item) return;
+
+  modalVideo.src = item.dataset.video + "?autoplay=1";
+  modal.classList.remove("hidden");
 });
 
-document.getElementById('closeModal').addEventListener('click', () => {
-  modalVideo.src = '';
-  modal.classList.add('hidden');
+closeModal.addEventListener("click", () => {
+  modalVideo.src = "";
+  modal.classList.add("hidden");
 });
 
-modal.addEventListener('click', e => {
+modal.addEventListener("click", e => {
   if (e.target === modal) {
-    modalVideo.src = '';
-    modal.classList.add('hidden');
+    modalVideo.src = "";
+    modal.classList.add("hidden");
   }
 });
 </script>
-
-
-
-
 
 
 

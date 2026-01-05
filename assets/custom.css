@@ -6,6 +6,11 @@
 
 
 /* label */
+.shape {
+  clip-path: polygon(0% 0%,75% 0%,90% 50%,75% 100%,0% 100%
+  );
+}
+
 .step-label {
   position: relative;
   height: 36px;
