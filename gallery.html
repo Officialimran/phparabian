@@ -262,7 +262,7 @@
   <p class="text-[#00605C] text-[20px] lg:text-[32px] font-normal font-objectsans leading-[36px] lg:leading-[58px] uppercase mb-6 lg:tracking-normal tracking-[0.02em]">Event Photos</p>
 
   <!-- Grid -->
-  <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 gap-5">
+  <div id="gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
     <!-- Card -->
     <div class="gallery-item relative cursor-pointer wow animate__animated animate__slideInDown" data-wow-duration="2s" data-caption="Annual Islamic Conference 2023">
@@ -315,12 +315,28 @@
         </div>
       </div>
     </div>
+    <div class="gallery-item relative cursor-pointer wow animate__animated animate__slideInDown" data-wow-duration="2s" data-caption="Business Forum Award Ceremony">
+      <img src="assets/img/gallery/galery-1.jpg" class="w-full h-[276px] lg:h-[458px] object-cover rounded-xl" />
+      <div class="absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100 transition">
+        <div class="flex items-center justify-center">
+          <img src="assets/img/gallery/lightbox-icon.svg">
+        </div>
+      </div>
+    </div>
+    <div class="gallery-item relative cursor-pointer wow animate__animated animate__slideInDown" data-wow-duration="2s" data-caption="Business Forum Award Ceremony">
+      <img src="assets/img/gallery/galery-1.jpg" class="w-full h-[276px] lg:h-[458px] object-cover rounded-xl" />
+      <div class="absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100 transition">
+        <div class="flex items-center justify-center">
+          <img src="assets/img/gallery/lightbox-icon.svg">
+        </div>
+      </div>
+    </div>
 
   </div>
 
   <!-- Load More -->
   <div class="text-center mt-10 wow animate__animated animate__slideInDown" data-wow-duration="2s">
-    <button id="loadMore" class="text-[14px] leading-[100%] font-poppins font-semibold px-[21px] py-[14px] border border-[#00605C] text-[#00605C] rounded-full hover:bg-[#00605C] hover:text-[#fff] transition">
+    <button id="loadMoreGallery" class="text-[14px] leading-[100%] font-poppins font-semibold px-[21px] py-[14px] border border-[#00605C] text-[#00605C] rounded-full hover:bg-[#00605C] hover:text-[#fff] transition">
       Load More
     </button>
   </div>
@@ -1092,29 +1108,54 @@ modal.addEventListener("click", e => {
     swiper.destroy();
   }
 
-  /* LOAD MORE */
-  document.getElementById("loadMore").onclick = () => {
-    const more = [
-      { img: "assets/img/gallery/4.png", cap: "Conference Networking Session" },
-      { img: "assets/img/gallery/5.png", cap: "Guest Arrival Ceremony" },
-      { img: "assets/img/gallery/6.png", cap: "Panel Discussion Moment" },
-    ];
+  
 
-    more.forEach(item => {
-      gallery.innerHTML += `
-        <div class="gallery-item relative cursor-pointer" data-caption="${item.cap}">
-          <img src="${item.img}" class="w-full h-[276px] lg:h-[458px] object-cover rounded-xl"/>
-          <div class="absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100 transition">
-            <div class="flex items-center justify-center">
-              <img src="assets/img/gallery/lightbox-icon.svg">
-            </div>
-          </div>
-        </div>
-      `;
-    });
+  // ===== Load More =====
+  const itemsGallery = document.querySelectorAll(".gallery-item");
+  const loadMoreBtnGallery = document.getElementById("loadMoreGallery");
 
-    initGallery();
-  };
+  let visibleGalleryCount = 0;
+
+  // detect desktop / mobile
+  function getStepCount() {
+    return window.innerWidth >= 1024 ? 6 : 3;
+  }
+
+  let stepGalleryItems = getStepCount();
+
+  // hide all first
+  itemsGallery.forEach(item => item.classList.add("hidden"));
+
+  function showItems() {
+    for (
+      let i = visibleGalleryCount;
+      i < visibleGalleryCount + stepGalleryItems;
+      i++
+    ) {
+      if (itemsGallery[i]) {
+        itemsGallery[i].classList.remove("hidden");
+      }
+    }
+
+    visibleGalleryCount += stepGalleryItems;
+
+    if (visibleGalleryCount >= itemsGallery.length) {
+      loadMoreBtnGallery.style.display = "none";
+    }
+  }
+
+  // initial load
+  showItems();
+
+  // Load more click
+  loadMoreBtnGallery.addEventListener("click", showItems);
+
+  // update step on resize (optional but safe)
+  window.addEventListener("resize", () => {
+    stepGalleryItems = getStepCount();
+  });
+
+
 
   initGallery();
 </script>
